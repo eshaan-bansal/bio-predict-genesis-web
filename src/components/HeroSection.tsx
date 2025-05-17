@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ChevronRight, RocketIcon, Atom, FlaskConical } from "lucide-react";
+import { ChevronRight, RocketIcon, Atom, FlaskConical, BookOpenIcon } from "lucide-react";
 import DataWaveBackground from "./DataWaveBackground";
 
 const HeroSection = () => {
@@ -28,7 +27,8 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-slow">
             <Button size="lg" className="gap-2 font-medium bg-gradient-to-r from-biopredict-purple to-biopredict-light-purple hover:opacity-90 transition-opacity shadow-lg shadow-biopredict-purple/20">
-              Get Started <ChevronRight className="h-4 w-4" />
+              <BookOpenIcon className="h-5 w-5" />
+              Book a Consultation <ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" className="font-medium border-biopredict-purple/30 backdrop-blur-sm hover:bg-biopredict-purple/10">
               See How It Works

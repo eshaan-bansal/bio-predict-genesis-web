@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { MicrochipIcon, Menu, X } from 'lucide-react';
+import { MicrochipIcon, Menu, X, BookOpenIcon } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,13 +54,19 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
+                <a href="#team" className="text-sm font-medium hover:text-biopredict-light-purple transition-colors">
+                  Team
+                </a>
+              </li>
+              <li>
                 <a href="#contact" className="text-sm font-medium hover:text-biopredict-light-purple transition-colors">
                   Contact
                 </a>
               </li>
             </ul>
-            <Button variant="default" size="sm">
-              Request Demo
+            <Button variant="default" size="sm" className="gap-1">
+              <BookOpenIcon className="h-4 w-4" />
+              Book a Consultation
             </Button>
           </div>
 
@@ -106,6 +112,13 @@ const Navbar = () => {
               Benefits
             </a>
             <a 
+              href="#team" 
+              className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Team
+            </a>
+            <a 
               href="#contact" 
               className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -113,8 +126,9 @@ const Navbar = () => {
               Contact
             </a>
             <div className="pt-2">
-              <Button variant="default" size="sm" className="w-full">
-                Request Demo
+              <Button variant="default" size="sm" className="w-full gap-1">
+                <BookOpenIcon className="h-4 w-4" />
+                Book a Consultation
               </Button>
             </div>
           </div>
