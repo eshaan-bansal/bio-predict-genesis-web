@@ -85,7 +85,7 @@ const MarketSection = () => {
                 </li>
               </ul>
               <div className="mt-4 text-xs text-gray-400">
-                <p>ADC market >$16B by 2025, RLT market >$13B by 2030, CGT CDMO market to grow from ~$8B in 2025 to ~$74B by 2034</p>
+                <p>ADC market {'>'}$16B by 2025, RLT market {'>'}$13B by 2030, CGT CDMO market to grow from ~$8B in 2025 to ~$74B by 2034</p>
               </div>
             </CardContent>
           </Card>
