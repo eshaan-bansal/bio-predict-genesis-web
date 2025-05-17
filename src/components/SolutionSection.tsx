@@ -1,5 +1,5 @@
 
-import { CircuitBoard, MoleculeIcon } from "lucide-react";
+import { CircuitBoard, Atom } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const SolutionSection = () => {
@@ -110,7 +110,7 @@ const SolutionSection = () => {
               
               {/* Connecting element */}
               <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-biopredict-light-purple rounded-full flex items-center justify-center z-10 shadow-lg">
-                <MoleculeIcon className="h-5 w-5 text-white" />
+                <Atom className="h-5 w-5 text-white" />
               </div>
             </div>
           </div>
