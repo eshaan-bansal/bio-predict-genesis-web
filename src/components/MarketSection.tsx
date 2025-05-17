@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { MicrochipIcon, Target, BrainCircuit } from "lucide-react";
+import { MicrochipIcon, Target, BrainCircuit, Shield, Rocket, Database } from "lucide-react";
 
 const MarketSection = () => {
   return (
@@ -122,18 +122,34 @@ const MarketSection = () => {
               Our Technological Edge
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-biopredict-light-purple">Proprietary AI Models</h4>
-                <p className="text-gray-300">
+                <h4 className="text-xl font-semibold text-biopredict-light-purple flex items-center">
+                  <BrainCircuit className="h-5 w-5 mr-2" />
+                  Proprietary AI Models
+                </h4>
+                <p className="text-gray-300 text-sm">
                   Our AI isn't off-the-shelf. RawMaterialPredict AI is built on sophisticated machine learning algorithms specifically trained on diverse biomanufacturing datasets. These models are uniquely designed to understand the intricate, often non-obvious correlations between hundreds of raw material parameters (from CoAs and internal tests) and critical process outcomes (like yield, purity, and deviations). This deep learning approach allows for highly accurate predictions of how specific material lots will behave in your unique processes, far exceeding the capabilities of general statistical tools or existing MES/LIMS functionalities.
                 </p>
               </div>
               
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-biopredict-light-purple">Real-Time Optimization & Prediction</h4>
-                <p className="text-gray-300">
-                  Beyond just analyzing data, our platform delivers actionable process parameter adjustments in real-time. As new raw material lots enter your facility, our AI immediately evaluates their molecular fingerprint, predicts how they'll perform in your specific manufacturing process, and recommends precise adjustments to critical process parameters to maximize yield and quality. This ensures consistent results despite natural raw material variability.
+                <h4 className="text-xl font-semibold text-biopredict-light-purple flex items-center">
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Real-Time Optimization & Prediction
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Gain foresight, not just hindsight. RawMaterialPredict AI integrates with your existing systems to analyze data as it's generated. This means you can receive predictive risk alerts for incoming raw material lots before they are even committed to production, or identify potential issues in the early stages of a batch. This real-time capability allows for timely interventions, such as material swapping, process parameter adjustments, or heightened monitoring, actively preventing failures and optimizing outcomes on the fly.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-xl font-semibold text-biopredict-light-purple flex items-center">
+                  <Shield className="h-5 w-5 mr-2" />
+                  Scalable & Secure Architecture
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Built for the future of biotech, RawMaterialPredict AI features a robust, cloud-native architecture. This ensures seamless scalability to handle vast data volumes from multiple production lines, sites, or diverse therapeutic programs. Our platform is designed for secure integration with your existing LIMS, MES, and data historians, adhering to stringent data integrity and GxP compliance considerations (e.g., 21 CFR Part 11). Whether you're at pilot scale or full commercial manufacturing, our solution adapts to your needs, ensuring reliable performance and data security.
                 </p>
               </div>
             </div>
