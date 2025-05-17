@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, RocketIcon, Atom, FlaskConical } from "lucide-react";
 import DataWaveBackground from "./DataWaveBackground";
