@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const SolutionsSection = () => {
@@ -47,13 +47,13 @@ const SolutionsSection = () => {
   ];
 
   return (
-    <section id="solutions" className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-            Solutions for Every Manufacturing Challenge
+    <section id="solutions" className="section-padding bg-muted/30">
+      <div className="container mx-auto container-padding">
+        <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-up">
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Solutions for Every Challenge
           </h2>
-          <p className="text-xl text-slate-600 text-balance">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             From raw material variability to process optimization, our platform addresses 
             the most critical pain points in biopharmaceutical manufacturing.
           </p>
@@ -66,40 +66,50 @@ const SolutionsSection = () => {
               className="animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="card-clean">
+              <div className="glass rounded-2xl p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                   {/* Problems */}
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                    <h3 className="font-display text-2xl font-semibold text-foreground mb-8">
                       {solution.title}
                     </h3>
-                    <h4 className="text-lg font-medium text-red-600 mb-4">Current Challenges</h4>
-                    <ul className="space-y-3">
-                      {solution.problems.map((problem, idx) => (
-                        <li key={idx} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-slate-600">{problem}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mb-6">
+                      <h4 className="font-display text-lg font-medium text-destructive mb-4 flex items-center">
+                        <X className="w-5 h-5 mr-2" />
+                        Current Challenges
+                      </h4>
+                      <ul className="space-y-3">
+                        {solution.problems.map((problem, idx) => (
+                          <li key={idx} className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0" />
+                            <span className="text-muted-foreground">{problem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   
                   {/* Solutions */}
                   <div>
-                    <div className="h-6 lg:h-12"></div> {/* Spacer for alignment */}
-                    <h4 className="text-lg font-medium text-green-600 mb-4">BioPredict Solutions</h4>
-                    <ul className="space-y-3 mb-6">
-                      {solution.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-slate-600">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="outline" className="group">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <div className="h-16 lg:h-20" /> {/* Spacer for alignment */}
+                    <div>
+                      <h4 className="font-display text-lg font-medium text-accent mb-4 flex items-center">
+                        <CheckCircle className="w-5 h-5 mr-2" />
+                        BioPredict Solutions
+                      </h4>
+                      <ul className="space-y-3 mb-8">
+                        {solution.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start space-x-3">
+                            <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button variant="outline" className="group hover:bg-muted/50 transition-all duration-200">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -109,17 +119,17 @@ const SolutionsSection = () => {
         
         {/* CTA Section */}
         <div className="mt-20 text-center animate-fade-up">
-          <div className="card-clean max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+          <div className="glass rounded-2xl p-12 max-w-3xl mx-auto">
+            <h3 className="font-display text-3xl font-semibold text-foreground mb-4">
               Ready to Transform Your Manufacturing?
             </h3>
-            <p className="text-slate-600 mb-8">
+            <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
               See how BioPredict can optimize your specific manufacturing challenges 
               with a personalized demonstration.
             </p>
-            <Button className="btn-primary gap-2">
+            <Button className="gradient-primary text-white border-0 hover:opacity-90 transition-all duration-200 text-lg px-8 py-4">
               Schedule Consultation
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
           </div>
         </div>

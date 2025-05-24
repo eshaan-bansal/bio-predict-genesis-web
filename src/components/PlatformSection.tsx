@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Brain, BarChart3, Shield, Zap } from 'lucide-react';
+import { Brain, BarChart3, Shield, Zap, CheckCircle } from 'lucide-react';
 
 const PlatformSection = () => {
   const features = [
@@ -26,82 +26,71 @@ const PlatformSection = () => {
     }
   ];
 
+  const benefits = [
+    "30% increase in manufacturing yields",
+    "50% reduction in production costs",
+    "98.7% prediction accuracy",
+    "Real-time process optimization"
+  ];
+
   return (
-    <section id="platform" className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-            The Future of Biomanufacturing Intelligence
+    <section id="platform" className="section-padding bg-muted/30">
+      <div className="container mx-auto container-padding">
+        <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-up">
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            The Future of Manufacturing Intelligence
           </h2>
-          <p className="text-xl text-slate-600 text-balance">
-            Our AI platform transforms complex manufacturing data into actionable insights, 
-            enabling unprecedented control over biopharmaceutical production processes.
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            Transform complex manufacturing data into actionable insights with our 
+            AI-powered platform designed specifically for biopharmaceutical production.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {features.map((feature, index) => (
-            <div 
-              key={feature.title} 
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <feature.icon className="h-6 w-6 text-blue-600" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {/* Features Grid */}
+          <div className="space-y-8">
+            {features.map((feature, index) => (
+              <div 
+                key={feature.title} 
+                className="flex items-start space-x-4 animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex-shrink-0 w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
+                  <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Platform Demo */}
-        <div className="mt-20 animate-fade-up">
-          <div className="card-clean max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
-                See BioPredict in Action
+            ))}
+          </div>
+
+          {/* Benefits List */}
+          <div className="animate-fade-up">
+            <div className="glass rounded-2xl p-8">
+              <h3 className="font-display text-2xl font-semibold text-foreground mb-8">
+                Proven Results
               </h3>
-              <p className="text-slate-600">
-                Experience how our platform transforms raw material analysis into manufacturing excellence.
-              </p>
-            </div>
-            
-            <div className="bg-slate-50 rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Input Analysis */}
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="w-8 h-8 bg-blue-600 rounded"></div>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-muted-foreground">{benefit}</span>
                   </div>
-                  <h4 className="font-semibold text-slate-900 mb-2">Raw Material Input</h4>
-                  <p className="text-sm text-slate-600">Upload CoA data and specifications</p>
-                </div>
-                
-                {/* AI Processing */}
+                ))}
+              </div>
+              
+              <div className="mt-8 p-6 bg-accent/10 rounded-xl">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Brain className="h-8 w-8 text-green-600" />
+                  <div className="text-3xl font-bold text-accent mb-2">$100B+</div>
+                  <div className="text-sm text-muted-foreground">
+                    Total addressable market opportunity
                   </div>
-                  <h4 className="font-semibold text-slate-900 mb-2">AI Analysis</h4>
-                  <p className="text-sm text-slate-600">Process through predictive models</p>
-                </div>
-                
-                {/* Output Recommendations */}
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BarChart3 className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <h4 className="font-semibold text-slate-900 mb-2">Optimized Parameters</h4>
-                  <p className="text-sm text-slate-600">Receive tailored process settings</p>
                 </div>
               </div>
             </div>

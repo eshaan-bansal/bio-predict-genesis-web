@@ -8,19 +8,16 @@ const CompanySection = () => {
       name: "Dr. Sarah Chen",
       role: "CEO & Co-Founder",
       background: "Former VP of Process Development at Genentech. PhD in Chemical Engineering from MIT.",
-      image: "/api/placeholder/120/120"
     },
     {
       name: "Dr. Michael Rodriguez",
       role: "CTO & Co-Founder", 
       background: "AI Research Lead at Google DeepMind. PhD in Machine Learning from Stanford.",
-      image: "/api/placeholder/120/120"
     },
     {
       name: "Dr. Emily Watson",
       role: "Chief Science Officer",
       background: "20+ years in biomanufacturing at Amgen and Biogen. PhD in Biotechnology from UC Berkeley.",
-      image: "/api/placeholder/120/120"
     }
   ];
 
@@ -32,13 +29,13 @@ const CompanySection = () => {
   ];
 
   return (
-    <section id="company" className="section-padding bg-slate-50">
-      <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+    <section id="company" className="section-padding bg-background">
+      <div className="container mx-auto container-padding">
+        <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-up">
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Leading the Future of Biomanufacturing
           </h2>
-          <p className="text-xl text-slate-600 text-balance">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Founded by industry veterans and AI pioneers, BioPredict combines decades of 
             biomanufacturing expertise with cutting-edge artificial intelligence.
           </p>
@@ -52,18 +49,18 @@ const CompanySection = () => {
               className="text-center animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <metric.icon className="h-6 w-6 text-blue-600" />
+              <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <metric.icon className="h-8 w-8 text-white" />
               </div>
-              <div className="text-2xl font-bold text-slate-900 mb-1">{metric.value}</div>
-              <div className="text-sm text-slate-600">{metric.label}</div>
+              <div className="text-3xl font-bold text-foreground mb-2">{metric.value}</div>
+              <div className="text-sm text-muted-foreground">{metric.label}</div>
             </div>
           ))}
         </div>
         
         {/* Leadership Team */}
         <div className="mb-20 animate-fade-up">
-          <h3 className="text-2xl font-semibold text-slate-900 text-center mb-12">
+          <h3 className="font-display text-3xl font-semibold text-foreground text-center mb-12">
             Leadership Team
           </h3>
           
@@ -71,13 +68,13 @@ const CompanySection = () => {
             {team.map((member, index) => (
               <div 
                 key={member.name}
-                className="card-clean text-center animate-fade-up"
+                className="glass rounded-2xl p-8 text-center animate-fade-up hover:shadow-lg transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-6"></div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">{member.name}</h4>
-                <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                <p className="text-sm text-slate-600">{member.background}</p>
+                <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-6"></div>
+                <h4 className="font-display text-xl font-semibold text-foreground mb-2">{member.name}</h4>
+                <p className="text-primary font-medium mb-4">{member.role}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{member.background}</p>
               </div>
             ))}
           </div>
@@ -85,11 +82,11 @@ const CompanySection = () => {
         
         {/* Mission Statement */}
         <div className="max-w-4xl mx-auto animate-fade-up">
-          <div className="card-clean text-center">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+          <div className="glass rounded-2xl p-12 text-center">
+            <h3 className="font-display text-3xl font-semibold text-foreground mb-8">
               Our Mission
             </h3>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               To accelerate the delivery of life-saving therapies by eliminating unpredictability 
               in biopharmaceutical manufacturing. Through AI-driven insights and process optimization, 
               we enable manufacturers to achieve consistent, high-quality production while reducing 
