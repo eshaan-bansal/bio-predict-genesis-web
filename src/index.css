@@ -5,65 +5,48 @@
 
 @layer base {
   :root {
-    --background: 8 12 23;
-    --foreground: 248 250 252;
-
-    --card: 15 23 42;
-    --card-foreground: 248 250 252;
-
-    --popover: 15 23 42;
-    --popover-foreground: 248 250 252;
-
-    --primary: 139 92 246;
-    --primary-foreground: 15 23 42;
-
-    --secondary: 30 41 59;
-    --secondary-foreground: 248 250 252;
-
-    --muted: 30 41 59;
-    --muted-foreground: 148 163 184;
-
-    --accent: 99 102 241;
-    --accent-foreground: 248 250 252;
-
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --primary: 15 23 42;
+    --primary-foreground: 255 255 255;
+    --secondary: 248 250 252;
+    --secondary-foreground: 15 23 42;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
     --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
-
-    --border: 30 41 59;
-    --input: 30 41 59;
-    --ring: 139 92 246;
-
-    --radius: 0.75rem;
+    --destructive-foreground: 255 255 255;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 8 12 23;
+    --background: 15 23 42;
     --foreground: 248 250 252;
-
-    --card: 15 23 42;
+    --card: 30 41 59;
     --card-foreground: 248 250 252;
-
-    --popover: 15 23 42;
+    --popover: 30 41 59;
     --popover-foreground: 248 250 252;
-
-    --primary: 139 92 246;
+    --primary: 248 250 252;
     --primary-foreground: 15 23 42;
-
     --secondary: 30 41 59;
     --secondary-foreground: 248 250 252;
-
     --muted: 30 41 59;
     --muted-foreground: 148 163 184;
-
-    --accent: 99 102 241;
-    --accent-foreground: 248 250 252;
-
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
-
-    --border: 30 41 59;
-    --input: 30 41 59;
-    --ring: 139 92 246;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 59 130 246;
   }
 }
 
@@ -71,129 +54,84 @@
   * {
     @apply border-border;
   }
-
+  
   body {
     @apply bg-background text-foreground;
-    background: 
-      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.02) 0%, transparent 50%),
-      linear-gradient(to bottom, rgb(8, 12, 23), rgb(15, 23, 42));
-    min-height: 100vh;
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
   }
 }
 
-/* Clean glass morphism */
-.glass-morphism {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-/* Refined animations */
-@keyframes fade-in {
-  0% {
+/* Clean animations */
+@keyframes fade-up {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.6;
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
-  50% {
+  to {
     opacity: 1;
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out;
+  animation: fade-in 0.4s ease-out;
 }
 
-.animate-fade-in-slow {
-  animation: fade-in 1.2s ease-out;
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 3s infinite;
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Clean gradient text */
+/* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Refined button styles */
-.cyber-button {
-  position: relative;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(99, 102, 241, 0.9));
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  transition: all 0.3s ease;
-  overflow: hidden;
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2;
 }
 
-.cyber-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.5s;
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2;
 }
 
-.cyber-button:hover::before {
-  left: 100%;
+/* Card styles */
+.card-clean {
+  @apply rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md;
 }
 
-.cyber-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-}
-
-/* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  letter-spacing: -0.02em;
-}
-
-.font-light {
-  font-weight: 300;
-}
-
-.font-extralight {
-  font-weight: 200;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .glass-morphism {
-    backdrop-filter: blur(10px);
-  }
+/* Section spacing */
+.section-padding {
+  @apply py-16 lg:py-24;
 }

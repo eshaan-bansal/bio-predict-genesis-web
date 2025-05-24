@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Brain, Menu, X, BookOpenIcon, Activity } from 'lucide-react';
+import { Brain, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,11 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -22,56 +18,40 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 glass-morphism shadow-2xl border-b border-white/10' 
-          : 'py-6 bg-transparent'
+          ? 'bg-white/80 backdrop-blur-lg border-b border-slate-200/60 shadow-sm' 
+          : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <div className="relative">
-              <Brain className="h-8 w-8 text-biopredict-accent mr-3" />
-            </div>
-            <span className="font-light text-2xl text-white">
-              Bio<span className="font-medium text-biopredict-accent">Predict</span>
-              <span className="text-xs text-slate-400 ml-2 font-mono uppercase tracking-wider">AI</span>
+      <div className="container-custom">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center space-x-2">
+            <Brain className="h-7 w-7 text-blue-600" />
+            <span className="text-xl font-semibold text-slate-900">
+              BioPredict
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-12">
-            <ul className="flex space-x-12">
-              <li>
-                <a href="#problem" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
-                  Challenge
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
+                <a 
+                  key={item}
+                  href={`#${item.toLowerCase()}`} 
+                  className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors"
+                >
+                  {item}
                 </a>
-              </li>
-              <li>
-                <a href="#solution" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
-                  Solution
-                </a>
-              </li>
-              <li>
-                <a href="#benefits" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
-                  Benefits
-                </a>
-              </li>
-              <li>
-                <a href="#team" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
-                  Team
-                </a>
-              </li>
-            </ul>
+              ))}
+            </nav>
             <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm" className="glass-morphism border-slate-600 hover:bg-white/5 text-slate-300 rounded-full px-6">
-                <Activity className="h-4 w-4 mr-2" />
-                Demo
+              <Button variant="ghost" size="sm" className="text-slate-700 hover:text-slate-900">
+                Sign In
               </Button>
-              <Button size="sm" className="cyber-button gap-2 rounded-full px-6">
-                <BookOpenIcon className="h-4 w-4" />
-                Contact
+              <Button className="btn-primary">
+                Book Demo
               </Button>
             </div>
           </div>
@@ -80,13 +60,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-xl glass-morphism"
+              className="p-2 text-slate-700 hover:text-slate-900"
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-biopredict-accent" />
-              ) : (
-                <Menu className="h-6 w-6 text-biopredict-accent" />
-              )}
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -94,26 +70,24 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-morphism animate-fade-in mt-4 mx-4 rounded-2xl">
-          <div className="px-6 py-8 space-y-6">
-            {['Challenge', 'Solution', 'Benefits', 'Team'].map((item) => (
+        <div className="md:hidden bg-white border-t border-slate-200 animate-fade-in">
+          <div className="container-custom py-6 space-y-4">
+            {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block py-3 text-lg font-light text-slate-300 hover:text-white transition-all duration-300"
+                className="block text-slate-700 hover:text-slate-900 font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item}
               </a>
             ))}
-            <div className="pt-6 space-y-4">
-              <Button variant="outline" size="sm" className="w-full glass-morphism border-slate-600 text-slate-300 rounded-full">
-                <Activity className="h-4 w-4 mr-2" />
-                Demo
+            <div className="pt-4 space-y-3">
+              <Button variant="ghost" className="w-full justify-start">
+                Sign In
               </Button>
-              <Button size="sm" className="w-full cyber-button gap-2 rounded-full">
-                <BookOpenIcon className="h-4 w-4" />
-                Contact
+              <Button className="btn-primary w-full">
+                Book Demo
               </Button>
             </div>
           </div>
