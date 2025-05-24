@@ -24,65 +24,54 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'py-2 glass-morphism shadow-cyber' 
-          : 'py-4 bg-transparent'
+          ? 'py-3 glass-morphism shadow-2xl border-b border-white/10' 
+          : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <div className="relative">
-              <Brain className="h-10 w-10 text-biopredict-purple animate-pulse-glow mr-3" />
-              <div className="absolute inset-0 rounded-full bg-biopredict-purple/20 animate-ping" style={{animationDuration: '3s'}}></div>
+              <Brain className="h-8 w-8 text-biopredict-accent mr-3" />
             </div>
-            <span className="font-bold text-2xl text-white">
-              Bio<span className="gradient-text">Predict</span>
-              <span className="text-xs text-biopredict-accent ml-2 font-mono">AI</span>
+            <span className="font-light text-2xl text-white">
+              Bio<span className="font-medium text-biopredict-accent">Predict</span>
+              <span className="text-xs text-slate-400 ml-2 font-mono uppercase tracking-wider">AI</span>
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <ul className="flex space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
+            <ul className="flex space-x-12">
               <li>
-                <a href="#problem" className="text-sm font-medium text-slate-300 hover:text-biopredict-accent transition-all duration-300 relative group">
+                <a href="#problem" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
                   Challenge
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-biopredict-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#solution" className="text-sm font-medium text-slate-300 hover:text-biopredict-accent transition-all duration-300 relative group">
-                  AI Solution
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-biopredict-accent transition-all duration-300 group-hover:w-full"></span>
+                <a href="#solution" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
+                  Solution
                 </a>
               </li>
               <li>
-                <a href="#benefits" className="text-sm font-medium text-slate-300 hover:text-biopredict-accent transition-all duration-300 relative group">
+                <a href="#benefits" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
                   Benefits
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-biopredict-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#team" className="text-sm font-medium text-slate-300 hover:text-biopredict-accent transition-all duration-300 relative group">
+                <a href="#team" className="text-sm font-light text-slate-300 hover:text-white transition-all duration-300">
                   Team
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-biopredict-accent transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-biopredict-accent transition-all duration-300 relative group">
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-biopredict-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
             </ul>
-            <div className="flex items-center space-x-3">
-              <Button variant="outline" size="sm" className="glass-morphism border-biopredict-purple/50 hover:bg-biopredict-purple/10 text-slate-300">
+            <div className="flex items-center space-x-4">
+              <Button variant="outline" size="sm" className="glass-morphism border-slate-600 hover:bg-white/5 text-slate-300 rounded-full px-6">
                 <Activity className="h-4 w-4 mr-2" />
-                Live Demo
+                Demo
               </Button>
-              <Button size="sm" className="cyber-button gap-2">
+              <Button size="sm" className="cyber-button gap-2 rounded-full px-6">
                 <BookOpenIcon className="h-4 w-4" />
-                Get Started
+                Contact
               </Button>
             </div>
           </div>
@@ -91,12 +80,12 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md glass-morphism"
+              className="p-2 rounded-xl glass-morphism"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-biopredict-purple" />
+                <X className="h-6 w-6 text-biopredict-accent" />
               ) : (
-                <Menu className="h-6 w-6 text-biopredict-purple" />
+                <Menu className="h-6 w-6 text-biopredict-accent" />
               )}
             </button>
           </div>
@@ -105,51 +94,26 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-morphism shadow-cyber animate-fade-in mt-2">
-          <div className="px-4 py-6 space-y-4">
-            <a 
-              href="#problem" 
-              className="block py-3 px-4 text-sm text-slate-300 hover:text-biopredict-accent hover:bg-biopredict-purple/10 rounded-lg transition-all duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Challenge
-            </a>
-            <a 
-              href="#solution" 
-              className="block py-3 px-4 text-sm text-slate-300 hover:text-biopredict-accent hover:bg-biopredict-purple/10 rounded-lg transition-all duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              AI Solution
-            </a>
-            <a 
-              href="#benefits" 
-              className="block py-3 px-4 text-sm text-slate-300 hover:text-biopredict-accent hover:bg-biopredict-purple/10 rounded-lg transition-all duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Benefits
-            </a>
-            <a 
-              href="#team" 
-              className="block py-3 px-4 text-sm text-slate-300 hover:text-biopredict-accent hover:bg-biopredict-purple/10 rounded-lg transition-all duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Team
-            </a>
-            <a 
-              href="#contact" 
-              className="block py-3 px-4 text-sm text-slate-300 hover:text-biopredict-accent hover:bg-biopredict-purple/10 rounded-lg transition-all duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </a>
-            <div className="pt-4 space-y-3">
-              <Button variant="outline" size="sm" className="w-full glass-morphism border-biopredict-purple/50 text-slate-300">
+        <div className="md:hidden glass-morphism animate-fade-in mt-4 mx-4 rounded-2xl">
+          <div className="px-6 py-8 space-y-6">
+            {['Challenge', 'Solution', 'Benefits', 'Team'].map((item) => (
+              <a 
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="block py-3 text-lg font-light text-slate-300 hover:text-white transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+            <div className="pt-6 space-y-4">
+              <Button variant="outline" size="sm" className="w-full glass-morphism border-slate-600 text-slate-300 rounded-full">
                 <Activity className="h-4 w-4 mr-2" />
-                Live Demo
+                Demo
               </Button>
-              <Button size="sm" className="w-full cyber-button gap-2">
+              <Button size="sm" className="w-full cyber-button gap-2 rounded-full">
                 <BookOpenIcon className="h-4 w-4" />
-                Get Started
+                Contact
               </Button>
             </div>
           </div>
