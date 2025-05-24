@@ -7,103 +7,101 @@ const ScienceSection = () => {
     {
       icon: TrendingUp,
       value: "$100B+",
-      label: "Industry Impact",
-      description: "Total annual inefficiencies in biopharmaceutical manufacturing"
+      label: "Market Opportunity",
+      description: "Total addressable market in biopharmaceutical manufacturing optimization"
     },
     {
       icon: Target,
       value: "98.7%",
       label: "Prediction Accuracy",
-      description: "Validated across diverse therapeutic modalities"
+      description: "Validated performance across diverse therapeutic modalities and processes"
     },
     {
       icon: Award,
       value: "30%",
       label: "Yield Improvement",
-      description: "Average increase in manufacturing efficiency"
+      description: "Average increase in manufacturing efficiency achieved by our clients"
     }
   ];
 
   return (
-    <section id="science" className="section-padding bg-background">
+    <section id="science" className="section-padding bg-white">
       <div className="container mx-auto container-padding">
-        <div className="max-w-3xl mx-auto text-center mb-20 animate-fade-up">
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Proven Science, Measurable Results
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
+            Proven Science, Measurable Impact
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             Our proprietary algorithms are trained on extensive datasets from leading 
             biomanufacturing facilities, delivering validated improvements across all metrics.
           </p>
         </div>
         
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
-              className="glass rounded-2xl p-8 text-center animate-fade-up hover:shadow-lg transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="text-center"
             >
-              <div className="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <stat.icon className="h-8 w-8 text-white" />
+              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <stat.icon className="h-8 w-8 text-gray-700" />
               </div>
-              <div className="text-4xl font-bold text-foreground mb-2">{stat.value}</div>
-              <div className="font-display text-lg font-semibold text-foreground mb-3">{stat.label}</div>
-              <p className="text-muted-foreground text-sm leading-relaxed">{stat.description}</p>
+              <div className="text-4xl font-serif font-medium text-gray-900 mb-2">{stat.value}</div>
+              <div className="font-medium text-gray-900 mb-3">{stat.label}</div>
+              <p className="text-gray-600 text-sm leading-relaxed">{stat.description}</p>
             </div>
           ))}
         </div>
         
         {/* Methodology */}
-        <div className="max-w-6xl mx-auto animate-fade-up">
-          <div className="glass rounded-2xl p-12">
-            <h3 className="font-display text-3xl font-semibold text-foreground mb-12 text-center">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gray-50 rounded-2xl p-12">
+            <h3 className="font-serif text-3xl font-medium text-gray-900 mb-12 text-center">
               Our Methodology
             </h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div>
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h4 className="font-medium text-gray-900 mb-3 text-lg">
                     Advanced Machine Learning
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our models leverage deep learning architectures specifically designed for 
-                    biomanufacturing data, incorporating domain expertise from process engineering 
-                    and quality science.
+                  <p className="text-gray-600 leading-relaxed">
+                    Deep learning architectures specifically designed for biomanufacturing data, 
+                    incorporating domain expertise from process engineering and quality science.
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h4 className="font-medium text-gray-900 mb-3 text-lg">
                     Continuous Learning
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Each production cycle provides new training data, enabling our algorithms 
-                    to continuously improve accuracy and adapt to changing conditions.
+                  <p className="text-gray-600 leading-relaxed">
+                    Each production cycle provides new training data, enabling continuous 
+                    improvement in accuracy and adaptation to changing conditions.
                   </p>
                 </div>
               </div>
               
               <div className="space-y-8">
                 <div>
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h4 className="font-medium text-gray-900 mb-3 text-lg">
                     Multi-Modal Integration
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We integrate diverse data sources including Certificate of Analysis (CoA) 
-                    data, in-process measurements, and historical batch records for comprehensive insights.
+                  <p className="text-gray-600 leading-relaxed">
+                    Integration of diverse data sources including Certificate of Analysis data, 
+                    in-process measurements, and historical batch records.
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h4 className="font-medium text-gray-900 mb-3 text-lg">
                     Regulatory Compliance
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    All models are developed with GxP principles in mind, ensuring full 
-                    traceability and validation for regulated environments.
+                  <p className="text-gray-600 leading-relaxed">
+                    All models developed with GxP principles, ensuring full traceability 
+                    and validation for regulated environments.
                   </p>
                 </div>
               </div>

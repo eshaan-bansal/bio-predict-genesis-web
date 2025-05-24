@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Brain, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,42 +18,39 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass border-b' 
+          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' 
           : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto container-padding">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-              <Brain className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-display font-semibold text-foreground">
+          <div className="flex items-center">
+            <span className="text-2xl font-serif font-medium text-gray-900">
               BioPredict
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-12">
-            <nav className="flex space-x-8">
+            <nav className="flex space-x-10">
               {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`} 
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   {item}
                 </a>
               ))}
             </nav>
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+            <div className="flex items-center space-x-6">
+              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-900">
                 Sign In
               </Button>
-              <Button className="gradient-primary text-white border-0 hover:opacity-90 transition-opacity">
+              <Button className="bg-gray-900 text-white hover:bg-gray-800 px-6">
                 Book Demo
               </Button>
             </div>
@@ -63,7 +60,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -73,13 +70,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass border-t animate-fade-in">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="container mx-auto container-padding py-8 space-y-6">
             {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block text-muted-foreground hover:text-foreground font-medium py-2 transition-colors"
+                className="block text-gray-600 hover:text-gray-900 font-medium py-2 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item}
@@ -89,7 +86,7 @@ const Navbar = () => {
               <Button variant="ghost" className="w-full justify-start">
                 Sign In
               </Button>
-              <Button className="gradient-primary text-white border-0 w-full">
+              <Button className="bg-gray-900 text-white w-full">
                 Book Demo
               </Button>
             </div>
