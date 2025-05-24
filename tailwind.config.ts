@@ -64,17 +64,23 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				biopredict: {
-					'blue': '#1A1F2C',
-					'purple': '#7E69AB',
-					'light-purple': '#9b87f5',
-					'accent': '#D6BCFA',
-					'white': '#FFFFFF',
+					'blue': '#0f172a',
+					'purple': '#8b5cf6',
+					'light-purple': '#a855f7',
+					'accent': '#6366f1',
+					'cyan': '#06b6d4',
+					'emerald': '#10b981',
+					'white': '#f8fafc',
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'mono': ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -96,7 +102,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -105,18 +111,20 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': {
-						opacity: '0.6',
+						opacity: '0.4',
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
 					},
 					'50%': {
 						opacity: '1',
+						boxShadow: '0 0 40px rgba(139, 92, 246, 0.8)'
 					},
 				},
 				'float': {
 					'0%, 100%': {
-						transform: 'translateY(0)',
+						transform: 'translateY(0) scale(1)',
 					},
 					'50%': {
-						transform: 'translateY(-10px)',
+						transform: 'translateY(-20px) scale(1.02)',
 					},
 				},
 				'gradient-x': {
@@ -127,21 +135,58 @@ export default {
 						'background-position': '100% 50%',
 					},
 				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
+				},
+				'cyber-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.5)'
+					}
+				},
+				'data-stream': {
+					'0%': {
+						transform: 'translateX(-100%) skewX(-20deg)',
+						opacity: '0'
+					},
+					'50%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateX(200%) skewX(-20deg)',
+						opacity: '0'
+					}
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
 				'fade-in-slow': 'fade-in 1.2s ease-out',
-				'pulse-glow': 'pulse-glow 3s infinite',
-				'float': 'float 6s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 4s infinite',
+				'float': 'float 8s ease-in-out infinite',
 				'gradient-x': 'gradient-x 15s ease infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'cyber-pulse': 'cyber-pulse 3s infinite',
+				'data-stream': 'data-stream 3s linear infinite',
 			},
 			backgroundImage: {
-				'hero-pattern': 'linear-gradient(to bottom right, rgba(126, 105, 171, 0.4), rgba(26, 31, 44, 0.7))',
-				'data-wave': 'url("/data-wave.svg")',
+				'hero-pattern': 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.05))',
+				'cyber-grid': 'linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)',
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
+			boxShadow: {
+				'cyber': '0 0 20px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+				'cyber-lg': '0 0 40px rgba(139, 92, 246, 0.4), 0 20px 40px rgba(139, 92, 246, 0.2)',
+				'glow': '0 0 30px rgba(139, 92, 246, 0.5)',
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
