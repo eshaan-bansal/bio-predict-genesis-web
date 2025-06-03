@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 
@@ -7,7 +6,7 @@ const AboutSection = () => {
     {
       name: "Jamie Levitan",
       email: "jamie@rawmaterialpredictive.com",
-      bio: ""
+      bio: "Political Science major at UMass Amherst. With a background in research, communication, and leadership, Jamie brings a sharp analytical mindset and a passion for storytelling to the intersection of technology and impact."
     },
     {
       name: "Eshaan Bansal", 
