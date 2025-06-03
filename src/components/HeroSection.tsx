@@ -1,25 +1,16 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+import FuturisticCube from './FuturisticCube';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
-      {/* Background Image */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <img 
-          src="/lovable-uploads/d1f98438-48ff-4e51-8d82-01ca0d2f05fc.png" 
-          alt="Laptop with analytics dashboard"
-          className="w-[150%] h-[150%] object-cover opacity-90 scale-125"
-          style={{ objectPosition: 'center center' }}
-        />
-      </div>
-      
-      {/* Content Overlay */}
+      {/* Content */}
       <div className="container mx-auto container-padding relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 items-center min-h-screen">
-            {/* Left Column - Text Content positioned to the left of laptop */}
+            {/* Left Column - Text Content */}
             <div className="lg:col-span-4 text-center lg:text-left lg:pr-4">
               {/* Main Headline */}
               <h1 className="font-serif text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-900 mb-6 slide-up text-balance leading-tight">
@@ -40,16 +31,10 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Center - Laptop space */}
+            {/* Center - 3D Graphic */}
             <div className="lg:col-span-5 relative slide-up">
-              {/* This space is for the laptop to show through */}
               <div className="h-80 lg:h-[400px] xl:h-[500px] relative">
-                {/* Screen overlay text */}
-                <div className="absolute top-8 left-8 text-left hidden lg:block">
-                  <p className="text-xs text-gray-500 font-medium opacity-60">
-                    Dashboard Analytics
-                  </p>
-                </div>
+                <FuturisticCube />
               </div>
             </div>
 
