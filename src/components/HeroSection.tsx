@@ -27,14 +27,11 @@ const HeroSection = () => {
                 AI-Powered Process Optimization Delivering 30% Higher Yields and 50% Lower Costs
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center slide-up">
-                <Button size="lg" className="bg-blue-600 text-white text-lg px-8 py-4 hover:bg-blue-700">
-                  Schedule Demo
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+              {/* CTA Button */}
+              <div className="flex justify-center lg:justify-start slide-up">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-blue-300 text-blue-700 hover:bg-blue-50">
                   Learn More
+                  <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
             </div>
@@ -45,11 +42,8 @@ const HeroSection = () => {
                 <img 
                   src="/lovable-uploads/f88c2efe-5981-450a-ae29-1ecc6fc2ef24.png" 
                   alt="AI-powered analytics dashboard"
-                  className="w-full h-auto max-w-lg mx-auto lg:max-w-full"
+                  className="w-full h-auto max-w-lg mx-auto lg:max-w-full drop-shadow-2xl"
                 />
-                {/* Floating elements for visual interest */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-300 rounded-full opacity-30 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
