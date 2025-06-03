@@ -4,45 +4,53 @@ import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto container-padding relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-12 slide-up">
-            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-            AI-Powered Manufacturing Intelligence
-          </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div className="text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-8 slide-up">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
+                AI-Powered Manufacturing Intelligence
+              </div>
 
-          {/* Main Headline */}
-          <h1 className="font-serif text-5xl lg:text-7xl font-medium text-gray-900 mb-8 slide-up text-balance">
-            Transforming Biopharmaceutical Manufacturing
-          </h1>
+              {/* Main Headline */}
+              <h1 className="font-serif text-4xl lg:text-6xl font-medium text-gray-900 mb-6 slide-up text-balance leading-tight">
+                Unlock a $10B Market
+              </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl lg:text-2xl text-gray-600 mb-16 leading-relaxed slide-up max-w-3xl mx-auto">
-            Unlock predictive intelligence that delivers 30% higher yields and 50% cost reduction 
-            across your entire production lifecycle.
-          </p>
+              {/* Subheadline */}
+              <p className="text-xl lg:text-2xl text-blue-600 mb-8 leading-relaxed slide-up font-medium">
+                AI-Powered Process Optimization Delivering 30% Higher Yields and 50% Lower Costs
+              </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center slide-up">
-            <Button size="lg" className="bg-gray-900 text-white text-lg px-8 py-4 hover:bg-gray-800">
-              Schedule Demo
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-gray-300 text-gray-700 hover:bg-gray-50">
-              Learn More
-            </Button>
-          </div>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center slide-up">
+                <Button size="lg" className="bg-blue-600 text-white text-lg px-8 py-4 hover:bg-blue-700">
+                  Schedule Demo
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-blue-300 text-blue-700 hover:bg-blue-50">
+                  Learn More
+                </Button>
+              </div>
+            </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-20 slide-up">
-            <p className="text-sm text-gray-500 mb-8">Trusted by leading biopharmaceutical companies</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-              {/* Placeholder for company logos */}
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-24 h-12 bg-gray-200 rounded" />
-              ))}
+            {/* Right Column - Laptop Image */}
+            <div className="relative slide-up">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/f88c2efe-5981-450a-ae29-1ecc6fc2ef24.png" 
+                  alt="AI-powered analytics dashboard"
+                  className="w-full h-auto max-w-lg mx-auto lg:max-w-full"
+                />
+                {/* Floating elements for visual interest */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-300 rounded-full opacity-30 animate-pulse delay-1000"></div>
+              </div>
             </div>
           </div>
         </div>

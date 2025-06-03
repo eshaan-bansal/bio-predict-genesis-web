@@ -42,10 +42,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
-              Sign In
-            </Button>
-            <Button className="bg-gray-900 text-white hover:bg-gray-800">
+            <Button className="bg-blue-600 text-white hover:bg-blue-700">
               Book Demo
             </Button>
           </div>
@@ -77,11 +74,8 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <div className="pt-6 space-y-4">
-                <Button variant="ghost" className="w-full justify-start">
-                  Sign In
-                </Button>
-                <Button className="bg-gray-900 text-white w-full">
+              <div className="pt-6">
+                <Button className="bg-blue-600 text-white w-full">
                   Book Demo
                 </Button>
               </div>
