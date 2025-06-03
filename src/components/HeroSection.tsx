@@ -20,14 +20,14 @@ const HeroSection = () => {
             <div className="text-center lg:text-left space-y-8 slide-up">
               {/* Main Headline */}
               <h1 className="font-serif text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
-                Unlocking <span className="text-blue-600">$100 Billion</span> in Biopharma Manufacturing Efficiency
+                Preventing <span className="text-blue-600">Million-Dollar Batch Failures</span> Before They Happen
               </h1>
 
               {/* Subheadline */}
               <p className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-medium">
-                AI-Powered Process Optimization Delivering 
-                <span className="text-blue-600 font-semibold"> 30% Higher Yields</span> and 
-                <span className="text-blue-600 font-semibold"> 50% Lower Costs</span>
+                AI-Powered Predictive Intelligence for Advanced Therapy Manufacturing - 
+                Turn Raw Material Data Into Your 
+                <span className="text-blue-600 font-semibold"> Competitive Advantage</span>
               </p>
             </div>
 
@@ -40,17 +40,17 @@ const HeroSection = () => {
               {/* Floating data points around the cube */}
               <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-pulse">
                 <div className="text-sm font-medium text-gray-900">98.7%</div>
-                <div className="text-xs text-gray-600">Accuracy</div>
+                <div className="text-xs text-gray-600">Prediction Accuracy</div>
               </div>
               
               <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-pulse delay-300">
-                <div className="text-sm font-medium text-gray-900">30%</div>
-                <div className="text-xs text-gray-600">Higher Yield</div>
+                <div className="text-sm font-medium text-gray-900">$4-10M+</div>
+                <div className="text-xs text-gray-600">Annual Savings</div>
               </div>
               
               <div className="absolute top-1/2 -left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-pulse delay-700">
-                <div className="text-sm font-medium text-gray-900">50%</div>
-                <div className="text-xs text-gray-600">Cost Reduction</div>
+                <div className="text-sm font-medium text-gray-900">20-50%</div>
+                <div className="text-xs text-gray-600">Faster Root Cause Analysis</div>
               </div>
             </div>
           </div>

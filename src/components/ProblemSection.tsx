@@ -8,7 +8,7 @@ const ProblemSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The Biopharma Bottleneck & Our AI Revolution
+            The Hidden Manufacturing Crisis & Our AI Solution
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Transforming biomanufacturing through advanced predictive analytics and AI
@@ -22,7 +22,7 @@ const ProblemSection = () => {
             </div>
             <Card className="overflow-hidden border-0 shadow-lg h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
               <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl font-bold mb-4">The High Stakes of Biomanufacturing Inefficiency</h3>
+                <h3 className="text-xl font-bold mb-4">The Multi-Million Dollar Impact of Raw Material Variability</h3>
                 
                 <ul className="space-y-4">
                   <li className="flex">
@@ -30,7 +30,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-red-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">Subtle raw material variations</strong> wreak havoc, leading to unpredictable batch quality, devastatingly costly failures (often millions per batch), and reduced yields.
+                      <strong className="font-medium">Subtle variations in raw materials</strong>—often within acceptable specifications—cause unpredictable batch failures, costing millions per incident in advanced therapy manufacturing (ADCs, RLTs, CGTs)
                     </p>
                   </li>
                   <li className="flex">
@@ -38,7 +38,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-red-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">Traditional systems (LIMS, MES)</strong> are reactive, not predictive. They track what went wrong, not what <em>will</em> go wrong based on inputs.
+                      <strong className="font-medium">Current systems are reactive:</strong> LIMS track what happened, MES manage what's happening, but nothing predicts what will happen based on your specific raw material lots
                     </p>
                   </li>
                   <li className="flex">
@@ -46,7 +46,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-red-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">Data exists in silos</strong>, making integrated, proactive analysis nearly impossible, consuming up to 80% of engineering time in manual data wrangling.
+                      <strong className="font-medium">Critical data sits isolated:</strong> Certificates of Analysis (CoAs) in PDFs, test results in LIMS, process data in MES—making integrated predictive analysis impossible
                     </p>
                   </li>
                   <li className="flex">
@@ -54,7 +54,15 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-red-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">High costs, complexity, stringent quality control</strong>, and supply chain vulnerabilities plague advanced therapies (ADCs, RLTs, CGTs).
+                      <strong className="font-medium">Manual data wrangling consumes up to 80%</strong> of process engineers' time, delaying critical insights when batch decisions need to be made
+                    </p>
+                  </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-red-500"></span>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong className="font-medium">Advanced therapies face amplified challenges:</strong> patient-specific processes, radioactive materials, complex conjugation chemistry, and million-dollar treatment costs where failure isn't an option
                     </p>
                   </li>
                 </ul>
@@ -68,7 +76,7 @@ const ProblemSection = () => {
             </div>
             <Card className="overflow-hidden border-0 shadow-lg h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
               <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl font-bold mb-4">Introducing RawMaterialPredict AI: Predictive Power for Peak Performance</h3>
+                <h3 className="text-xl font-bold mb-4">RawMaterialPredict AI: From Reactive to Predictive Manufacturing</h3>
                 
                 <ul className="space-y-4">
                   <li className="flex">
@@ -76,7 +84,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-green-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">RawMaterialPredict AI</strong> leverages proprietary AI and machine learning to analyze integrated data from raw material testing (digitized CoAs) and real-time process monitoring.
+                      <strong className="font-medium">RawMaterialPredict AI breaks down data silos</strong> by digitizing CoAs using advanced OCR and LLM technology, then integrating this with your LIMS, MES, and process data
                     </p>
                   </li>
                   <li className="flex">
@@ -84,7 +92,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-green-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">Our platform predicts</strong> the likelihood of quality deviations and suboptimal yields <em>before</em> a batch starts or in its early stages, based on specific raw material attributes.
+                      <strong className="font-medium">Our machine learning models identify hidden correlations</strong> between specific raw material attributes and downstream process outcomes—predicting batch success probability before production begins
                     </p>
                   </li>
                   <li className="flex">
@@ -92,17 +100,26 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-green-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">This enables proactive intervention</strong>: prevent batch failures, optimize material selection, slash root cause analysis time, and ensure consistent quality.
+                      <strong className="font-medium">Proactive risk assessment:</strong> Flag high-risk material lots, optimize material selection, prevent costly failures, and accelerate root cause analysis by 20-50%
+                    </p>
+                  </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong className="font-medium">Purpose-built for complex biologics and advanced therapies</strong> where process sensitivity to inputs is highest and failure costs are most severe
                     </p>
                   </li>
                 </ul>
 
                 <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">The RawMaterialPredict AI Edge</h4>
+                  <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">The RawMaterialPredict AI Advantage</h4>
                   <div className="space-y-2 text-sm text-blue-700 dark:text-blue-200">
-                    <p><strong>Deep Specialization:</strong> Unlike generic AI or existing manufacturing software, our core focus is on predictive quality intelligence derived specifically from upstream raw material variability and its downstream impact.</p>
-                    <p><strong>Proactive, Not Reactive:</strong> We shift the paradigm from fixing problems to preventing them, turning raw material data into a predictive asset.</p>
-                    <p><strong>Integrated Intelligence:</strong> We break down data silos, connecting CoA data, LIMS, and MES insights for a holistic, predictive view unavailable elsewhere.</p>
+                    <p><strong>Upstream Focus:</strong> Unlike existing LIMS, MES, or generic AI platforms, we specialize exclusively in predictive quality intelligence derived from raw material variability—the critical but poorly managed factor in biomanufacturing</p>
+                    <p><strong>CoA Intelligence:</strong> We're the only platform that automatically digitizes and analyzes Certificates of Analysis, transforming this rich but underutilized data source into predictive insights</p>
+                    <p><strong>Process-Specific Models:</strong> Our AI understands the unique sensitivities of advanced therapy manufacturing (mAb production, ADC conjugation, CGT processing) and their specific raw material dependencies</p>
+                    <p><strong>Proactive Prevention:</strong> We shift from 'detect and react' to 'predict and prevent'—identifying problems at their source before they propagate through expensive manufacturing processes</p>
                   </div>
                 </div>
               </CardContent>

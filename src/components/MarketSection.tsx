@@ -12,10 +12,10 @@ const MarketSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            The Multi-Billion Dollar Horizon: Your Stake in the Future
+            The Massive Market Reality: Where Efficiency Meets Profitability
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Unlocking unprecedented value in biopharmaceutical manufacturing through AI-driven optimization
+            Capturing unprecedented value in the rapidly expanding advanced therapy manufacturing market
           </p>
         </div>
 
@@ -26,19 +26,23 @@ const MarketSection = () => {
               <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                 <BrainCircuit className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">$100 Billion Total Addressable Market (TAM)</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Multi-Billion Dollar Advanced Therapy Manufacturing Market</h3>
               <ul className="space-y-3 mt-4 text-sm">
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Represents the global biopharmaceutical manufacturing sector's vast expenditure and the immense financial burden of current inefficiencies.</span>
+                  <span className="text-gray-700">ADC market projected to exceed $16 billion in 2025, growing at >20% CAGR to reach $38 billion by 2029</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Includes costs lost to batch failures, material waste, quality deviations, and suboptimal process performance industry-wide.</span>
+                  <span className="text-gray-700">RLT market forecast to surpass $13 billion by 2030, with blockbuster drugs like Pluvicto generating $1B+ in just 9 months</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Highlights the enormous untapped value AI can unlock by optimizing these complex, high-value operations.</span>
+                  <span className="text-gray-700">CGT CDMO market expected to grow from ~$8 billion in 2025 to ~$74 billion by 2034 (28% CAGR)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">Global pharmaceutical CDMO market approaching ~$369 billion by 2034, with advanced therapies representing the highest-growth, highest-margin segment</span>
                 </li>
               </ul>
             </CardContent>
@@ -50,24 +54,25 @@ const MarketSection = () => {
               <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                 <Target className="h-6 w-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">$20 Billion Serviceable Addressable Market (SAM)</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Proven ROI: Industry-Validated Cost Savings</h3>
               <ul className="space-y-3 mt-4 text-sm">
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Targeting advanced therapy (ADC, RLT, CGT) and complex biologic manufacturers where raw material impact and costs are highest.</span>
+                  <span className="text-gray-700">AI applications in biomanufacturing deliver documented savings of $4-10M+ annually per manufacturing site</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Focus on innovative CDMOs and biotech/pharma companies actively seeking digital transformation and AI-driven efficiency gains.</span>
+                  <span className="text-gray-700">Single batch failure prevention can save millions in lost materials, labor, and facility time for advanced therapies</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Segments producing high-value therapeutics where even marginal improvements in yield and failure reduction translate to millions in ROI.</span>
+                  <span className="text-gray-700">Yield improvements of 3-12% documented from related AI applications—translating to millions in additional revenue for high-value products</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">Root cause analysis time reduction of 20-50%, saving hundreds of hours of expert time per year</span>
                 </li>
               </ul>
-              <div className="mt-4 text-xs text-gray-500 bg-gray-50 p-2 rounded">
-                <p>ADC market {'>'}$16B by 2025, RLT market {'>'}$13B by 2030, CGT CDMO market from ~$8B in 2025 to ~$74B by 2034</p>
-              </div>
             </CardContent>
           </Card>
 
@@ -77,19 +82,19 @@ const MarketSection = () => {
               <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                 <MicrochipIcon className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">30% Yield Improvement Potential</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Target Market: High-Value, Innovation-Ready Customers</h3>
               <ul className="space-y-3 mt-4 text-sm">
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Directly translates to significantly more product from existing resources, drastically improving revenue potential.</span>
+                  <span className="text-gray-700">Primary focus: CDMOs specializing in advanced therapies (Lonza, Catalent, Fujifilm Diosynth, Thermo Fisher Patheon, WuXi Biologics, Samsung Biologics)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Substantially reduces Cost of Goods Sold (COGS), boosting profit margins per batch.</span>
+                  <span className="text-gray-700">Secondary market: Mid-to-large biotech/pharma with internal advanced therapy manufacturing capabilities</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Increases overall production capacity and throughput without the need for costly facility expansions or new capital equipment.</span>
+                  <span className="text-gray-700">Companies experiencing batch-to-batch inconsistency, yield variability, or frequent raw material-related process deviations</span>
                 </li>
               </ul>
             </CardContent>
@@ -100,37 +105,53 @@ const MarketSection = () => {
           <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold mb-6 flex items-center justify-center text-gray-900">
               <MicrochipIcon className="h-6 w-6 text-blue-600 mr-2" />
-              The Science Behind the Savings: Our AI Powerhouse
+              Why Now? The Perfect Storm for Predictive Manufacturing
             </h3>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <h4 className="text-xl font-semibold text-blue-600 flex items-center">
                   <BrainCircuit className="h-5 w-5 mr-2" />
-                  Proprietary AI Models
+                  Market Maturity & Regulatory Push
                 </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Our AI isn't off-the-shelf. RawMaterialPredict AI is built on sophisticated machine learning algorithms specifically trained on diverse biomanufacturing datasets. These models are uniquely designed to understand the intricate, often non-obvious correlations between hundreds of raw material parameters (from CoAs and internal tests) and critical process outcomes (like yield, purity, and deviations). This deep learning approach allows for highly accurate predictions of how specific material lots will behave in your unique processes, far exceeding the capabilities of general statistical tools or existing MES/LIMS functionalities.
-                </p>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                    <span>2025 biotech funding environment rewards solutions with clear ROI and operational efficiency gains—exactly what RawMaterialPredict AI delivers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                    <span>FDA's emphasis on Quality by Design (QbD) and Process Analytical Technology (PAT) aligns perfectly with our predictive approach</span>
+                  </li>
+                </ul>
               </div>
               
               <div className="space-y-4">
                 <h4 className="text-xl font-semibold text-green-600 flex items-center">
                   <Rocket className="h-5 w-5 mr-2" />
-                  Real-Time Optimization & Prediction
+                  Economic & Supply Chain Resilience
                 </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Gain foresight, not just hindsight. RawMaterialPredict AI integrates with your existing systems to analyze data as it's generated. This means you can receive predictive risk alerts for incoming raw material lots before they are even committed to production, or identify potential issues in the early stages of a batch. This real-time capability allows for timely interventions, such as material swapping, process parameter adjustments, or heightened monitoring, actively preventing failures and optimizing outcomes on the fly.
-                </p>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                    <span>As a software solution, we help companies optimize existing resources rather than requiring new capital investments—critical in uncertain economic times</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                    <span>Global trade uncertainties make optimizing material utilization and reducing waste more valuable than ever</span>
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-purple-600 flex items-center">
-                  <Shield className="h-5 w-5 mr-2" />
-                  Scalable & Secure Architecture
-                </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Built for the future of biotech, RawMaterialPredict AI features a robust, cloud-native architecture. This ensures seamless scalability to handle vast data volumes from multiple production lines, sites, or diverse therapeutic programs. Our platform is designed for secure integration with your existing LIMS, MES, and data historians, adhering to stringent data integrity and GxP compliance considerations (e.g., 21 CFR Part 11). Whether you're at pilot scale or full commercial manufacturing, our solution adapts to your needs, ensuring reliable performance and data security.
+            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <h4 className="text-lg font-semibold text-blue-800 mb-3">Competitive Differentiation</h4>
+              <p className="text-blue-700 font-medium mb-2">
+                "Unlike generic AI platforms, existing LIMS/MES, or broad analytics tools—RawMaterialPredict AI is the only solution purpose-built for predictive raw material quality management in biomanufacturing."
+              </p>
+              <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+                <p className="text-yellow-800 font-medium">
+                  <strong>Urgency/Timing Element:</strong> "The 2025 market rewards early adopters of operational AI. Position your organization ahead of the curve while competitors struggle with reactive quality management."
                 </p>
               </div>
             </div>
