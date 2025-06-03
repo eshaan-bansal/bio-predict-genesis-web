@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Brain, Database, Target } from 'lucide-react';
+import { Brain, Database, Target, Check, X, AlertTriangle } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const PlatformSection = () => {
@@ -23,13 +23,68 @@ const PlatformSection = () => {
   ];
 
   const comparisonData = [
-    { feature: "Focus", rawMaterialPredict: "Raw material variability prediction", competitors: "General process optimization or broad data analytics" },
-    { feature: "Data Sources", rawMaterialPredict: "CoA digitization + LIMS + MES integration", competitors: "Limited to existing structured data" },
-    { feature: "AI Specialization", rawMaterialPredict: "Purpose-built for biomanufacturing sensitivities", competitors: "Generic ML models adapted for pharma" },
-    { feature: "Predictive Capability", rawMaterialPredict: "Batch success probability before production", competitors: "Reactive monitoring or generic predictions" },
-    { feature: "Implementation", rawMaterialPredict: "Rapid deployment with existing systems", competitors: "Complex enterprise-wide transformations" },
-    { feature: "ROI Timeline", rawMaterialPredict: "Immediate value from first prevented failure", competitors: "Long-term value requiring full adoption" }
+    { 
+      capability: "Predictive Material Risk Scoring", 
+      rawMaterialPredict: { text: "Core Feature", status: "success" },
+      traditionalLIMS: { text: "None", status: "error" },
+      manufacturingExecution: { text: "None", status: "error" },
+      genericAI: { text: "Requires Custom Development", status: "error" }
+    },
+    { 
+      capability: "Automated CoA Data Extraction", 
+      rawMaterialPredict: { text: "AI-Powered OCR/LLM", status: "success" },
+      traditionalLIMS: { text: "Manual Entry", status: "error" },
+      manufacturingExecution: { text: "Not Applicable", status: "error" },
+      genericAI: { text: "Custom Development Needed", status: "error" }
+    },
+    { 
+      capability: "Process Outcome Prediction", 
+      rawMaterialPredict: { text: "Material-to-Outcome Modeling", status: "success" },
+      traditionalLIMS: { text: "Limited", status: "error" },
+      manufacturingExecution: { text: "Process Tracking Only", status: "error" },
+      genericAI: { text: "Generic Analytics", status: "error" }
+    },
+    { 
+      capability: "Proactive Risk Alerts", 
+      rawMaterialPredict: { text: "Before Batch Starts", status: "success" },
+      traditionalLIMS: { text: "After Testing", status: "error" },
+      manufacturingExecution: { text: "During Production", status: "error" },
+      genericAI: { text: "Reactive Reporting", status: "error" }
+    },
+    { 
+      capability: "Root Cause Analysis Speed", 
+      rawMaterialPredict: { text: "Instant Material Linking", status: "success" },
+      traditionalLIMS: { text: "Manual Investigation", status: "warning" },
+      manufacturingExecution: { text: "Process-Only View", status: "warning" },
+      genericAI: { text: "No Context", status: "error" }
+    }
   ];
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'success':
+        return <Check className="h-4 w-4 text-green-600" />;
+      case 'warning':
+        return <AlertTriangle className="h-4 w-4 text-yellow-600" />;
+      case 'error':
+        return <X className="h-4 w-4 text-red-600" />;
+      default:
+        return null;
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'success':
+        return 'text-green-700 bg-green-50';
+      case 'warning':
+        return 'text-yellow-700 bg-yellow-50';
+      case 'error':
+        return 'text-red-700 bg-red-50';
+      default:
+        return 'text-gray-700';
+    }
+  };
 
   return (
     <section id="platform" className="section-padding bg-gray-50">
@@ -66,13 +121,13 @@ const PlatformSection = () => {
         </div>
 
         {/* Competitive Advantage Table */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="font-serif text-3xl font-medium text-gray-900 mb-4">
               Why RawMaterialPredict AI Leads the Market
             </h3>
             <p className="text-lg text-gray-600">
-              Our focused approach delivers superior value compared to generic solutions
+              Our focused approach delivers superior value compared to traditional solutions
             </p>
           </div>
           
@@ -80,17 +135,41 @@ const PlatformSection = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-blue-50">
-                  <TableHead className="font-semibold text-gray-900 py-4 px-6">Feature</TableHead>
-                  <TableHead className="font-semibold text-blue-700 py-4 px-6">RawMaterialPredict AI</TableHead>
-                  <TableHead className="font-semibold text-gray-700 py-4 px-6">Traditional Competitors</TableHead>
+                  <TableHead className="font-semibold text-gray-900 py-4 px-6 w-1/5">Capability</TableHead>
+                  <TableHead className="font-semibold text-blue-700 py-4 px-6 text-center w-1/5">RawMaterialPredict AI</TableHead>
+                  <TableHead className="font-semibold text-gray-700 py-4 px-6 text-center w-1/5">Traditional LIMS</TableHead>
+                  <TableHead className="font-semibold text-gray-700 py-4 px-6 text-center w-1/5">Manufacturing Execution Systems</TableHead>
+                  <TableHead className="font-semibold text-gray-700 py-4 px-6 text-center w-1/5">Generic AI Platforms</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {comparisonData.map((row, index) => (
                   <TableRow key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <TableCell className="font-medium text-gray-900 py-4 px-6">{row.feature}</TableCell>
-                    <TableCell className="text-blue-700 py-4 px-6 font-medium">{row.rawMaterialPredict}</TableCell>
-                    <TableCell className="text-gray-600 py-4 px-6">{row.competitors}</TableCell>
+                    <TableCell className="font-medium text-gray-900 py-4 px-6">{row.capability}</TableCell>
+                    <TableCell className={`py-4 px-6 text-center ${getStatusColor(row.rawMaterialPredict.status)} rounded-lg mx-2`}>
+                      <div className="flex items-center justify-center space-x-2">
+                        {getStatusIcon(row.rawMaterialPredict.status)}
+                        <span className="font-medium">{row.rawMaterialPredict.text}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className={`py-4 px-6 text-center ${getStatusColor(row.traditionalLIMS.status)} rounded-lg mx-2`}>
+                      <div className="flex items-center justify-center space-x-2">
+                        {getStatusIcon(row.traditionalLIMS.status)}
+                        <span>{row.traditionalLIMS.text}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className={`py-4 px-6 text-center ${getStatusColor(row.manufacturingExecution.status)} rounded-lg mx-2`}>
+                      <div className="flex items-center justify-center space-x-2">
+                        {getStatusIcon(row.manufacturingExecution.status)}
+                        <span>{row.manufacturingExecution.text}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className={`py-4 px-6 text-center ${getStatusColor(row.genericAI.status)} rounded-lg mx-2`}>
+                      <div className="flex items-center justify-center space-x-2">
+                        {getStatusIcon(row.genericAI.status)}
+                        <span>{row.genericAI.text}</span>
+                      </div>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
