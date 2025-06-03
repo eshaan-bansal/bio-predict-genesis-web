@@ -1,87 +1,27 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' 
-          : 'bg-transparent'
-      }`}
-    >
+  return <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200' : 'bg-transparent'}`}>
       <div className="container mx-auto container-padding">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-serif font-medium text-gray-900">
-              BioPredict
-            </span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-12">
-            <nav className="flex space-x-10">
-              {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
-                <a 
-                  key={item}
-                  href={`#${item.toLowerCase()}`} 
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-            <div className="flex items-center space-x-6">
-              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-900">
-                Sign In
-              </Button>
-              <Button className="bg-gray-900 text-white hover:bg-gray-800 px-6">
-                Book Demo
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
+        
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+      {isMobileMenuOpen && <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="container mx-auto container-padding py-8 space-y-6">
-            {['Platform', 'Science', 'Solutions', 'Company'].map((item) => (
-              <a 
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block text-gray-600 hover:text-gray-900 font-medium py-2 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
+            {['Platform', 'Science', 'Solutions', 'Company'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="block text-gray-600 hover:text-gray-900 font-medium py-2 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                 {item}
-              </a>
-            ))}
+              </a>)}
             <div className="pt-6 space-y-4">
               <Button variant="ghost" className="w-full justify-start">
                 Sign In
@@ -91,10 +31,7 @@ const Navbar = () => {
               </Button>
             </div>
           </div>
-        </div>
-      )}
-    </nav>
-  );
+        </div>}
+    </nav>;
 };
-
 export default Navbar;
