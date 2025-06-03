@@ -14,7 +14,7 @@ const HeroSection = () => {
             <div className="lg:col-span-4 text-center lg:text-left lg:pr-4">
               {/* Main Headline */}
               <h1 className="font-serif text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-900 mb-6 slide-up text-balance leading-tight">
-                Unlock a $10B Market
+                Unlocking $100 Billion in Biopharma Manufacturing Efficiency
               </h1>
 
               {/* Subheadline */}
