@@ -4,10 +4,19 @@ import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
+      {/* Background Image */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img 
+          src="/lovable-uploads/d1f98438-48ff-4e51-8d82-01ca0d2f05fc.png" 
+          alt="Laptop with analytics dashboard"
+          className="w-full h-full object-cover opacity-90"
+        />
+      </div>
+      
+      {/* Content Overlay */}
       <div className="container mx-auto container-padding relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div className="text-center lg:text-left">
@@ -30,15 +39,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right Column - Laptop Image */}
-            <div className="relative slide-up">
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/e63fd022-ce91-4c0c-949a-c59bbeeb2db2.png" 
-                  alt="AI-powered analytics dashboard"
-                  className="w-full h-auto max-w-lg mx-auto lg:max-w-full drop-shadow-2xl"
-                />
-              </div>
+            {/* Right Column - Empty space to let background show */}
+            <div className="relative slide-up lg:block hidden">
+              {/* This space allows the background laptop image to show through */}
             </div>
           </div>
         </div>
