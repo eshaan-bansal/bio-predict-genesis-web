@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Textarea } from '@/components/ui/textarea';
 
 const AboutSection = () => {
   const founders = [
@@ -31,11 +32,6 @@ const AboutSection = () => {
           {founders.map((founder, index) => (
             <div key={founder.name} className="text-center">
               <div className="mb-6">
-                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-gray-500">
-                    {founder.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
                 <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">
                   {founder.name}
                 </h3>
@@ -47,11 +43,12 @@ const AboutSection = () => {
                   {founder.email}
                 </a>
               </div>
-              {founder.bio && (
-                <p className="text-gray-600 leading-relaxed">
-                  {founder.bio}
-                </p>
-              )}
+              <div className="mt-6">
+                <Textarea
+                  placeholder="Add description here..."
+                  className="w-full min-h-[120px] text-left"
+                />
+              </div>
             </div>
           ))}
         </div>
