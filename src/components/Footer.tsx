@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -17,15 +15,6 @@ const Footer = () => {
               Join leading biopharmaceutical companies using BioPredict to achieve 
               unprecedented manufacturing efficiency and quality.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4">
-                Schedule Demo
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
-              <Button variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-8 py-4">
-                Download Case Study
-              </Button>
-            </div>
           </div>
         </div>
       </div>
@@ -47,10 +36,10 @@ const Footer = () => {
           <div>
             <h3 className="font-medium mb-6">Platform</h3>
             <ul className="space-y-4 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API Documentation</a></li>
+              <li>Features</li>
+              <li>Integrations</li>
+              <li>Security</li>
+              <li>API Documentation</li>
             </ul>
           </div>
           
@@ -58,10 +47,10 @@ const Footer = () => {
           <div>
             <h3 className="font-medium mb-6">Solutions</h3>
             <ul className="space-y-4 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Raw Material Optimization</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Process Control</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Quality Management</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Regulatory Compliance</a></li>
+              <li>Raw Material Optimization</li>
+              <li>Process Control</li>
+              <li>Quality Management</li>
+              <li>Regulatory Compliance</li>
             </ul>
           </div>
           
@@ -69,10 +58,10 @@ const Footer = () => {
           <div>
             <h3 className="font-medium mb-6">Company</h3>
             <ul className="space-y-4 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">News</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>News</li>
+              <li>Contact</li>
             </ul>
           </div>
         </div>
@@ -83,9 +72,9 @@ const Footer = () => {
             © {new Date().getFullYear()} BioPredict AI. All rights reserved.
           </p>
           <div className="flex space-x-8 text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
+            <span>Cookies</span>
           </div>
         </div>
       </div>

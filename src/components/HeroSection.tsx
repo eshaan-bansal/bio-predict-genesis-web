@@ -1,6 +1,4 @@
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
 import FuturisticCube from './FuturisticCube';
 
 const HeroSection = () => {
@@ -21,14 +19,6 @@ const HeroSection = () => {
               <p className="text-base lg:text-lg xl:text-xl text-blue-600 mb-8 leading-relaxed slide-up font-medium">
                 AI-Powered Process Optimization Delivering 30% Higher Yields and 50% Lower Costs
               </p>
-
-              {/* CTA Button */}
-              <div className="flex justify-center lg:justify-start slide-up">
-                <Button variant="outline" size="lg" className="text-base px-6 py-3 border-blue-300 text-blue-700 hover:bg-blue-50">
-                  Learn More
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </Button>
-              </div>
             </div>
 
             {/* Center - 3D Graphic */}
