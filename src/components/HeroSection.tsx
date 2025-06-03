@@ -11,12 +11,6 @@ const HeroSection = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div className="text-center lg:text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-8 slide-up">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-                AI-Powered Manufacturing Intelligence
-              </div>
-
               {/* Main Headline */}
               <h1 className="font-serif text-4xl lg:text-6xl font-medium text-gray-900 mb-6 slide-up text-balance leading-tight">
                 Unlock a $10B Market
@@ -40,7 +34,7 @@ const HeroSection = () => {
             <div className="relative slide-up">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/f88c2efe-5981-450a-ae29-1ecc6fc2ef24.png" 
+                  src="/lovable-uploads/e63fd022-ce91-4c0c-949a-c59bbeeb2db2.png" 
                   alt="AI-powered analytics dashboard"
                   className="w-full h-auto max-w-lg mx-auto lg:max-w-full drop-shadow-2xl"
                 />
