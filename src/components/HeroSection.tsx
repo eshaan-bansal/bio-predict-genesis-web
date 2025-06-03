@@ -1,7 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       <div className="container mx-auto container-padding relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
@@ -23,16 +26,29 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center slide-up">
-            
+            <Button size="lg" className="bg-gray-900 text-white text-lg px-8 py-4 hover:bg-gray-800">
+              Schedule Demo
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-gray-300 text-gray-700 hover:bg-gray-50">
               Learn More
             </Button>
           </div>
 
           {/* Trust Indicators */}
-          
+          <div className="mt-20 slide-up">
+            <p className="text-sm text-gray-500 mb-8">Trusted by leading biopharmaceutical companies</p>
+            <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
+              {/* Placeholder for company logos */}
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="w-24 h-12 bg-gray-200 rounded" />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
