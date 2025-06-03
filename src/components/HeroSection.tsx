@@ -29,13 +29,6 @@ const HeroSection = () => {
                 <span className="text-blue-600 font-semibold"> 30% Higher Yields</span> and 
                 <span className="text-blue-600 font-semibold"> 50% Lower Costs</span>
               </p>
-
-              {/* Call to action */}
-              <div className="pt-4">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-lg">
-                  Discover the Platform
-                </button>
-              </div>
             </div>
 
             {/* Right Column - 3D Graphic */}
