@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Brain, BarChart3, Shield, Zap } from 'lucide-react';
 

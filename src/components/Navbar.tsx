@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-serif font-medium text-gray-900">BioPredict</span>
+            <span className="text-2xl font-serif font-medium text-gray-900">RawMaterialPredictive</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -39,7 +39,8 @@ const Navbar = () => {
             {[
               { name: 'Platform', id: 'platform' },
               { name: 'Science', id: 'science' },
-              { name: 'Market', id: 'market' }
+              { name: 'Market', id: 'market' },
+              { name: 'About Us', id: 'about' }
             ].map((item) => (
               <button
                 key={item.name}
@@ -69,7 +70,8 @@ const Navbar = () => {
               {[
                 { name: 'Platform', id: 'platform' },
                 { name: 'Science', id: 'science' },
-                { name: 'Market', id: 'market' }
+                { name: 'Market', id: 'market' },
+                { name: 'About Us', id: 'about' }
               ].map((item) => (
                 <button
                   key={item.name}
