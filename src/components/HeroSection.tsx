@@ -20,7 +20,7 @@ const HeroSection = () => {
             <div className="text-center lg:text-left space-y-8 slide-up">
               {/* Main Headline */}
               <h1 className="font-serif text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
-                Preventing <span className="text-blue-600">Million-Dollar Batch Failures</span> Before They Happen
+                Preventing <span className="text-blue-600">Significant Capital and Time Loss</span> Before It Happens
               </h1>
 
               {/* Subheadline */}
