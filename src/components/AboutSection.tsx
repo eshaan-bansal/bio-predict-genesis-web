@@ -12,7 +12,7 @@ const AboutSection = () => {
     {
       name: "Eshaan Bansal", 
       email: "eshaan@rawmaterialpredictive.com",
-      bio: ""
+      bio: "Neuroscience major at Colby College. Eshaan combines scientific insight with a strong sense of community and creativity, supporting the team with a focus on innovation, design, and user engagement."
     }
   ];
 
@@ -46,7 +46,9 @@ const AboutSection = () => {
               <div className="mt-6">
                 <Textarea
                   placeholder="Add description here..."
+                  value={founder.bio}
                   className="w-full min-h-[120px] text-left"
+                  readOnly
                 />
               </div>
             </div>
