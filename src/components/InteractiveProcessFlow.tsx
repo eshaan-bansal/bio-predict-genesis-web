@@ -75,10 +75,6 @@ const InteractiveProcessFlow = () => {
                     <p className="text-gray-600 text-xs sm:text-sm mb-4">
                       {step.description}
                     </p>
-                    
-                    <div className={`text-xs text-blue-600 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`}>
-                      Click to {isActive ? 'collapse' : 'expand'}
-                    </div>
                   </div>
                 </div>
                 
