@@ -1,4 +1,3 @@
-
 import { DnaIcon, FlaskRoundIcon, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -7,7 +6,7 @@ const ProblemSection = () => {
     <section id="problem" className="py-16 sm:py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold mb-4 text-black">
             Raw Material Challenges & AI Solutions
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">

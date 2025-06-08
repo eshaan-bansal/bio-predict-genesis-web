@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -65,18 +64,24 @@ const Navbar = () => {
         Skip to main content
       </a>
       
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm' : 'bg-transparent'
-      }`}>
+      <nav className={
+        "fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
+      }>
         <div className="container mx-auto container-padding">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex items-center">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                className="flex items-center space-x-2 text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
               >
-                RMPredictive
+                <img
+                  src="/RMPredictive_Logo.png"
+                  alt="RMPredictive Logo"
+                  className="h-[78px] w-[78px] object-contain"
+                  style={{ background: 'transparent' }}
+                />
+                <span>RMPredictive</span>
               </button>
             </div>
 
