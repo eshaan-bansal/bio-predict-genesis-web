@@ -28,7 +28,7 @@
     --ring: 128 128 0; /* Olive Green */
     --radius: 6px;
     
-    /* Custom color variables for the Earthy and Elegant palette */
+    /* Earthy and Elegant color palette */
     --olive-green: 128 128 0;
     --sand-beige: 244 164 96;
     --ivory: 255 255 240;
@@ -47,8 +47,8 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     line-height: 1.6;
     letter-spacing: -0.01em;
-    color: rgb(101 67 33); /* Dark Brown */
-    background-color: rgb(255 255 240); /* Ivory */
+    color: hsl(var(--dark-brown));
+    background-color: hsl(var(--ivory));
     font-display: swap;
   }
   
@@ -57,7 +57,7 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: rgb(101 67 33); /* Dark Brown */
+    color: hsl(var(--dark-brown));
     font-display: swap;
   }
   

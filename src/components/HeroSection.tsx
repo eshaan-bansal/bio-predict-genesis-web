@@ -15,8 +15,8 @@ const HeroSection = () => {
 
   if (loading || !content) {
     return (
-      <section className="relative min-h-screen flex items-center justify-center bg-background">
-        <div className="animate-pulse text-muted-foreground">Loading...</div>
+      <section className="relative min-h-screen flex items-center justify-center bg-ivory">
+        <div className="animate-pulse text-dark-brown">Loading...</div>
       </section>
     );
   }
@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ivory">
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -55,7 +55,7 @@ const HeroSection = () => {
                         </button>
                       </TooltipTrigger>
                       <TooltipContent side="bottom">
-                        <p>See 98.7% Accuracy At No Cost</p>
+                        <p className="text-dark-brown">See 98.7% Accuracy At No Cost</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
