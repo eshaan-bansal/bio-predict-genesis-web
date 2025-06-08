@@ -3,7 +3,6 @@ import React from 'react';
 import { TrendingUp, Target, Award } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import AnimatedFlowDiagram from './AnimatedFlowDiagram';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -60,11 +59,6 @@ const ScienceSection = () => {
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Animated Flow Diagram */}
-        <div className="mb-16 sm:mb-20">
-          <AnimatedFlowDiagram />
         </div>
         
         {/* Methodology */}
