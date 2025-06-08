@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { TrendingUp, Target, Award, Database, Brain, Zap, Shield, ChevronDown, ChevronUp, ArrowRight, Eye } from 'lucide-react';
+import { TrendingUp, Target, Award, Database, Brain, Zap, Shield, X } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
-  const [expandedStep, setExpandedStep] = useState<number | null>(0); // First step expanded by default
-  const [viewedSteps, setViewedSteps] = useState<Set<number>>(new Set([0])); // Track viewed steps
-  const [showAllSteps, setShowAllSteps] = useState(false);
+  const [selectedStep, setSelectedStep] = useState<number | null>(null);
 
   const stats = [
     {
@@ -34,6 +33,7 @@ const ScienceSection = () => {
     {
       icon: Database,
       title: "Data Ingestion",
+      shortDescription: "Collect and integrate raw material data from multiple sources.",
       description: "Collect and integrate raw material data from multiple sources including COA data, in-process measurements, and historical batch records.",
       color: "from-blue-500 to-cyan-600",
       bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
@@ -48,6 +48,7 @@ const ScienceSection = () => {
     {
       icon: Brain,
       title: "AI Analysis",
+      shortDescription: "Advanced ML algorithms analyze patterns and correlations in the data.",
       description: "Advanced machine learning algorithms analyze patterns and correlations in the data to identify key quality indicators and risk factors.",
       color: "from-purple-500 to-pink-600",
       bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
@@ -62,6 +63,7 @@ const ScienceSection = () => {
     {
       icon: Zap,
       title: "Predictive Modeling",
+      shortDescription: "Generate real-time predictions with 98.7% accuracy.",
       description: "Generate real-time predictions for manufacturing outcomes with 98.7% accuracy across diverse therapeutic modalities.",
       color: "from-yellow-500 to-orange-600",
       bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
@@ -76,6 +78,7 @@ const ScienceSection = () => {
     {
       icon: Shield,
       title: "Output Generation",
+      shortDescription: "Deliver actionable insights and recommendations.",
       description: "Deliver actionable insights and recommendations to optimize manufacturing processes and improve yield efficiency.",
       color: "from-green-500 to-emerald-600",
       bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
@@ -88,37 +91,6 @@ const ScienceSection = () => {
       ]
     }
   ];
-
-  const toggleStep = (index: number) => {
-    if (showAllSteps) return; // Don't allow individual toggling when all are shown
-    
-    const newExpandedStep = expandedStep === index ? null : index;
-    setExpandedStep(newExpandedStep);
-    
-    // Mark step as viewed
-    if (newExpandedStep !== null) {
-      setViewedSteps(prev => new Set([...prev, index]));
-    }
-  };
-
-  const toggleAllSteps = () => {
-    setShowAllSteps(!showAllSteps);
-    if (!showAllSteps) {
-      // Mark all steps as viewed when showing all
-      setViewedSteps(new Set([0, 1, 2, 3]));
-      setExpandedStep(null);
-    } else {
-      setExpandedStep(0); // Reset to first step
-    }
-  };
-
-  const goToNextStep = (currentIndex: number) => {
-    if (currentIndex < processSteps.length - 1 && !showAllSteps) {
-      const nextIndex = currentIndex + 1;
-      setExpandedStep(nextIndex);
-      setViewedSteps(prev => new Set([...prev, nextIndex]));
-    }
-  };
 
   return (
     <section id="science" className="section-padding bg-white">
@@ -153,184 +125,100 @@ const ScienceSection = () => {
           ))}
         </div>
 
-        {/* Process Flow Steps */}
+        {/* Process Flow Steps - Compact Cards */}
         <div className="mb-16 sm:mb-20">
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-12 gap-4">
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 text-center sm:text-left">
-              How It Works
-            </h3>
-            
-            {/* Progress Indicator & Controls */}
-            <div className="flex items-center gap-4">
-              {/* Progress Dots */}
-              <div className="flex items-center gap-2">
-                {processSteps.map((_, index) => (
-                  <div key={index} className="flex items-center">
-                    <div 
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        viewedSteps.has(index) 
-                          ? 'bg-blue-500 scale-110' 
-                          : 'bg-gray-300'
-                      }`}
-                    />
-                    {index < processSteps.length - 1 && (
-                      <div className={`w-6 h-0.5 mx-1 transition-colors duration-300 ${
-                        viewedSteps.has(index) && viewedSteps.has(index + 1)
-                          ? 'bg-blue-300'
-                          : 'bg-gray-200'
-                      }`} />
-                    )}
-                  </div>
-                ))}
-              </div>
-              
-              {/* View All Toggle */}
-              <button
-                onClick={toggleAllSteps}
-                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors duration-200"
-              >
-                <Eye className="h-4 w-4" />
-                {showAllSteps ? 'Step by Step' : 'View All'}
-              </button>
-            </div>
-          </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
+            How It Works
+          </h3>
           
-          {/* Desktop Layout */}
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-4 gap-6 relative">
-              {/* Flow Connectors */}
-              {processSteps.slice(0, -1).map((_, index) => (
-                <div 
-                  key={`connector-${index}`}
-                  className="absolute top-12 z-10 flex items-center justify-center"
-                  style={{ 
-                    left: `${(index + 1) * 25 - 2.5}%`,
-                    width: '5%'
-                  }}
-                >
-                  <ArrowRight className="h-5 w-5 text-gray-400" />
-                </div>
-              ))}
-              
-              {processSteps.map((step, index) => (
-                <div 
-                  key={step.title}
-                  className={`${step.bgColor} rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border border-white/50 relative`}
-                  onClick={() => toggleStep(index)}
-                >
-                  {/* Step Number */}
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center text-sm font-bold text-gray-700 shadow-sm">
-                    {index + 1}
-                  </div>
-                  
-                  <div className={`w-12 h-12 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg`}>
-                    <step.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h4 className="font-medium text-gray-900 mb-3 flex items-center justify-center gap-2">
-                    {step.title}
-                    {!showAllSteps && (
-                      expandedStep === index ? (
-                        <ChevronUp className="h-4 w-4 text-gray-600" />
-                      ) : (
-                        <ChevronDown className="h-4 w-4 text-gray-600" />
-                      )
-                    )}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{step.description}</p>
-                  
-                  {(expandedStep === index || showAllSteps) && (
-                    <div className="mt-4 space-y-2 animate-fade-in">
-                      <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-3"></div>
-                      {step.details.map((detail, detailIndex) => (
-                        <div key={detailIndex} className="text-xs text-gray-600 bg-white/60 rounded-lg px-3 py-2 backdrop-blur-sm">
-                          • {detail}
-                        </div>
-                      ))}
-                      
-                      {/* Next Step Hint */}
-                      {!showAllSteps && expandedStep === index && index < processSteps.length - 1 && (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            goToNextStep(index);
-                          }}
-                          className="mt-3 text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1 mx-auto"
-                        >
-                          Next: {processSteps[index + 1].title}
-                          <ArrowRight className="h-3 w-3" />
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Mobile/Tablet Timeline Layout */}
-          <div className="lg:hidden space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, index) => (
-              <div key={step.title} className="flex gap-4">
-                {/* Timeline Connector */}
-                <div className="flex flex-col items-center">
-                  <div className={`w-10 h-10 ${step.iconBg} rounded-full flex items-center justify-center shadow-lg relative`}>
-                    <step.icon className="h-5 w-5 text-white" />
-                    {/* Step Number Badge */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-700">
-                      {index + 1}
-                    </div>
-                  </div>
-                  {index < processSteps.length - 1 && (
-                    <div className="w-0.5 h-16 bg-gray-200 mt-2"></div>
-                  )}
+              <div 
+                key={step.title}
+                className={`${step.bgColor} rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border border-white/50 relative group`}
+                onClick={() => setSelectedStep(index)}
+              >
+                {/* Step Number */}
+                <div className="absolute -top-3 -left-3 w-8 h-8 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center text-sm font-bold text-gray-700 shadow-sm">
+                  {index + 1}
                 </div>
                 
-                {/* Content */}
-                <div 
-                  className={`flex-1 ${step.bgColor} rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border border-white/50`}
-                  onClick={() => toggleStep(index)}
-                >
-                  <h4 className="font-medium text-gray-900 mb-3 flex items-center justify-between">
-                    {step.title}
-                    {!showAllSteps && (
-                      expandedStep === index ? (
-                        <ChevronUp className="h-4 w-4 text-gray-600" />
-                      ) : (
-                        <ChevronDown className="h-4 w-4 text-gray-600" />
-                      )
-                    )}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{step.description}</p>
-                  
-                  {(expandedStep === index || showAllSteps) && (
-                    <div className="mt-4 space-y-2 animate-fade-in">
-                      <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-3"></div>
-                      {step.details.map((detail, detailIndex) => (
-                        <div key={detailIndex} className="text-xs text-gray-600 bg-white/60 rounded-lg px-3 py-2 backdrop-blur-sm">
-                          • {detail}
-                        </div>
-                      ))}
-                      
-                      {/* Next Step Hint */}
-                      {!showAllSteps && expandedStep === index && index < processSteps.length - 1 && (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            goToNextStep(index);
-                          }}
-                          className="mt-3 text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1"
-                        >
-                          Next: {processSteps[index + 1].title}
-                          <ArrowRight className="h-3 w-3" />
-                        </button>
-                      )}
-                    </div>
-                  )}
+                <div className={`w-12 h-12 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <step.icon className="h-6 w-6 text-white" />
+                </div>
+                
+                <h4 className="font-medium text-gray-900 mb-3 text-lg">
+                  {step.title}
+                </h4>
+                
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {step.shortDescription}
+                </p>
+                
+                <div className="mt-4 text-xs text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Click for details →
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Modal for Step Details */}
+        <Dialog open={selectedStep !== null} onOpenChange={() => setSelectedStep(null)}>
+          <DialogContent className="max-w-2xl">
+            {selectedStep !== null && (
+              <>
+                <DialogHeader>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-16 h-16 ${processSteps[selectedStep].iconBg} rounded-xl flex items-center justify-center shadow-lg`}>
+                      <processSteps[selectedStep].icon className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <DialogTitle className="text-2xl font-medium text-gray-900">
+                        {processSteps[selectedStep].title}
+                      </DialogTitle>
+                      <div className="text-sm text-gray-500 mt-1">
+                        Step {selectedStep + 1} of {processSteps.length}
+                      </div>
+                    </div>
+                  </div>
+                </DialogHeader>
+                
+                <div className="space-y-6">
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    {processSteps[selectedStep].description}
+                  </p>
+                  
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-4 text-lg">Key Features</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {processSteps[selectedStep].details.map((detail, detailIndex) => (
+                        <div key={detailIndex} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm leading-relaxed">{detail}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {selectedStep < processSteps.length - 1 && (
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-200">
+                      <span className="text-gray-500 text-sm">
+                        Next: {processSteps[selectedStep + 1].title}
+                      </span>
+                      <button
+                        onClick={() => setSelectedStep(selectedStep + 1)}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
+                      >
+                        Next Step →
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
         
         {/* Methodology */}
         <div className="max-w-5xl mx-auto">
