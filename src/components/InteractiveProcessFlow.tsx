@@ -39,7 +39,7 @@ const InteractiveProcessFlow = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-12">
-        <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-4">
+        <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-4">
           Interactive Process Flow
         </h3>
         <p className="text-gray-600">Click on each step to learn more about our AI-driven optimization process</p>

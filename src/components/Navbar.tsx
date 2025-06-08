@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className="flex items-center">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-xl sm:text-2xl font-sans font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                className="text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
               >
                 RMPredictive
               </button>

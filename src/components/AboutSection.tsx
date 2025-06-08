@@ -24,7 +24,7 @@ const AboutSection = () => {
     <section id="about" className="section-padding bg-white">
       <div className="container mx-auto container-padding">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
+          <h2 className="text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
             {aboutContent.title}
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -36,7 +36,7 @@ const AboutSection = () => {
           {aboutContent.founders.map((founder, index) => (
             <div key={founder.name} className="text-center">
               <div className="mb-6">
-                <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">
+                <h3 className="text-2xl font-medium text-gray-900 mb-2">
                   {founder.name}
                 </h3>
                 <p className="text-blue-600 mb-4">{founder.role}</p>

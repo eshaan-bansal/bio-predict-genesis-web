@@ -32,7 +32,7 @@ const CompanySection = () => {
     <section id="company" className="section-padding bg-white">
       <div className="container mx-auto container-padding">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
+          <h2 className="text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
             Leading the Future of Biomanufacturing
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -51,7 +51,7 @@ const CompanySection = () => {
               <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <metric.icon className="h-8 w-8 text-gray-700" />
               </div>
-              <div className="text-3xl font-serif font-medium text-gray-900 mb-2">{metric.value}</div>
+              <div className="text-3xl font-medium text-gray-900 mb-2">{metric.value}</div>
               <div className="text-sm text-gray-600">{metric.label}</div>
             </div>
           ))}
@@ -59,7 +59,7 @@ const CompanySection = () => {
         
         {/* Leadership Team */}
         <div className="mb-20">
-          <h3 className="font-serif text-3xl font-medium text-gray-900 text-center mb-12">
+          <h3 className="text-3xl font-medium text-gray-900 text-center mb-12">
             Leadership Team
           </h3>
           
@@ -81,7 +81,7 @@ const CompanySection = () => {
         {/* Mission Statement */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 rounded-2xl p-12 text-center">
-            <h3 className="font-serif text-3xl font-medium text-gray-900 mb-8">
+            <h3 className="text-3xl font-medium text-gray-900 mb-8">
               Our Mission
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">

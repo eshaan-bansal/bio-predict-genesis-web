@@ -33,7 +33,7 @@ const HeroSection = () => {
               {/* Left Column - Text Content */}
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
-                <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
                   Optimize <span className="text-blue-600">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
                 </h1>
 
