@@ -1,10 +1,7 @@
-
 import { DnaIcon, FlaskRoundIcon, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 const ProblemSection = () => {
-  return (
-    <section id="problem" className="py-16 sm:py-20 relative">
+  return <section id="problem" className="py-16 sm:py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold mb-4">
@@ -76,7 +73,7 @@ const ProblemSection = () => {
             </div>
             <Card className="overflow-hidden border-0 shadow-lg h-full bg-gradient-to-br from-white to-gray-50">
               <CardContent className="p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4">RMPredictive: AI for Smarter Manufacturing</h3>
+                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4">RM Predictive: AI for Smarter Manufacturing</h3>
                 
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="flex">
@@ -133,8 +130,6 @@ const ProblemSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProblemSection;
