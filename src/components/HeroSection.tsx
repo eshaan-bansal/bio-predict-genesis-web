@@ -33,12 +33,12 @@ const HeroSection = () => {
               {/* Left Column - Text Content */}
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-charcoal leading-tight text-balance">
-                  Optimize <span className="text-coral-pink">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-dark-brown leading-tight text-balance">
+                  Optimize <span className="text-olive-green">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-charcoal leading-relaxed font-medium opacity-80">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-dark-brown leading-relaxed font-medium opacity-80">
                   {heroContent.subheadline}
                 </p>
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
                       <TooltipTrigger asChild>
                         <button 
                           onClick={handleRequestDemo}
-                          className="bg-coral-pink text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-coral-pink/90 transition-colors min-h-[44px] min-w-[44px] touch-manipulation shadow-lg"
+                          className="bg-olive-green text-ivory px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-olive-green/90 transition-colors min-h-[44px] min-w-[44px] touch-manipulation shadow-lg"
                         >
                           Request Demo
                         </button>
@@ -69,19 +69,19 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Floating data points around the cube */}
-                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse border border-mint-green/20">
-                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.accuracy}</div>
-                  <div className="text-xs text-charcoal/60">Prediction Accuracy</div>
+                <div className="absolute top-1/4 left-0 bg-ivory/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse border border-sand-beige/20">
+                  <div className="text-xs sm:text-sm font-medium text-dark-brown">{heroContent.statistics.accuracy}</div>
+                  <div className="text-xs text-dark-brown/60">Prediction Accuracy</div>
                 </div>
                 
-                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300 border border-mint-green/20">
-                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.savings}</div>
-                  <div className="text-xs text-charcoal/60">Annual Savings</div>
+                <div className="absolute bottom-1/4 right-0 bg-ivory/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300 border border-sand-beige/20">
+                  <div className="text-xs sm:text-sm font-medium text-dark-brown">{heroContent.statistics.savings}</div>
+                  <div className="text-xs text-dark-brown/60">Annual Savings</div>
                 </div>
                 
-                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700 border border-mint-green/20">
-                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.fasterRCA}</div>
-                  <div className="text-xs text-charcoal/60">Faster RCA</div>
+                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-ivory/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700 border border-sand-beige/20">
+                  <div className="text-xs sm:text-sm font-medium text-dark-brown">{heroContent.statistics.fasterRCA}</div>
+                  <div className="text-xs text-dark-brown/60">Faster RCA</div>
                 </div>
               </div>
             </div>

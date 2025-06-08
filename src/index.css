@@ -7,32 +7,32 @@
 
 @layer base {
   :root {
-    --background: 245 245 245; /* Light Gray background */
-    --foreground: 51 51 51; /* Charcoal for text */
+    --background: 255 255 240; /* Ivory background */
+    --foreground: 101 67 33; /* Dark Brown for text */
     --card: 255 255 255;
-    --card-foreground: 51 51 51; /* Charcoal */
+    --card-foreground: 101 67 33; /* Dark Brown */
     --popover: 255 255 255;
-    --popover-foreground: 51 51 51; /* Charcoal */
-    --primary: 255 111 97; /* Coral Pink */
-    --primary-foreground: 255 255 255; /* White text on coral */
-    --secondary: 152 255 152; /* Mint Green */
-    --secondary-foreground: 51 51 51; /* Charcoal on mint */
-    --muted: 240 240 240;
-    --muted-foreground: 102 102 102;
-    --accent: 152 255 152; /* Mint Green */
-    --accent-foreground: 51 51 51; /* Charcoal */
+    --popover-foreground: 101 67 33; /* Dark Brown */
+    --primary: 128 128 0; /* Olive Green */
+    --primary-foreground: 255 255 240; /* Ivory text on olive */
+    --secondary: 244 164 96; /* Sand Beige */
+    --secondary-foreground: 101 67 33; /* Dark Brown on sand */
+    --muted: 250 250 245;
+    --muted-foreground: 101 67 33;
+    --accent: 244 164 96; /* Sand Beige */
+    --accent-foreground: 101 67 33; /* Dark Brown */
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
     --border: 220 220 220;
     --input: 220 220 220;
-    --ring: 255 111 97; /* Coral Pink */
+    --ring: 128 128 0; /* Olive Green */
     --radius: 6px;
     
-    /* Custom color variables for the new palette */
-    --coral-pink: 255 111 97;
-    --mint-green: 152 255 152;
-    --light-gray: 245 245 245;
-    --charcoal: 51 51 51;
+    /* Custom color variables for the Earthy and Elegant palette */
+    --olive-green: 128 128 0;
+    --sand-beige: 244 164 96;
+    --ivory: 255 255 240;
+    --dark-brown: 101 67 33;
   }
 }
 
@@ -47,8 +47,8 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     line-height: 1.6;
     letter-spacing: -0.01em;
-    color: rgb(51 51 51); /* Charcoal */
-    background-color: rgb(245 245 245); /* Light Gray */
+    color: rgb(101 67 33); /* Dark Brown */
+    background-color: rgb(255 255 240); /* Ivory */
     font-display: swap;
   }
   
@@ -57,7 +57,7 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: rgb(51 51 51); /* Charcoal */
+    color: rgb(101 67 33); /* Dark Brown */
     font-display: swap;
   }
   
@@ -68,7 +68,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-coral-pink to-charcoal bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-olive-green to-dark-brown bg-clip-text text-transparent;
   }
   
   .section-padding {
