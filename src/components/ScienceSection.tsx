@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
@@ -131,14 +130,14 @@ const ScienceSection = () => {
                   </p>
                 </div>
 
-                {/* Expanded Content Overlay */}
-                <div className={`absolute inset-0 z-10 transition-all duration-300 ${
+                {/* Expanded Content Below - Matches box size */}
+                <div className={`overflow-hidden transition-all duration-300 ${
                   hoveredStep === index 
-                    ? 'opacity-100 pointer-events-auto' 
-                    : 'opacity-0 pointer-events-none'
+                    ? 'max-h-96 opacity-100' 
+                    : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl p-10 h-full">
-                    <div className="space-y-4 h-full flex flex-col">
+                  <div className="mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-10">
+                    <div className="space-y-4">
                       <div className="flex items-center gap-3">
                         <div className={`w-16 h-16 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
                           <step.icon className="h-8 w-8 text-white" />
@@ -157,7 +156,7 @@ const ScienceSection = () => {
                         {step.oneLine}
                       </div>
                       
-                      <p className="text-gray-600 leading-relaxed text-sm flex-grow overflow-y-auto">
+                      <p className="text-gray-600 leading-relaxed text-sm">
                         {step.description}
                       </p>
                     </div>
