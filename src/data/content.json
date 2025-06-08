@@ -1,0 +1,192 @@
+
+{
+  "hero": {
+    "headline": "Optimize Biopharmaceutical Manufacturing with AI-Driven Raw Material Insights",
+    "subheadline": "Transform biotech manufacturing efficiency with RMPredictive's predictive analytics platform. Achieve 30% higher yields and 50% cost reduction through intelligent raw material optimization.",
+    "ctaText": "Request Demo - See 98.7% Accuracy",
+    "statistics": {
+      "accuracy": "98.7%",
+      "savings": "$4-10M+",
+      "fasterRCA": "20-50%"
+    }
+  },
+  "problem": {
+    "title": "Critical Manufacturing Challenges",
+    "subtitle": "Biopharmaceutical manufacturers face unprecedented pressure to deliver life-saving therapies efficiently and cost-effectively.",
+    "problems": [
+      {
+        "title": "Raw Material Variability",
+        "description": "Inconsistent raw material quality leads to unpredictable manufacturing outcomes",
+        "impact": "30-40% batch failure rates"
+      },
+      {
+        "title": "Process Inefficiency",
+        "description": "Manual monitoring and reactive adjustments result in suboptimal yields",
+        "impact": "$2-5M+ per failed batch"
+      },
+      {
+        "title": "Regulatory Compliance",
+        "description": "Complex documentation and validation requirements slow down production",
+        "impact": "6-12 month delays"
+      }
+    ]
+  },
+  "platform": {
+    "title": "AI-Powered Manufacturing Intelligence",
+    "subtitle": "Our platform leverages advanced machine learning to transform raw material data into actionable manufacturing insights.",
+    "features": [
+      {
+        "title": "Predictive Analytics",
+        "description": "AI algorithms predict manufacturing outcomes based on raw material characteristics",
+        "benefits": [
+          "98.7% prediction accuracy",
+          "Real-time risk assessment",
+          "Proactive quality control"
+        ]
+      },
+      {
+        "title": "Process Optimization",
+        "description": "Automated parameter adjustments optimize manufacturing conditions in real-time",
+        "benefits": [
+          "30% yield improvement",
+          "50% cost reduction",
+          "Reduced batch failures"
+        ]
+      },
+      {
+        "title": "Data Integration",
+        "description": "Seamless integration with existing manufacturing systems and databases",
+        "benefits": [
+          "Single source of truth",
+          "Historical data analysis",
+          "Regulatory compliance"
+        ]
+      }
+    ]
+  },
+  "science": {
+    "title": "Proven Science, Measurable Impact",
+    "subtitle": "Our proprietary algorithms are trained on extensive datasets from leading biomanufacturing facilities, delivering validated improvements across all metrics.",
+    "stats": [
+      {
+        "icon": "TrendingUp",
+        "value": "$100B+",
+        "label": "Market Opportunity",
+        "description": "Total addressable market in biopharmaceutical manufacturing optimization"
+      },
+      {
+        "icon": "Target",
+        "value": "98.7%",
+        "label": "Prediction Accuracy",
+        "description": "Validated performance across diverse therapeutic modalities and processes"
+      },
+      {
+        "icon": "Award",
+        "value": "30%",
+        "label": "Yield Improvement",
+        "description": "Average expected increase in manufacturing efficiency achieved by our clients"
+      }
+    ],
+    "methodology": {
+      "title": "Our Methodology",
+      "sections": [
+        {
+          "title": "Advanced Machine Learning",
+          "description": "Deep learning architectures specifically designed for biomanufacturing data, incorporating domain expertise from process engineering and quality science."
+        },
+        {
+          "title": "Continuous Learning",
+          "description": "Each production cycle provides new training data, enabling continuous improvement in accuracy and adaptation to changing conditions."
+        },
+        {
+          "title": "Multi-Modal Integration",
+          "description": "Integration of diverse data sources including Certificate of Analysis data, in-process measurements, and historical batch records."
+        },
+        {
+          "title": "Regulatory Compliance",
+          "description": "All models developed with GxP principles, ensuring full traceability and validation for regulated environments."
+        }
+      ]
+    }
+  },
+  "market": {
+    "title": "Massive Market Opportunity",
+    "subtitle": "The biopharmaceutical manufacturing optimization market represents a significant growth opportunity driven by increasing demand for efficient production.",
+    "marketSize": "$100B+",
+    "growthRate": "15% CAGR",
+    "keyMetrics": [
+      {
+        "label": "Global Biopharmaceutical Market",
+        "value": "$500B+",
+        "description": "Total market size with manufacturing representing 20-30% of costs"
+      },
+      {
+        "label": "Manufacturing Cost Savings",
+        "value": "$4-10M",
+        "description": "Annual savings potential per manufacturing facility"
+      },
+      {
+        "label": "Market Growth Rate",
+        "value": "15% CAGR",
+        "description": "Expected growth in biopharmaceutical manufacturing optimization"
+      }
+    ]
+  },
+  "about": {
+    "title": "Meet Our Biopharmaceutical Manufacturing AI Experts",
+    "subtitle": "Meet the co-founders revolutionizing biopharmaceutical manufacturing efficiency through advanced predictive analytics and raw material optimization technology",
+    "founders": [
+      {
+        "name": "Jamie Levitan",
+        "email": "jamie@rawmaterialpredictive.com",
+        "role": "Co-Founder & Biotech AI Specialist",
+        "bio": ""
+      },
+      {
+        "name": "Eshaan Bansal",
+        "email": "eshaan@rawmaterialpredictive.com",
+        "role": "Co-Founder & Biotech AI Specialist", 
+        "bio": ""
+      }
+    ]
+  },
+  "footer": {
+    "company": {
+      "name": "RMPredictive",
+      "description": "AI-driven efficiency for advanced therapy manufacturing."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "items": [
+        { "label": "Problem", "sectionId": "problem" },
+        { "label": "Platform", "sectionId": "platform" },
+        { "label": "Science", "sectionId": "science" },
+        { "label": "Market", "sectionId": "market" }
+      ]
+    },
+    "solutions": {
+      "title": "Solutions",
+      "items": [
+        "Predictive Analytics",
+        "Data Integration", 
+        "Risk Prevention",
+        "Yield Optimization"
+      ]
+    },
+    "contact": {
+      "title": "Get Started",
+      "items": [
+        { "label": "Request Demo", "action": "demo" },
+        { "label": "Contact Us", "action": "scroll", "target": "about" }
+      ]
+    },
+    "legal": {
+      "copyright": "© {year} RMPredictive. All rights reserved.",
+      "links": [
+        { "label": "Privacy", "path": "/privacy-policy" },
+        { "label": "Terms", "path": "/terms-of-service" },
+        { "label": "Cookies", "path": "/cookies" }
+      ]
+    }
+  }
+}

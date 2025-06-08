@@ -1,38 +1,45 @@
 
 import React from 'react';
-import { Textarea } from '@/components/ui/textarea';
+import { useContent } from '../hooks/useContent';
 
 const AboutSection = () => {
-  const founders = [{
-    name: "Jamie Levitan",
-    email: "jamie@rawmaterialpredictive.com",
-    bio: ""
-  }, {
-    name: "Eshaan Bansal",
-    email: "eshaan@rawmaterialpredictive.com", 
-    bio: ""
-  }];
+  const { content, loading } = useContent();
+
+  if (loading || !content) {
+    return (
+      <section className="section-padding bg-white">
+        <div className="container mx-auto container-padding">
+          <div className="text-center animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const aboutContent = content.about;
 
   return (
     <section id="about" className="section-padding bg-white">
       <div className="container mx-auto container-padding">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
-            Meet Our Biopharmaceutical Manufacturing AI Experts
+            {aboutContent.title}
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Meet the co-founders revolutionizing biopharmaceutical manufacturing efficiency through advanced predictive analytics and raw material optimization technology
+            {aboutContent.subtitle}
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          {founders.map((founder, index) => (
+          {aboutContent.founders.map((founder, index) => (
             <div key={founder.name} className="text-center">
               <div className="mb-6">
                 <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">
                   {founder.name}
                 </h3>
-                <p className="text-blue-600 mb-4">Co-Founder & Biotech AI Specialist</p>
+                <p className="text-blue-600 mb-4">{founder.role}</p>
                 <a 
                   href={`mailto:${founder.email}`} 
                   className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -42,7 +49,9 @@ const AboutSection = () => {
                 </a>
               </div>
               <div className="mt-6">
-                {/* Bio area for future content */}
+                {founder.bio && (
+                  <p className="text-gray-600 leading-relaxed">{founder.bio}</p>
+                )}
               </div>
             </div>
           ))}

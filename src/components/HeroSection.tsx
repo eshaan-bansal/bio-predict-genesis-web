@@ -2,13 +2,25 @@
 import LazyFuturisticCube from './LazyFuturisticCube';
 import DemoRequestModal from './DemoRequestModal';
 import { useState } from 'react';
+import { useContent } from '../hooks/useContent';
 
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const { content, loading } = useContent();
 
   const handleRequestDemo = () => {
     setIsDemoModalOpen(true);
   };
+
+  if (loading || !content) {
+    return (
+      <section className="relative min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f5f3f0' }}>
+        <div className="animate-pulse text-gray-400">Loading...</div>
+      </section>
+    );
+  }
+
+  const heroContent = content.hero;
 
   return (
     <>
@@ -26,7 +38,7 @@ const HeroSection = () => {
 
                 {/* Subheadline */}
                 <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-medium">
-                  Transform biotech manufacturing efficiency with RMPredictive's predictive analytics platform. Achieve 30% higher yields and 50% cost reduction through intelligent raw material optimization.
+                  {heroContent.subheadline}
                 </p>
 
                 {/* CTA Button */}
@@ -35,7 +47,7 @@ const HeroSection = () => {
                     onClick={handleRequestDemo}
                     className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
                   >
-                    Request Demo - See 98.7% Accuracy
+                    {heroContent.ctaText}
                   </button>
                 </div>
               </div>
@@ -48,17 +60,17 @@ const HeroSection = () => {
                 
                 {/* Floating data points around the cube */}
                 <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">98.7%</div>
+                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.accuracy}</div>
                   <div className="text-xs text-gray-600">Prediction Accuracy</div>
                 </div>
                 
                 <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">$4-10M+</div>
+                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.savings}</div>
                   <div className="text-xs text-gray-600">Annual Savings</div>
                 </div>
                 
                 <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">20-50%</div>
+                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.fasterRCA}</div>
                   <div className="text-xs text-gray-600">Faster RCA</div>
                 </div>
               </div>
