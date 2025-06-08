@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { TrendingUp, Target, Award } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import InteractiveProcessFlow from './InteractiveProcessFlow';
 
 const ScienceSection = () => {
+  const { elementRef, isVisible } = useIntersectionObserver();
+
   const stats = [
     {
       icon: TrendingUp,
@@ -37,21 +42,29 @@ const ScienceSection = () => {
           </p>
         </div>
         
-        {/* Statistics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
+        {/* Statistics Grid with Animation */}
+        <div ref={elementRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
-              className={`text-center ${index === 0 ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center' : ''}`}
+              className={`text-center ${index === 0 ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center' : ''} transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6 hover:bg-gray-200 transition-colors duration-300">
                 <stat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />
               </div>
-              <div className="text-3xl sm:text-4xl font-serif font-medium text-gray-900 mb-2">{stat.value}</div>
+              <div className="text-3xl sm:text-4xl font-serif font-medium text-gray-900 mb-2">
+                <AnimatedCounter value={stat.value} isVisible={isVisible} />
+              </div>
               <div className="font-medium text-gray-900 mb-3">{stat.label}</div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Interactive Process Flow */}
+        <div className="mb-16 sm:mb-20">
+          <InteractiveProcessFlow />
         </div>
         
         {/* Methodology */}
