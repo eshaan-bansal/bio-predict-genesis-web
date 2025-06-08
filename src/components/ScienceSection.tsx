@@ -1,11 +1,11 @@
-
-import React from 'react';
-import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
+import React, { useState } from 'react';
+import { TrendingUp, Target, Award, Database, Brain, Zap, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
   const stats = [
     {
@@ -32,24 +32,64 @@ const ScienceSection = () => {
     {
       icon: Database,
       title: "Data Ingestion",
-      description: "Collect and integrate raw material data from multiple sources including COA data, in-process measurements, and historical batch records."
+      description: "Collect and integrate raw material data from multiple sources including COA data, in-process measurements, and historical batch records.",
+      color: "from-blue-500 to-cyan-600",
+      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
+      iconBg: "bg-gradient-to-br from-blue-500 to-cyan-600",
+      details: [
+        "Certificate of Analysis (COA) data integration",
+        "Real-time process parameter monitoring",
+        "Historical batch record analysis",
+        "Multi-source data harmonization"
+      ]
     },
     {
       icon: Brain,
       title: "AI Analysis",
-      description: "Advanced machine learning algorithms analyze patterns and correlations in the data to identify key quality indicators and risk factors."
+      description: "Advanced machine learning algorithms analyze patterns and correlations in the data to identify key quality indicators and risk factors.",
+      color: "from-purple-500 to-pink-600",
+      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
+      iconBg: "bg-gradient-to-br from-purple-500 to-pink-600",
+      details: [
+        "Deep learning pattern recognition",
+        "Statistical correlation analysis",
+        "Quality risk factor identification",
+        "Anomaly detection algorithms"
+      ]
     },
     {
       icon: Zap,
       title: "Predictive Modeling",
-      description: "Generate real-time predictions for manufacturing outcomes with 98.7% accuracy across diverse therapeutic modalities."
+      description: "Generate real-time predictions for manufacturing outcomes with 98.7% accuracy across diverse therapeutic modalities.",
+      color: "from-yellow-500 to-orange-600",
+      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
+      iconBg: "bg-gradient-to-br from-yellow-500 to-orange-600",
+      details: [
+        "Real-time outcome predictions",
+        "98.7% accuracy validation",
+        "Multi-modal therapeutic support",
+        "Continuous model refinement"
+      ]
     },
     {
       icon: Shield,
       title: "Output Generation",
-      description: "Deliver actionable insights and recommendations to optimize manufacturing processes and improve yield efficiency."
+      description: "Deliver actionable insights and recommendations to optimize manufacturing processes and improve yield efficiency.",
+      color: "from-green-500 to-emerald-600",
+      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
+      iconBg: "bg-gradient-to-br from-green-500 to-emerald-600",
+      details: [
+        "Actionable process recommendations",
+        "Yield optimization strategies",
+        "Quality improvement insights",
+        "Regulatory compliance reports"
+      ]
     }
   ];
+
+  const toggleStep = (index: number) => {
+    setExpandedStep(expandedStep === index ? null : index);
+  };
 
   return (
     <section id="science" className="section-padding bg-white">
@@ -93,13 +133,32 @@ const ScienceSection = () => {
             {processSteps.map((step, index) => (
               <div 
                 key={step.title}
-                className="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors duration-300"
+                className={`${step.bgColor} rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border border-white/50`}
+                onClick={() => toggleStep(index)}
               >
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <step.icon className="h-6 w-6 text-gray-700" />
+                <div className={`w-12 h-12 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                  <step.icon className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-medium text-gray-900 mb-3">{step.title}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                <h4 className="font-medium text-gray-900 mb-3 flex items-center justify-center gap-2">
+                  {step.title}
+                  {expandedStep === index ? (
+                    <ChevronUp className="h-4 w-4 text-gray-600" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 text-gray-600" />
+                  )}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{step.description}</p>
+                
+                {expandedStep === index && (
+                  <div className="mt-4 space-y-2 animate-fade-in">
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-3"></div>
+                    {step.details.map((detail, detailIndex) => (
+                      <div key={detailIndex} className="text-xs text-gray-600 bg-white/60 rounded-lg px-3 py-2 backdrop-blur-sm">
+                        • {detail}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
