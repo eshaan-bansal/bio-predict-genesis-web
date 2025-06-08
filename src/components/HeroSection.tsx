@@ -1,5 +1,5 @@
 
-import FuturisticCube from './FuturisticCube';
+import LazyFuturisticCube from './LazyFuturisticCube';
 import DemoRequestModal from './DemoRequestModal';
 import { useState } from 'react';
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
               {/* Right Column - 3D Graphic */}
               <div className="relative slide-up order-first lg:order-last">
                 <div className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] relative">
-                  <FuturisticCube />
+                  <LazyFuturisticCube />
                 </div>
                 
                 {/* Floating data points around the cube */}
