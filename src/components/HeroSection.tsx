@@ -1,3 +1,4 @@
+
 import FuturisticCube from './FuturisticCube';
 import DemoRequestModal from './DemoRequestModal';
 import { useState } from 'react';
@@ -20,12 +21,12 @@ const HeroSection = () => {
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
                 <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
-                  Optimize <span className="text-blue-600">Raw Material Impact</span> with AI
+                  Optimize <span className="text-blue-600">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
                 </h1>
 
                 {/* Subheadline */}
                 <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-medium">
-                  Discover RMPredictive: AI-driven efficiency for advanced therapy manufacturing
+                  Transform biotech manufacturing efficiency with RMPredictive's predictive analytics platform. Achieve 30% higher yields and 50% cost reduction through intelligent raw material optimization.
                 </p>
 
                 {/* CTA Button */}
@@ -34,7 +35,7 @@ const HeroSection = () => {
                     onClick={handleRequestDemo}
                     className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
                   >
-                    Request Demo
+                    Request Demo - See 98.7% Accuracy
                   </button>
                 </div>
               </div>
