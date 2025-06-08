@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const TermsOfService = () => {
   return (
@@ -9,6 +12,15 @@ const TermsOfService = () => {
       <Navbar />
       <div className="container mx-auto container-padding py-24">
         <div className="max-w-4xl mx-auto prose prose-lg">
+          <div className="mb-8">
+            <Link to="/">
+              <Button size="lg" className="mb-6">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Main Website
+              </Button>
+            </Link>
+          </div>
+          
           <h1 className="font-serif text-4xl lg:text-5xl font-medium mb-8 text-foreground">
             Terms of Service
           </h1>

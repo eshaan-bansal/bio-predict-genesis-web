@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const Cookies = () => {
   return (
@@ -11,6 +14,15 @@ const Cookies = () => {
       <main className="pt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-4xl mx-auto">
+            <div className="mb-8">
+              <Link to="/">
+                <Button size="lg" className="mb-6">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Main Website
+                </Button>
+              </Link>
+            </div>
+            
             <h1 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-8">
               Cookie Policy
             </h1>

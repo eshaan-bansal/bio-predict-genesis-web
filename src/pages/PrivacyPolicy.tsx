@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicy = () => {
   return (
@@ -9,6 +12,15 @@ const PrivacyPolicy = () => {
       <Navbar />
       <main className="pt-20">
         <div className="container mx-auto container-padding section-padding max-w-4xl">
+          <div className="mb-8">
+            <Link to="/">
+              <Button size="lg" className="mb-6">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Main Website
+              </Button>
+            </Link>
+          </div>
+          
           <h1 className="font-serif text-4xl lg:text-5xl font-medium text-gray-900 mb-8">
             Privacy Policy
           </h1>
