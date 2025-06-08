@@ -30,21 +30,6 @@ const Footer = () => {
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
                 Achieve cost savings and efficiency with RMPredictive.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  onClick={handleRequestDemo}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium min-h-[44px]"
-                >
-                  Request Demo
-                </Button>
-                <Button 
-                  onClick={() => scrollToSection('platform')}
-                  variant="outline"
-                  className="border-gray-300 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg font-medium min-h-[44px]"
-                >
-                  Explore Platform
-                </Button>
-              </div>
             </div>
           </div>
         </div>
