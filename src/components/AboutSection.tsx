@@ -31,7 +31,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-4xl mx-auto">
           {founders.map((founder, index) => (
             <div key={founder.name} className="text-center">
-              <div className="mb-6">
+              <div className="mb-3">
                 <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">
                   {founder.name}
                 </h3>
@@ -43,7 +43,7 @@ const AboutSection = () => {
                   {founder.email}
                 </a>
               </div>
-              <div className="mt-6">
+              <div className="mt-3">
                 <Textarea
                   placeholder="Add description here..."
                   value={founder.bio}
