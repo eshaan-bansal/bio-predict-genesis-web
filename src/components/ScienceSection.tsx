@@ -20,7 +20,7 @@ const ScienceSection = () => {
       icon: Award,
       value: "30%",
       label: "Yield Improvement",
-      description: "Average increase in manufacturing efficiency achieved by our clients"
+      description: "Average expected increase in manufacturing efficiency achieved by our clients"
     }
   ];
 
