@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -61,7 +62,9 @@ const Footer = () => {
             © {new Date().getFullYear()} RawMaterialPredictive AI. All rights reserved.
           </p>
           <div className="flex space-x-8 text-gray-400">
-            <span>Privacy Policy</span>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
             <span>Terms of Service</span>
             <span>Cookies</span>
           </div>
