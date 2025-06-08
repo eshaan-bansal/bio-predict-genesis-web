@@ -30,7 +30,7 @@ const ProblemSection = () => {
                       <span className="h-2 w-2 rounded-full bg-red-500"></span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong className="font-medium">Subtle variations in raw materials</strong>—often within acceptable specifications—cause unpredictable batch failures, costing millions per incident in advanced therapy manufacturing (ADCs, RLTs, CGTs)
+                      <strong className="font-medium">Variations in raw materials can cause quality issues and costly production failures.</strong> Subtle variations—often within acceptable specifications—cause unpredictable batch failures, costing millions per incident in advanced therapy manufacturing (ADCs, RLTs, CGTs)
                     </p>
                   </li>
                   <li className="flex">
@@ -116,7 +116,7 @@ const ProblemSection = () => {
                 <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                   <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">The RawMaterialPredict AI Advantage</h4>
                   <div className="space-y-2 text-sm text-blue-700 dark:text-blue-200">
-                    <p><strong>Upstream Focus:</strong> Unlike existing LIMS, MES, or generic AI platforms, we specialize exclusively in predictive quality intelligence derived from raw material variability—the critical but poorly managed factor in biomanufacturing</p>
+                    <p><strong>Upstream Focus:</strong> Unlike LIMS and MES, RawMaterialPredict AI uniquely predicts quality outcomes based on raw material variability—the critical but poorly managed factor in biomanufacturing</p>
                     <p><strong>CoA Intelligence:</strong> We're the only platform that automatically digitizes and analyzes Certificates of Analysis, transforming this rich but underutilized data source into predictive insights</p>
                     <p><strong>Process-Specific Models:</strong> Our AI understands the unique sensitivities of advanced therapy manufacturing (mAb production, ADC conjugation, CGT processing) and their specific raw material dependencies</p>
                     <p><strong>Proactive Prevention:</strong> We shift from 'detect and react' to 'predict and prevent'—identifying problems at their source before they propagate through expensive manufacturing processes</p>

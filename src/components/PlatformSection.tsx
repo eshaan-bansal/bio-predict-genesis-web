@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Brain, Database, Target, Check, X, AlertTriangle } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -8,7 +7,7 @@ const PlatformSection = () => {
     {
       icon: Brain,
       title: "AI That Understands Biomanufacturing",
-      description: "RawMaterialPredict AI leverages established machine learning techniques—multivariate data analysis, regression modeling, ensemble methods like Random Forests—specifically applied to the unique challenges of biomanufacturing. Our models are trained to identify statistically significant correlations between raw material attributes and critical process outcomes. This isn't generic AI; it's purpose-built intelligence that understands the complex relationships between Certificate of Analysis data and your manufacturing success."
+      description: "Using proven AI techniques, RawMaterialPredict AI is both feasible and impactful. Our models leverage established machine learning techniques—multivariate data analysis, regression modeling, ensemble methods like Random Forests—specifically applied to the unique challenges of biomanufacturing. Our models are trained to identify statistically significant correlations between raw material attributes and critical process outcomes. This isn't generic AI; it's purpose-built intelligence that understands the complex relationships between Certificate of Analysis data and your manufacturing success."
     },
     {
       icon: Database,
@@ -18,7 +17,7 @@ const PlatformSection = () => {
     {
       icon: Target,
       title: "Proactive Risk Assessment & Prevention",
-      description: "Flag high-risk material lots, optimize material selection, prevent costly failures, and accelerate root cause analysis by 20-50%. Our predictive models identify potential quality deviations before they occur, enabling proactive interventions that save millions in batch failures and manufacturing delays."
+      description: "RawMaterialPredict AI offers substantial cost savings and efficiency improvements. Our predictive models identify potential quality deviations before they occur, enabling proactive interventions that save millions in batch failures and manufacturing delays."
     }
   ];
 
