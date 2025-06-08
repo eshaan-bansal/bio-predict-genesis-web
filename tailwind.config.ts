@@ -1,5 +1,4 @@
 
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,8 +66,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				serif: ['Instrument Serif', 'serif'],
+				sans: ['Roboto', 'system-ui', 'sans-serif'],
+				serif: ['Roboto', 'system-ui', 'sans-serif'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -96,4 +95,3 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
