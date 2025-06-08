@@ -131,32 +131,23 @@ const ScienceSection = () => {
             How It Works
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {processSteps.map((step, index) => (
               <div 
                 key={step.title}
-                className={`${step.bgColor} rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 cursor-pointer border border-white/50 relative group`}
+                className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300 cursor-pointer group"
                 onClick={() => setSelectedStep(index)}
               >
-                {/* Step Number */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center text-sm font-bold text-gray-700 shadow-sm">
-                  {index + 1}
+                <div className={`w-10 h-10 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                  <step.icon className="h-5 w-5 text-white" />
                 </div>
                 
-                <div className={`w-12 h-12 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <step.icon className="h-6 w-6 text-white" />
-                </div>
-                
-                <h4 className="font-medium text-gray-900 mb-3 text-lg">
+                <h4 className="font-medium text-gray-900 mb-1 text-sm">
                   {step.title}
                 </h4>
                 
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {step.shortDescription}
-                </p>
-                
-                <div className="mt-4 text-xs text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Click for details →
+                <div className="text-xs text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Click for details
                 </div>
               </div>
             ))}
@@ -210,7 +201,7 @@ const ScienceSection = () => {
                         onClick={() => setSelectedStep(selectedStep + 1)}
                         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
                       >
-                        Next Step →
+                        Next Step
                       </button>
                     </div>
                   )}
