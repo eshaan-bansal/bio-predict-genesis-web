@@ -1,12 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import DemoRequestModal from './DemoRequestModal';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +42,8 @@ const Navbar = () => {
   };
 
   const handleRequestDemo = () => {
-    scrollToSection('about');
+    setIsDemoModalOpen(true);
+    setIsMobileMenuOpen(false);
   };
 
   const navigationItems = [
@@ -147,6 +149,12 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
+      {/* Demo Request Modal */}
+      <DemoRequestModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)} 
+      />
     </>
   );
 };
