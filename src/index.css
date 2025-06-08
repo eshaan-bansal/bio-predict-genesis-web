@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 245 245 245; /* Light background for contrast */
+    --background: 255 255 255; /* White background */
     --foreground: 42 45 52; /* Gunmetal Gray for text */
     --card: 255 255 255;
     --card-foreground: 42 45 52; /* Gunmetal Gray */
@@ -94,59 +94,6 @@
   
   .will-change-opacity {
     will-change: opacity;
-  }
-  
-  /* New color utilities */
-  .bg-midnight-blue {
-    background-color: hsl(var(--midnight-blue));
-  }
-  
-  .bg-electric-teal {
-    background-color: hsl(var(--electric-teal));
-  }
-  
-  .bg-gunmetal-gray {
-    background-color: hsl(var(--gunmetal-gray));
-  }
-  
-  .bg-neon-purple {
-    background-color: hsl(var(--neon-purple));
-  }
-  
-  .bg-silver {
-    background-color: hsl(var(--silver));
-  }
-  
-  .text-midnight-blue {
-    color: hsl(var(--midnight-blue));
-  }
-  
-  .text-electric-teal {
-    color: hsl(var(--electric-teal));
-  }
-  
-  .text-gunmetal-gray {
-    color: hsl(var(--gunmetal-gray));
-  }
-  
-  .text-neon-purple {
-    color: hsl(var(--neon-purple));
-  }
-  
-  .text-silver {
-    color: hsl(var(--silver));
-  }
-  
-  .border-midnight-blue {
-    border-color: hsl(var(--midnight-blue));
-  }
-  
-  .border-electric-teal {
-    border-color: hsl(var(--electric-teal));
-  }
-  
-  .border-neon-purple {
-    border-color: hsl(var(--neon-purple));
   }
 }
 
