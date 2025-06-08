@@ -112,18 +112,21 @@ const ProblemSection = () => {
                     </p>
                   </li>
                 </ul>
-
-                <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-sans font-semibold text-blue-800 mb-2">The RMPredictive Advantage</h4>
-                  <div className="space-y-2 text-sm text-blue-700">
-                    <p><strong>Upstream Focus:</strong> Unlike LIMS and MES, RMPredictive uniquely predicts quality outcomes based on raw material variability</p>
-                    <p><strong>CoA Intelligence:</strong> Automatically digitizes and analyzes Certificates of Analysis</p>
-                    <p><strong>Process-Specific Models:</strong> Understands unique sensitivities of advanced therapy manufacturing</p>
-                    <p><strong>Proactive Prevention:</strong> Shift from 'detect and react' to 'predict and prevent'</p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Centered advantage box moved down */}
+        <div className="max-w-4xl mx-auto">
+          <div className="mt-12 p-6 bg-blue-50 rounded-lg mx-auto max-w-3xl">
+            <h4 className="font-sans font-semibold text-blue-800 mb-3 text-center">The RMPredictive Advantage</h4>
+            <div className="space-y-3 text-sm text-blue-700">
+              <p><strong>Upstream Focus:</strong> Unlike LIMS and MES, RMPredictive uniquely predicts quality outcomes based on raw material variability</p>
+              <p><strong>CoA Intelligence:</strong> Automatically digitizes and analyzes Certificates of Analysis</p>
+              <p><strong>Process-Specific Models:</strong> Understands unique sensitivities of advanced therapy manufacturing</p>
+              <p><strong>Proactive Prevention:</strong> Shift from 'detect and react' to 'predict and prevent'</p>
+            </div>
           </div>
         </div>
       </div>
