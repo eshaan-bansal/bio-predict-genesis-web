@@ -1,4 +1,3 @@
-
 import { DnaIcon, FlaskRoundIcon, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -15,7 +14,7 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto mb-12">
           <div className="relative">
             <div className="absolute -left-4 -top-4 bg-red-100/20 rounded-full p-3">
               <FlaskRoundIcon className="h-6 w-6 text-red-600" />
@@ -125,6 +124,46 @@ const ProblemSection = () => {
                     </div>
                     <p className="text-gray-700">
                       <strong className="font-medium">CoA Intelligence:</strong> Automatically digitizes and analyzes Certificates of Analysis
+                    </p>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <div className="relative max-w-md">
+            <div className="absolute -left-4 -top-4 bg-blue-100/20 rounded-full p-3">
+              <Target className="h-6 w-6 text-blue-600" />
+            </div>
+            <Card className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100">
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl font-sans font-bold mb-4 text-blue-900">Key Benefits</h3>
+                
+                <ul className="space-y-4">
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                    </div>
+                    <p className="text-blue-800">
+                      <strong className="font-medium">Reduce batch failures by 70%</strong> through predictive analytics
+                    </p>
+                  </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                    </div>
+                    <p className="text-blue-800">
+                      <strong className="font-medium">Save $4-10M+ annually</strong> in production costs
+                    </p>
+                  </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                    </div>
+                    <p className="text-blue-800">
+                      <strong className="font-medium">Accelerate time to market</strong> with faster, data-driven decisions
                     </p>
                   </li>
                 </ul>
