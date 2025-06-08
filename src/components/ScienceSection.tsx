@@ -110,7 +110,7 @@ const ScienceSection = () => {
             {processSteps.map((step, index) => (
               <div key={step.title} className="relative">
                 <div 
-                  className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  className="bg-white border border-gray-200 rounded-lg p-10 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
                   onMouseEnter={() => setHoveredStep(index)}
                   onMouseLeave={() => setHoveredStep(null)}
                 >
@@ -118,8 +118,8 @@ const ScienceSection = () => {
                     hover for details
                   </div>
                   
-                  <div className={`w-14 h-14 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className="h-7 w-7 text-white" />
+                  <div className={`w-16 h-16 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <step.icon className="h-8 w-8 text-white" />
                   </div>
                   
                   <h4 className="font-medium text-gray-900 mb-4 text-xl">
@@ -131,17 +131,17 @@ const ScienceSection = () => {
                   </p>
                 </div>
 
-                {/* Expanded Content Below - Matches box size */}
-                <div className={`overflow-hidden transition-all duration-300 ${
+                {/* Expanded Content Overlay */}
+                <div className={`absolute inset-0 z-10 transition-all duration-300 ${
                   hoveredStep === index 
-                    ? 'max-h-96 opacity-100' 
-                    : 'max-h-0 opacity-0'
+                    ? 'opacity-100 pointer-events-auto' 
+                    : 'opacity-0 pointer-events-none'
                 }`}>
-                  <div className="mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-8">
-                    <div className="space-y-4">
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-xl p-10 h-full">
+                    <div className="space-y-4 h-full flex flex-col">
                       <div className="flex items-center gap-3">
-                        <div className={`w-14 h-14 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
-                          <step.icon className="h-7 w-7 text-white" />
+                        <div className={`w-16 h-16 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
+                          <step.icon className="h-8 w-8 text-white" />
                         </div>
                         <div>
                           <h4 className="font-medium text-gray-900 text-xl">
@@ -157,7 +157,7 @@ const ScienceSection = () => {
                         {step.oneLine}
                       </div>
                       
-                      <p className="text-gray-600 leading-relaxed text-sm">
+                      <p className="text-gray-600 leading-relaxed text-sm flex-grow overflow-y-auto">
                         {step.description}
                       </p>
                     </div>
