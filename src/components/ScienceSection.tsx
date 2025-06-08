@@ -110,19 +110,19 @@ const ScienceSection = () => {
             {processSteps.map((step, index) => (
               <div key={step.title} className="relative">
                 <div 
-                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
                   onMouseEnter={() => setHoveredStep(index)}
                   onMouseLeave={() => setHoveredStep(null)}
                 >
-                  <div className={`absolute top-3 right-3 text-xs text-gray-400 transition-opacity duration-300 ${hoveredStep === index ? 'opacity-100' : 'opacity-0'}`}>
+                  <div className={`absolute top-4 right-4 text-xs text-gray-400 transition-opacity duration-300 ${hoveredStep === index ? 'opacity-100' : 'opacity-0'}`}>
                     hover for details
                   </div>
                   
-                  <div className={`w-10 h-10 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className="h-5 w-5 text-white" />
+                  <div className={`w-14 h-14 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <step.icon className="h-7 w-7 text-white" />
                   </div>
                   
-                  <h4 className="font-medium text-gray-900 mb-2 text-lg">
+                  <h4 className="font-medium text-gray-900 mb-4 text-xl">
                     {step.title}
                   </h4>
                   
