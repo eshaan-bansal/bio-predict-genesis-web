@@ -1,17 +1,9 @@
-
 import FuturisticCube from './FuturisticCube';
 import DemoRequestModal from './DemoRequestModal';
 import { useState } from 'react';
 
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-
-  const scrollToNext = () => {
-    const nextSection = document.querySelector('#problem');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const handleRequestDemo = () => {
     setIsDemoModalOpen(true);
@@ -36,17 +28,11 @@ const HeroSection = () => {
                   Discover RMPredictive: AI-driven efficiency for advanced therapy manufacturing
                 </p>
 
-                {/* CTA Buttons */}
-                <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center lg:items-start lg:justify-start justify-center">
-                  <button 
-                    onClick={scrollToNext}
-                    className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
-                  >
-                    Explore Platform
-                  </button>
+                {/* CTA Button */}
+                <div className="pt-4 flex justify-center lg:justify-start">
                   <button 
                     onClick={handleRequestDemo}
-                    className="bg-transparent border-2 border-blue-600 text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-600 hover:text-white transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
+                    className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
                   >
                     Request Demo
                   </button>
