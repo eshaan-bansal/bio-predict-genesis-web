@@ -1,7 +1,10 @@
+
 import { DnaIcon, FlaskRoundIcon, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+
 const ProblemSection = () => {
-  return <section id="problem" className="py-16 sm:py-20 relative">
+  return (
+    <section id="problem" className="py-16 sm:py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold mb-4">
@@ -12,7 +15,7 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           <div className="relative">
             <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 bg-red-100/20 rounded-full p-2 sm:p-3">
               <FlaskRoundIcon className="h-5 w-5 sm:h-6 sm:w-6 text-red-600" />
@@ -130,6 +133,8 @@ const ProblemSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ProblemSection;
