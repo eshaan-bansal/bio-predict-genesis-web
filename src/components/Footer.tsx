@@ -1,8 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleRequestDemo = () => {
+    scrollToSection('about');
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       {/* CTA Section */}
@@ -15,41 +27,108 @@ const Footer = () => {
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
               Achieve cost savings and efficiency with RMPredictive.
             </p>
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors">
-              Explore RMPredictive
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={handleRequestDemo}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium min-h-[44px]"
+              >
+                Request Demo
+              </Button>
+              <Button 
+                onClick={() => scrollToSection('platform')}
+                variant="outline"
+                className="border-gray-300 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg font-medium min-h-[44px]"
+              >
+                Explore Platform
+              </Button>
+            </div>
           </div>
         </div>
       </div>
       
       {/* Footer Content */}
       <div className="container mx-auto container-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-6">
               <span className="text-2xl font-sans font-medium">RMPredictive</span>
             </div>
-            <p className="text-gray-400 leading-relaxed">
-              AI for smarter manufacturing.
+            <p className="text-gray-400 leading-relaxed mb-6">
+              AI-driven efficiency for advanced therapy manufacturing.
             </p>
           </div>
           
-          {/* Features */}
+          {/* Navigation */}
           <div>
-            <h3 className="font-sans font-medium mb-6 text-gray-300">Features</h3>
+            <h3 className="font-sans font-medium mb-6 text-gray-300">Navigation</h3>
+            <ul className="space-y-4 text-gray-400">
+              <li>
+                <button 
+                  onClick={() => scrollToSection('problem')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Problem
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('platform')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Platform
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('science')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Science
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('market')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Market
+                </button>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Solutions */}
+          <div>
+            <h3 className="font-sans font-medium mb-6 text-gray-300">Solutions</h3>
             <ul className="space-y-4 text-gray-400">
               <li>Predictive Analytics</li>
               <li>Data Integration</li>
               <li>Risk Prevention</li>
+              <li>Yield Optimization</li>
             </ul>
           </div>
           
-          {/* Contact */}
+          {/* Contact & Support */}
           <div>
-            <h3 className="font-sans font-medium mb-6 text-gray-300">Contact</h3>
+            <h3 className="font-sans font-medium mb-6 text-gray-300">Get Started</h3>
             <ul className="space-y-4 text-gray-400">
-              <li>Schedule Demo</li>
+              <li>
+                <button 
+                  onClick={handleRequestDemo}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Request Demo
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('about')}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Contact Us
+                </button>
+              </li>
               <li>Support</li>
               <li>Documentation</li>
             </ul>

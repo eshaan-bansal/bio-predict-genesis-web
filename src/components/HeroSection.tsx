@@ -10,13 +10,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
       {/* Content */}
       <div className="container mx-auto container-padding relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-20 lg:py-0">
             {/* Left Column - Text Content */}
-            <div className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
+            <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
               {/* Main Headline */}
               <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
                 Optimize <span className="text-blue-600">Raw Material Impact</span> with AI
@@ -27,13 +27,19 @@ const HeroSection = () => {
                 Discover RMPredictive: AI-driven efficiency for advanced therapy manufacturing
               </p>
 
-              {/* CTA Button */}
-              <div className="pt-4">
+              {/* CTA Buttons */}
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center lg:items-start lg:justify-start justify-center">
                 <button 
                   onClick={scrollToNext}
                   className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
                 >
-                  Explore RMPredictive
+                  Explore Platform
+                </button>
+                <button 
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-transparent border-2 border-blue-600 text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-600 hover:text-white transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
+                >
+                  Request Demo
                 </button>
               </div>
             </div>
