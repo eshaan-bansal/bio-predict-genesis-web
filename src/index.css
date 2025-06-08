@@ -48,7 +48,7 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     line-height: 1.6;
     letter-spacing: -0.01em;
-    color: hsl(var(--gunmetal-gray));
+    color: rgb(42 45 52); /* Gunmetal Gray */
     font-display: swap;
   }
   
@@ -57,7 +57,7 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: hsl(var(--midnight-blue));
+    color: rgb(10 31 68); /* Midnight Blue */
     font-display: swap;
   }
   

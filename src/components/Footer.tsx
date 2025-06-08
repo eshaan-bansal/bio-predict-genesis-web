@@ -3,11 +3,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import DemoRequestModal from './DemoRequestModal';
-import { useContent } from '../hooks/useContent';
 
 const Footer = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const { content, loading } = useContent();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -22,20 +20,6 @@ const Footer = () => {
     setIsDemoModalOpen(true);
   };
 
-  if (loading || !content) {
-    return (
-      <footer className="bg-midnight-blue text-silver">
-        <div className="container mx-auto container-padding py-12">
-          <div className="animate-pulse">
-            <div className="h-4 bg-gray-700 rounded w-1/4 mb-4"></div>
-            <div className="h-3 bg-gray-700 rounded w-1/2"></div>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-
-  const footerContent = content.footer;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -46,76 +30,100 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <h3 className="text-xl font-medium text-electric-teal mb-4">
-                {footerContent.company.name}
+                RMPredictive
               </h3>
               <p className="text-sm leading-relaxed mb-6">
-                {footerContent.company.description}
+                AI-driven efficiency for advanced therapy manufacturing.
               </p>
             </div>
 
             {/* Navigation */}
             <div>
               <h4 className="font-medium text-white mb-4">
-                {footerContent.navigation.title}
+                Navigation
               </h4>
               <ul className="space-y-3">
-                {footerContent.navigation.items.map((item) => (
-                  <li key={item.label}>
-                    <button
-                      onClick={() => scrollToSection(item.sectionId)}
-                      className="text-sm hover:text-electric-teal transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
+                <li>
+                  <button
+                    onClick={() => scrollToSection('problem')}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Problem
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('platform')}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Platform
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('science')}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Science
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('market')}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Market
+                  </button>
+                </li>
               </ul>
             </div>
 
             {/* Solutions */}
             <div>
               <h4 className="font-medium text-white mb-4">
-                {footerContent.solutions.title}
+                Solutions
               </h4>
               <ul className="space-y-3">
-                {footerContent.solutions.items.map((item) => (
-                  <li key={item}>
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
+                <li>
+                  <span className="text-sm">Predictive Analytics</span>
+                </li>
+                <li>
+                  <span className="text-sm">Data Integration</span>
+                </li>
+                <li>
+                  <span className="text-sm">Risk Prevention</span>
+                </li>
+                <li>
+                  <span className="text-sm">Yield Optimization</span>
+                </li>
               </ul>
             </div>
 
             {/* Get Started */}
             <div>
               <h4 className="font-medium text-white mb-4">
-                {footerContent.contact.title}
+                Get Started
               </h4>
               <ul className="space-y-3">
-                {footerContent.contact.items.map((item) => (
-                  <li key={item.label}>
-                    {item.action === 'demo' ? (
-                      <button
-                        onClick={handleRequestDemo}
-                        className="text-sm hover:text-electric-teal transition-colors"
-                      >
-                        {item.label}
-                      </button>
-                    ) : item.action === 'scroll' && item.target ? (
-                      <button
-                        onClick={() => scrollToSection(item.target)}
-                        className="text-sm hover:text-electric-teal transition-colors"
-                      >
-                        {item.label}
-                      </button>
-                    ) : (
-                      <span className="text-sm">{item.label}</span>
-                    )}
-                  </li>
-                ))}
+                <li>
+                  <button
+                    onClick={handleRequestDemo}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Request Demo
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection('about')}
+                    className="text-sm hover:text-electric-teal transition-colors"
+                  >
+                    Contact Us
+                  </button>
+                </li>
               </ul>
               
-              {/* Additional Support Links */}
+              {/* Support Links */}
               <div className="mt-6">
                 <h5 className="font-medium text-white mb-3">Support</h5>
                 <ul className="space-y-2">
@@ -131,19 +139,28 @@ const Footer = () => {
           <div className="border-t border-gunmetal-gray mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm mb-4 md:mb-0">
-                {footerContent.legal.copyright.replace('{year}', currentYear.toString())}
+                © {currentYear} RMPredictive. All rights reserved.
               </p>
               
               <div className="flex space-x-6">
-                {footerContent.legal.links.map((link) => (
-                  <Link
-                    key={link.label}
-                    to={link.path}
-                    className="text-sm hover:text-electric-teal transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <Link
+                  to="/privacy-policy"
+                  className="text-sm hover:text-electric-teal transition-colors"
+                >
+                  Privacy
+                </Link>
+                <Link
+                  to="/terms-of-service"
+                  className="text-sm hover:text-electric-teal transition-colors"
+                >
+                  Terms
+                </Link>
+                <Link
+                  to="/cookies"
+                  className="text-sm hover:text-electric-teal transition-colors"
+                >
+                  Cookies
+                </Link>
               </div>
             </div>
           </div>
