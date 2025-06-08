@@ -42,7 +42,7 @@ const ScienceSection = () => {
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
-              className="text-center"
+              className={`text-center ${index === 0 ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center' : ''}`}
             >
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <stat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />
