@@ -44,7 +44,7 @@ const HeroSection = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4 flex justify-center lg:justify-start">
-                  <TooltipProvider>
+                  <TooltipProvider delayDuration={200}>
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <button 
@@ -54,8 +54,8 @@ const HeroSection = () => {
                           Request Demo
                         </button>
                       </TooltipTrigger>
-                      <TooltipContent>
-                        <p>See 98.7% Accuracy at no cost</p>
+                      <TooltipContent side="bottom">
+                        <p>See 98.7% Accuracy At No Cost</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
