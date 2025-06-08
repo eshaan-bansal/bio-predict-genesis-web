@@ -55,7 +55,7 @@ const HeroSection = () => {
                         </button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>See 98.7% Accuracy</p>
+                        <p>See 98.7% Accuracy at no cost</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
