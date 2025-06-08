@@ -59,12 +59,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// New color palette
-				'midnight-blue': 'hsl(var(--midnight-blue))',
-				'electric-teal': 'hsl(var(--electric-teal))',
-				'gunmetal-gray': 'hsl(var(--gunmetal-gray))',
-				'neon-purple': 'hsl(var(--neon-purple))',
-				'silver': 'hsl(var(--silver))',
+				// New soft neutrals color palette
+				'coral-pink': 'hsl(var(--coral-pink))',
+				'mint-green': 'hsl(var(--mint-green))',
+				'light-gray': 'hsl(var(--light-gray))',
+				'charcoal': 'hsl(var(--charcoal))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

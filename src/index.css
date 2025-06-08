@@ -7,33 +7,32 @@
 
 @layer base {
   :root {
-    --background: 255 255 255; /* White background */
-    --foreground: 42 45 52; /* Gunmetal Gray for text */
+    --background: 245 245 245; /* Light Gray background */
+    --foreground: 51 51 51; /* Charcoal for text */
     --card: 255 255 255;
-    --card-foreground: 42 45 52; /* Gunmetal Gray */
+    --card-foreground: 51 51 51; /* Charcoal */
     --popover: 255 255 255;
-    --popover-foreground: 42 45 52; /* Gunmetal Gray */
-    --primary: 10 31 68; /* Midnight Blue */
-    --primary-foreground: 192 192 192; /* Silver */
-    --secondary: 42 45 52; /* Gunmetal Gray */
-    --secondary-foreground: 192 192 192; /* Silver */
-    --muted: 230 230 230;
-    --muted-foreground: 100 100 100;
-    --accent: 0 245 212; /* Electric Teal */
-    --accent-foreground: 10 31 68; /* Midnight Blue */
+    --popover-foreground: 51 51 51; /* Charcoal */
+    --primary: 255 111 97; /* Coral Pink */
+    --primary-foreground: 255 255 255; /* White text on coral */
+    --secondary: 152 255 152; /* Mint Green */
+    --secondary-foreground: 51 51 51; /* Charcoal on mint */
+    --muted: 240 240 240;
+    --muted-foreground: 102 102 102;
+    --accent: 152 255 152; /* Mint Green */
+    --accent-foreground: 51 51 51; /* Charcoal */
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
-    --border: 200 200 200;
-    --input: 200 200 200;
-    --ring: 0 245 212; /* Electric Teal */
+    --border: 220 220 220;
+    --input: 220 220 220;
+    --ring: 255 111 97; /* Coral Pink */
     --radius: 6px;
     
     /* Custom color variables for the new palette */
-    --midnight-blue: 10 31 68;
-    --electric-teal: 0 245 212;
-    --gunmetal-gray: 42 45 52;
-    --neon-purple: 138 43 226;
-    --silver: 192 192 192;
+    --coral-pink: 255 111 97;
+    --mint-green: 152 255 152;
+    --light-gray: 245 245 245;
+    --charcoal: 51 51 51;
   }
 }
 
@@ -48,7 +47,8 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     line-height: 1.6;
     letter-spacing: -0.01em;
-    color: rgb(42 45 52); /* Gunmetal Gray */
+    color: rgb(51 51 51); /* Charcoal */
+    background-color: rgb(245 245 245); /* Light Gray */
     font-display: swap;
   }
   
@@ -57,7 +57,7 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: rgb(10 31 68); /* Midnight Blue */
+    color: rgb(51 51 51); /* Charcoal */
     font-display: swap;
   }
   
@@ -68,7 +68,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-midnight-blue to-gunmetal-gray bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-coral-pink to-charcoal bg-clip-text text-transparent;
   }
   
   .section-padding {

@@ -15,8 +15,8 @@ const HeroSection = () => {
 
   if (loading || !content) {
     return (
-      <section className="relative min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f5f3f0' }}>
-        <div className="animate-pulse text-gray-400">Loading...</div>
+      <section className="relative min-h-screen flex items-center justify-center bg-background">
+        <div className="animate-pulse text-muted-foreground">Loading...</div>
       </section>
     );
   }
@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -33,12 +33,12 @@ const HeroSection = () => {
               {/* Left Column - Text Content */}
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
-                  Optimize <span className="text-blue-600">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-charcoal leading-tight text-balance">
+                  Optimize <span className="text-coral-pink">Biopharmaceutical Manufacturing</span> with AI-Driven Raw Material Insights
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-medium">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-charcoal leading-relaxed font-medium opacity-80">
                   {heroContent.subheadline}
                 </p>
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
                       <TooltipTrigger asChild>
                         <button 
                           onClick={handleRequestDemo}
-                          className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
+                          className="bg-coral-pink text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-coral-pink/90 transition-colors min-h-[44px] min-w-[44px] touch-manipulation shadow-lg"
                         >
                           Request Demo
                         </button>
@@ -69,19 +69,19 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Floating data points around the cube */}
-                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.accuracy}</div>
-                  <div className="text-xs text-gray-600">Prediction Accuracy</div>
+                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse border border-mint-green/20">
+                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.accuracy}</div>
+                  <div className="text-xs text-charcoal/60">Prediction Accuracy</div>
                 </div>
                 
-                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.savings}</div>
-                  <div className="text-xs text-gray-600">Annual Savings</div>
+                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300 border border-mint-green/20">
+                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.savings}</div>
+                  <div className="text-xs text-charcoal/60">Annual Savings</div>
                 </div>
                 
-                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.fasterRCA}</div>
-                  <div className="text-xs text-gray-600">Faster RCA</div>
+                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700 border border-mint-green/20">
+                  <div className="text-xs sm:text-sm font-medium text-charcoal">{heroContent.statistics.fasterRCA}</div>
+                  <div className="text-xs text-charcoal/60">Faster RCA</div>
                 </div>
               </div>
             </div>

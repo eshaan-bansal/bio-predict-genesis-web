@@ -24,15 +24,15 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-midnight-blue text-silver">
+      <footer className="bg-charcoal text-white">
         <div className="container mx-auto container-padding py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <h3 className="text-xl font-medium text-electric-teal mb-4">
+              <h3 className="text-xl font-medium text-coral-pink mb-4">
                 RMPredictive
               </h3>
-              <p className="text-sm leading-relaxed mb-6">
+              <p className="text-sm leading-relaxed mb-6 text-white/80">
                 AI-driven efficiency for advanced therapy manufacturing.
               </p>
             </div>
@@ -46,7 +46,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection('problem')}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Problem
                   </button>
@@ -54,7 +54,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection('platform')}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Platform
                   </button>
@@ -62,7 +62,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection('science')}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Science
                   </button>
@@ -70,7 +70,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection('market')}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Market
                   </button>
@@ -85,16 +85,16 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 <li>
-                  <span className="text-sm">Predictive Analytics</span>
+                  <span className="text-sm text-white/70">Predictive Analytics</span>
                 </li>
                 <li>
-                  <span className="text-sm">Data Integration</span>
+                  <span className="text-sm text-white/70">Data Integration</span>
                 </li>
                 <li>
-                  <span className="text-sm">Risk Prevention</span>
+                  <span className="text-sm text-white/70">Risk Prevention</span>
                 </li>
                 <li>
-                  <span className="text-sm">Yield Optimization</span>
+                  <span className="text-sm text-white/70">Yield Optimization</span>
                 </li>
               </ul>
             </div>
@@ -108,7 +108,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={handleRequestDemo}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Request Demo
                   </button>
@@ -116,7 +116,7 @@ const Footer = () => {
                 <li>
                   <button
                     onClick={() => scrollToSection('about')}
-                    className="text-sm hover:text-electric-teal transition-colors"
+                    className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                   >
                     Contact Us
                   </button>
@@ -128,7 +128,7 @@ const Footer = () => {
                 <h5 className="font-medium text-white mb-3">Support</h5>
                 <ul className="space-y-2">
                   <li>
-                    <span className="text-sm">Documentation</span>
+                    <span className="text-sm text-white/70">Documentation</span>
                   </li>
                 </ul>
               </div>
@@ -136,28 +136,28 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gunmetal-gray mt-12 pt-8">
+          <div className="border-t border-white/20 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-sm mb-4 md:mb-0">
+              <p className="text-sm mb-4 md:mb-0 text-white/70">
                 © {currentYear} RMPredictive. All rights reserved.
               </p>
               
               <div className="flex space-x-6">
                 <Link
                   to="/privacy-policy"
-                  className="text-sm hover:text-electric-teal transition-colors"
+                  className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                 >
                   Privacy
                 </Link>
                 <Link
                   to="/terms-of-service"
-                  className="text-sm hover:text-electric-teal transition-colors"
+                  className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                 >
                   Terms
                 </Link>
                 <Link
                   to="/cookies"
-                  className="text-sm hover:text-electric-teal transition-colors"
+                  className="text-sm text-white/70 hover:text-coral-pink transition-colors"
                 >
                   Cookies
                 </Link>
