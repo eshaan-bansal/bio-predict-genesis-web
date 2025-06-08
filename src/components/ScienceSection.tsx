@@ -106,7 +106,7 @@ const ScienceSection = () => {
             How It Works
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
             {processSteps.map((step, index) => (
               <div key={step.title} className="relative">
                 <div 
@@ -122,43 +122,45 @@ const ScienceSection = () => {
                     <step.icon className="h-5 w-5 text-white" />
                   </div>
                   
-                  <h4 className="font-medium text-gray-900 mb-2 text-base">
+                  <h4 className="font-medium text-gray-900 mb-2 text-lg">
                     {step.title}
                   </h4>
                   
-                  <p className="text-xs text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {step.oneLine}
                   </p>
                 </div>
 
-                {/* Expanded Content Below */}
-                <div className={`mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-4 transition-all duration-300 ${
+                {/* Expanded Content Below - Only takes space when visible */}
+                <div className={`overflow-hidden transition-all duration-300 ${
                   hoveredStep === index 
-                    ? 'opacity-100 translate-y-0 pointer-events-auto' 
-                    : 'opacity-0 -translate-y-2 pointer-events-none'
+                    ? 'max-h-96 opacity-100' 
+                    : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
-                        <step.icon className="h-4 w-4 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-gray-900 text-sm">
-                          {step.title}
-                        </h4>
-                        <div className="text-xs text-gray-500">
-                          Step {index + 1} of {processSteps.length}
+                  <div className="mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
+                          <step.icon className="h-4 w-4 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-gray-900 text-sm">
+                            {step.title}
+                          </h4>
+                          <div className="text-xs text-gray-500">
+                            Step {index + 1} of {processSteps.length}
+                          </div>
                         </div>
                       </div>
+                      
+                      <div className="text-xs font-medium text-blue-600 border-l-2 border-blue-200 pl-3">
+                        {step.oneLine}
+                      </div>
+                      
+                      <p className="text-gray-600 leading-relaxed text-xs">
+                        {step.description}
+                      </p>
                     </div>
-                    
-                    <div className="text-xs font-medium text-blue-600 border-l-2 border-blue-200 pl-3">
-                      {step.oneLine}
-                    </div>
-                    
-                    <p className="text-gray-600 leading-relaxed text-xs">
-                      {step.description}
-                    </p>
                   </div>
                 </div>
               </div>
