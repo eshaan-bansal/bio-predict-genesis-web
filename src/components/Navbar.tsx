@@ -31,16 +31,16 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-serif font-medium text-gray-900">RawMaterialPredictive</span>
+            <span className="text-2xl font-sans font-medium text-gray-900">RMPredictive</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-12">
             {[
-              { name: 'Platform', id: 'platform' },
+              { name: 'Features', id: 'platform' },
               { name: 'Science', id: 'science' },
               { name: 'Market', id: 'market' },
-              { name: 'About Us', id: 'about' }
+              { name: 'Contact', id: 'about' }
             ].map((item) => (
               <button
                 key={item.name}
@@ -68,10 +68,10 @@ const Navbar = () => {
           <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="container mx-auto container-padding py-8 space-y-6">
               {[
-                { name: 'Platform', id: 'platform' },
+                { name: 'Features', id: 'platform' },
                 { name: 'Science', id: 'science' },
                 { name: 'Market', id: 'market' },
-                { name: 'About Us', id: 'about' }
+                { name: 'Contact', id: 'about' }
               ].map((item) => (
                 <button
                   key={item.name}

@@ -19,16 +19,24 @@ const HeroSection = () => {
             {/* Left Column - Text Content */}
             <div className="text-center lg:text-left space-y-8 slide-up">
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
-                Preventing <span className="text-blue-600">Significant Capital and Time Loss</span> Before It Happens
+              <h1 className="font-sans text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-tight text-balance">
+                Optimize <span className="text-blue-600">Raw Material Impact</span> with AI
               </h1>
 
               {/* Subheadline */}
               <p className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed font-medium">
-                AI-Powered Predictive Intelligence for Advanced Therapy Manufacturing - 
-                Turn Raw Material Data Into Your 
-                <span className="text-blue-600 font-semibold"> Competitive Advantage</span>
+                Discover RMPredictive: AI-driven efficiency for advanced therapy manufacturing
               </p>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <button 
+                  onClick={scrollToNext}
+                  className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors"
+                >
+                  Explore RMPredictive
+                </button>
+              </div>
             </div>
 
             {/* Right Column - 3D Graphic */}
