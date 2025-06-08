@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
@@ -32,7 +33,7 @@ const ScienceSection = () => {
     {
       icon: Database,
       title: "Data Ingestion",
-      oneLine: "Comprehensive data collection from certificates, measurements, and batch records",
+      oneLine: "Multi-source data collection and harmonization",
       description: "Our platform seamlessly integrates Certificate of Analysis (COA) data, real-time process parameter monitoring, and historical batch record analysis. This multi-source data harmonization creates a unified foundation for predictive analytics, ensuring no critical information is overlooked in the manufacturing optimization process.",
       color: "from-blue-500 to-cyan-600",
       bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
@@ -41,7 +42,7 @@ const ScienceSection = () => {
     {
       icon: Brain,
       title: "AI Analysis",
-      oneLine: "Deep learning identifies quality indicators and manufacturing risk factors",
+      oneLine: "Pattern recognition and statistical correlation",
       description: "Sophisticated machine learning algorithms perform deep pattern recognition and statistical correlation analysis across your manufacturing data. Our AI identifies key quality indicators, detects anomalies before they impact production, and uncovers hidden relationships between raw material characteristics and final product outcomes.",
       color: "from-purple-500 to-pink-600",
       bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
@@ -50,7 +51,7 @@ const ScienceSection = () => {
     {
       icon: Zap,
       title: "Predictive Modeling",
-      oneLine: "Real-time outcome predictions across diverse therapeutic modalities",
+      oneLine: "Real-time manufacturing outcome predictions",
       description: "Our validated predictive models generate real-time manufacturing outcome predictions with industry-leading 98.7% accuracy. The system supports multiple therapeutic modalities and continuously refines its predictions through ongoing learning, enabling proactive decision-making throughout the manufacturing process.",
       color: "from-yellow-500 to-orange-600",
       bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
@@ -59,7 +60,7 @@ const ScienceSection = () => {
     {
       icon: Shield,
       title: "Output Generation",
-      oneLine: "Actionable recommendations for process optimization and yield improvement",
+      oneLine: "Actionable optimization recommendations",
       description: "Transform complex analytical insights into clear, actionable recommendations for your manufacturing team. Our platform delivers specific process optimization strategies, yield improvement guidance, quality enhancement insights, and comprehensive regulatory compliance reports that drive measurable manufacturing improvements.",
       color: "from-green-500 to-emerald-600",
       bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
@@ -99,7 +100,7 @@ const ScienceSection = () => {
           ))}
         </div>
 
-        {/* Process Flow Steps - Dropdown Approach */}
+        {/* Process Flow Steps */}
         <div className="mb-16 sm:mb-20">
           <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
             How It Works
@@ -113,7 +114,7 @@ const ScienceSection = () => {
                   onMouseEnter={() => setHoveredStep(index)}
                   onMouseLeave={() => setHoveredStep(null)}
                 >
-                  <div className={`absolute top-3 right-3 text-xs text-gray-400 transition-opacity duration-300 ${hoveredStep === index ? 'opacity-0' : 'opacity-60 group-hover:opacity-100'}`}>
+                  <div className={`absolute top-3 right-3 text-xs text-gray-400 transition-opacity duration-300 ${hoveredStep === index ? 'opacity-100' : 'opacity-0'}`}>
                     hover for details
                   </div>
                   
@@ -121,17 +122,17 @@ const ScienceSection = () => {
                     <step.icon className="h-5 w-5 text-white" />
                   </div>
                   
-                  <h4 className="font-medium text-gray-900 mb-2 text-sm">
+                  <h4 className="font-medium text-gray-900 mb-2 text-base">
                     {step.title}
                   </h4>
                   
-                  <p className="text-xs text-gray-600 leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {step.oneLine}
                   </p>
                 </div>
 
-                {/* Dropdown Content */}
-                <div className={`absolute top-full left-0 right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-4 transition-all duration-300 ${
+                {/* Expanded Content Below */}
+                <div className={`mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-4 transition-all duration-300 ${
                   hoveredStep === index 
                     ? 'opacity-100 translate-y-0 pointer-events-auto' 
                     : 'opacity-0 -translate-y-2 pointer-events-none'
