@@ -15,7 +15,7 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           <div className="relative">
             <div className="absolute -left-4 -top-4 bg-red-100/20 rounded-full p-3">
               <FlaskRoundIcon className="h-6 w-6 text-red-600" />
@@ -111,22 +111,25 @@ const ProblemSection = () => {
                       <strong className="font-medium">Purpose-built for complex biologics</strong> where process sensitivity is highest
                     </p>
                   </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                    </div>
+                    <p className="text-gray-700">
+                      <strong className="font-medium">Upstream Focus:</strong> Unlike LIMS and MES, RMPredictive uniquely predicts quality outcomes based on raw material variability
+                    </p>
+                  </li>
+                  <li className="flex">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                      <span className="h-2 w-2 rounded-full bg-green-500"></span>
+                    </div>
+                    <p className="text-gray-700">
+                      <strong className="font-medium">CoA Intelligence:</strong> Automatically digitizes and analyzes Certificates of Analysis
+                    </p>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
-          </div>
-        </div>
-
-        {/* Centered advantage box moved down */}
-        <div className="max-w-4xl mx-auto">
-          <div className="mt-12 p-6 bg-blue-50 rounded-lg mx-auto max-w-3xl">
-            <h4 className="font-sans font-semibold text-blue-800 mb-3 text-center">The RMPredictive Advantage</h4>
-            <div className="space-y-3 text-sm text-blue-700">
-              <p><strong>Upstream Focus:</strong> Unlike LIMS and MES, RMPredictive uniquely predicts quality outcomes based on raw material variability</p>
-              <p><strong>CoA Intelligence:</strong> Automatically digitizes and analyzes Certificates of Analysis</p>
-              <p><strong>Process-Specific Models:</strong> Understands unique sensitivities of advanced therapy manufacturing</p>
-              <p><strong>Proactive Prevention:</strong> Shift from 'detect and react' to 'predict and prevent'</p>
-            </div>
           </div>
         </div>
       </div>
