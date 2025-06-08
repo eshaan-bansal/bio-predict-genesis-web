@@ -3,6 +3,7 @@ import LazyFuturisticCube from './LazyFuturisticCube';
 import DemoRequestModal from './DemoRequestModal';
 import { useState } from 'react';
 import { useContent } from '../hooks/useContent';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
@@ -43,12 +44,21 @@ const HeroSection = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4 flex justify-center lg:justify-start">
-                  <button 
-                    onClick={handleRequestDemo}
-                    className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
-                  >
-                    {heroContent.ctaText}
-                  </button>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button 
+                          onClick={handleRequestDemo}
+                          className="bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-blue-700 transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
+                        >
+                          Request Demo
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>See 98.7% Accuracy</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </div>
               </div>
 
