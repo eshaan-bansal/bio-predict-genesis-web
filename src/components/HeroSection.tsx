@@ -1,6 +1,5 @@
 
 import FuturisticCube from './FuturisticCube';
-import { ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToNext = () => {
@@ -63,21 +62,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <button 
-          onClick={scrollToNext}
-          className="flex flex-col items-center space-y-2 text-gray-600 hover:text-gray-900 transition-colors group"
-          aria-label="Scroll to learn more"
-        >
-          <span className="text-sm font-medium">Learn More</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-gray-600 transition-colors">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-gray-600 transition-colors"></div>
-          </div>
-          <ChevronDown className="w-4 h-4 animate-bounce" />
-        </button>
       </div>
     </section>
   );
