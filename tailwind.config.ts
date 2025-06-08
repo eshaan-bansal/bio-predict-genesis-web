@@ -59,11 +59,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Earthy and Elegant color palette
-				'olive-green': 'hsl(var(--olive-green))',
-				'sand-beige': 'hsl(var(--sand-beige))',
-				'ivory': 'hsl(var(--ivory))',
-				'dark-brown': 'hsl(var(--dark-brown))',
+				// New color palette
+				'midnight-blue': 'hsl(var(--midnight-blue))',
+				'electric-teal': 'hsl(var(--electric-teal))',
+				'gunmetal-gray': 'hsl(var(--gunmetal-gray))',
+				'neon-purple': 'hsl(var(--neon-purple))',
+				'silver': 'hsl(var(--silver))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

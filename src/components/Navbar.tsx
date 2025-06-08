@@ -60,13 +60,13 @@ const Navbar = () => {
       {/* Skip Navigation for Accessibility */}
       <a 
         href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-olive-green text-ivory px-4 py-2 rounded-lg z-[100]"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-[100]"
       >
         Skip to main content
       </a>
       
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-ivory/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm' : 'bg-transparent'
       }`}>
         <div className="container mx-auto container-padding">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className="flex items-center">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-xl sm:text-2xl font-medium text-dark-brown hover:text-olive-green transition-colors"
+                className="text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
               >
                 RMPredictive
               </button>
@@ -88,8 +88,8 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`font-medium transition-colors min-h-[44px] min-w-[44px] touch-manipulation px-3 py-2 rounded-md ${
                     activeSection === item.id 
-                      ? 'text-olive-green bg-sand-beige/20' 
-                      : 'text-dark-brown hover:text-olive-green hover:bg-sand-beige/10'
+                      ? 'text-blue-600 bg-blue-50' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
                   {item.name}
@@ -99,7 +99,7 @@ const Navbar = () => {
               {/* Primary CTA Button */}
               <Button 
                 onClick={handleRequestDemo}
-                className="bg-olive-green hover:bg-olive-green/90 text-ivory px-6 py-2 min-h-[44px] shadow-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 min-h-[44px]"
               >
                 Request Demo
               </Button>
@@ -109,7 +109,7 @@ const Navbar = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-dark-brown p-2 min-h-[44px] min-w-[44px] touch-manipulation hover:text-olive-green hover:bg-sand-beige/10 rounded-md transition-colors"
+                className="text-gray-600 p-2 min-h-[44px] min-w-[44px] touch-manipulation hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
                 aria-label="Toggle mobile menu"
                 aria-expanded={isMobileMenuOpen}
               >
@@ -120,7 +120,7 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden bg-ivory border-t border-border shadow-lg rounded-b-lg">
+            <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg rounded-b-lg">
               <div className="container mx-auto container-padding py-6 space-y-2">
                 {navigationItems.map((item) => (
                   <button
@@ -128,8 +128,8 @@ const Navbar = () => {
                     onClick={() => scrollToSection(item.id)}
                     className={`block w-full text-left font-medium py-4 px-4 transition-colors rounded-lg min-h-[44px] touch-manipulation ${
                       activeSection === item.id 
-                        ? 'text-olive-green bg-sand-beige/20' 
-                        : 'text-dark-brown hover:text-olive-green hover:bg-sand-beige/10'
+                        ? 'text-blue-600 bg-blue-50' 
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                     }`}
                   >
                     {item.name}
@@ -137,10 +137,10 @@ const Navbar = () => {
                 ))}
                 
                 {/* Mobile CTA Button */}
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-gray-100">
                   <Button 
                     onClick={handleRequestDemo}
-                    className="w-full bg-olive-green hover:bg-olive-green/90 text-ivory py-4 min-h-[44px] shadow-lg"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 min-h-[44px]"
                   >
                     Request Demo
                   </Button>
