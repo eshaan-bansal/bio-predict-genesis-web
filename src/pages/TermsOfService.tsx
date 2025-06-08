@@ -13,7 +13,7 @@ const TermsOfService = () => {
             Terms of Service
           </h1>
           
-          <div className="space-y-8 text-muted-foreground leading-relaxed">
+          <div className="space-y-8 text-foreground leading-relaxed">
             <div>
               <p className="font-semibold text-foreground mb-2">Effective Date: June 6th 2025</p>
               <p>
