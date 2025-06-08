@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Target, Award } from 'lucide-react';
+import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
@@ -25,6 +25,29 @@ const ScienceSection = () => {
       value: "30%",
       label: "Yield Improvement",
       description: "Average expected increase in manufacturing efficiency achieved by our clients"
+    }
+  ];
+
+  const processSteps = [
+    {
+      icon: Database,
+      title: "Data Ingestion",
+      description: "Collect and integrate raw material data from multiple sources including COA data, in-process measurements, and historical batch records."
+    },
+    {
+      icon: Brain,
+      title: "AI Analysis",
+      description: "Advanced machine learning algorithms analyze patterns and correlations in the data to identify key quality indicators and risk factors."
+    },
+    {
+      icon: Zap,
+      title: "Predictive Modeling",
+      description: "Generate real-time predictions for manufacturing outcomes with 98.7% accuracy across diverse therapeutic modalities."
+    },
+    {
+      icon: Shield,
+      title: "Output Generation",
+      description: "Deliver actionable insights and recommendations to optimize manufacturing processes and improve yield efficiency."
     }
   ];
 
@@ -59,6 +82,27 @@ const ScienceSection = () => {
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Process Flow Steps */}
+        <div className="mb-16 sm:mb-20">
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
+            How It Works
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {processSteps.map((step, index) => (
+              <div 
+                key={step.title}
+                className="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors duration-300"
+              >
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <step.icon className="h-6 w-6 text-gray-700" />
+                </div>
+                <h4 className="font-medium text-gray-900 mb-3">{step.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         
         {/* Methodology */}
