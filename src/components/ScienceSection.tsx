@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
-  const [selectedStep, setSelectedStep] = useState<number | null>(null);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const stats = [
     {
@@ -33,7 +32,6 @@ const ScienceSection = () => {
     {
       icon: Database,
       title: "Data Ingestion",
-      shortDescription: "Collect and integrate raw material data from multiple sources.",
       oneLine: "Comprehensive data collection from certificates, measurements, and batch records",
       description: "Our platform seamlessly integrates Certificate of Analysis (COA) data, real-time process parameter monitoring, and historical batch record analysis. This multi-source data harmonization creates a unified foundation for predictive analytics, ensuring no critical information is overlooked in the manufacturing optimization process.",
       color: "from-blue-500 to-cyan-600",
@@ -43,7 +41,6 @@ const ScienceSection = () => {
     {
       icon: Brain,
       title: "AI Analysis",
-      shortDescription: "Advanced ML algorithms analyze patterns and correlations in the data.",
       oneLine: "Deep learning identifies quality indicators and manufacturing risk factors",
       description: "Sophisticated machine learning algorithms perform deep pattern recognition and statistical correlation analysis across your manufacturing data. Our AI identifies key quality indicators, detects anomalies before they impact production, and uncovers hidden relationships between raw material characteristics and final product outcomes.",
       color: "from-purple-500 to-pink-600",
@@ -53,7 +50,6 @@ const ScienceSection = () => {
     {
       icon: Zap,
       title: "Predictive Modeling",
-      shortDescription: "Generate real-time predictions with 98.7% accuracy.",
       oneLine: "Real-time outcome predictions across diverse therapeutic modalities",
       description: "Our validated predictive models generate real-time manufacturing outcome predictions with industry-leading 98.7% accuracy. The system supports multiple therapeutic modalities and continuously refines its predictions through ongoing learning, enabling proactive decision-making throughout the manufacturing process.",
       color: "from-yellow-500 to-orange-600",
@@ -63,7 +59,6 @@ const ScienceSection = () => {
     {
       icon: Shield,
       title: "Output Generation",
-      shortDescription: "Deliver actionable insights and recommendations.",
       oneLine: "Actionable recommendations for process optimization and yield improvement",
       description: "Transform complex analytical insights into clear, actionable recommendations for your manufacturing team. Our platform delivers specific process optimization strategies, yield improvement guidance, quality enhancement insights, and comprehensive regulatory compliance reports that drive measurable manufacturing improvements.",
       color: "from-green-500 to-emerald-600",
@@ -85,7 +80,6 @@ const ScienceSection = () => {
           </p>
         </div>
         
-        {/* Statistics Grid with Animation */}
         <div ref={elementRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
           {stats.map((stat, index) => (
             <div 
@@ -105,71 +99,72 @@ const ScienceSection = () => {
           ))}
         </div>
 
-        {/* Process Flow Steps - Hover Dropdowns */}
+        {/* Process Flow Steps - Dropdown Approach */}
         <div className="mb-16 sm:mb-20">
           <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
             How It Works
           </h3>
           
-          <TooltipProvider delayDuration={0}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {processSteps.map((step, index) => (
-                <Tooltip key={step.title}>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group relative">
-                      <div className="absolute top-3 right-3 text-xs text-gray-400 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                        hover for details
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {processSteps.map((step, index) => (
+              <div key={step.title} className="relative">
+                <div 
+                  className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  onMouseEnter={() => setHoveredStep(index)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                >
+                  <div className={`absolute top-3 right-3 text-xs text-gray-400 transition-opacity duration-300 ${hoveredStep === index ? 'opacity-0' : 'opacity-60 group-hover:opacity-100'}`}>
+                    hover for details
+                  </div>
+                  
+                  <div className={`w-10 h-10 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <step.icon className="h-5 w-5 text-white" />
+                  </div>
+                  
+                  <h4 className="font-medium text-gray-900 mb-2 text-sm">
+                    {step.title}
+                  </h4>
+                  
+                  <p className="text-xs text-gray-600 leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+                    {step.oneLine}
+                  </p>
+                </div>
+
+                {/* Dropdown Content */}
+                <div className={`absolute top-full left-0 right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl p-4 transition-all duration-300 ${
+                  hoveredStep === index 
+                    ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                    : 'opacity-0 -translate-y-2 pointer-events-none'
+                }`}>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
+                        <step.icon className="h-4 w-4 text-white" />
                       </div>
-                      
-                      <div className={`w-10 h-10 ${step.iconBg} rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                        <step.icon className="h-5 w-5 text-white" />
-                      </div>
-                      
-                      <h4 className="font-medium text-gray-900 mb-2 text-sm">
-                        {step.title}
-                      </h4>
-                      
-                      <p className="text-xs text-gray-600 leading-relaxed">
-                        {step.oneLine}
-                      </p>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent 
-                    side="bottom" 
-                    className="w-80 p-4 bg-white border border-gray-200 shadow-xl"
-                    sideOffset={8}
-                  >
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 ${step.iconBg} rounded-lg flex items-center justify-center shadow-lg`}>
-                          <step.icon className="h-4 w-4 text-white" />
+                      <div>
+                        <h4 className="font-medium text-gray-900 text-sm">
+                          {step.title}
+                        </h4>
+                        <div className="text-xs text-gray-500">
+                          Step {index + 1} of {processSteps.length}
                         </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm">
-                            {step.title}
-                          </h4>
-                          <div className="text-xs text-gray-500">
-                            Step {index + 1} of {processSteps.length}
-                          </div>
-                        </div>
                       </div>
-                      
-                      <div className="text-xs font-medium text-blue-600 border-l-2 border-blue-200 pl-3">
-                        {step.oneLine}
-                      </div>
-                      
-                      <p className="text-gray-600 leading-relaxed text-xs">
-                        {step.description}
-                      </p>
                     </div>
-                  </TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          </TooltipProvider>
+                    
+                    <div className="text-xs font-medium text-blue-600 border-l-2 border-blue-200 pl-3">
+                      {step.oneLine}
+                    </div>
+                    
+                    <p className="text-gray-600 leading-relaxed text-xs">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         
-        {/* Methodology */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 lg:p-12">
             <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
