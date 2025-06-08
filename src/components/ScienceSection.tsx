@@ -3,7 +3,7 @@ import React from 'react';
 import { TrendingUp, Target, Award } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import InteractiveProcessFlow from './InteractiveProcessFlow';
+import AnimatedFlowDiagram from './AnimatedFlowDiagram';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -62,9 +62,9 @@ const ScienceSection = () => {
           ))}
         </div>
 
-        {/* Interactive Process Flow */}
+        {/* Animated Flow Diagram */}
         <div className="mb-16 sm:mb-20">
-          <InteractiveProcessFlow />
+          <AnimatedFlowDiagram />
         </div>
         
         {/* Methodology */}
