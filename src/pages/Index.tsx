@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
@@ -7,7 +6,6 @@ import ScienceSection from "@/components/ScienceSection";
 import MarketSection from "@/components/MarketSection";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
-import ContentManager from "@/components/ContentManager";
 
 const Index = () => {
   return (
@@ -22,7 +20,6 @@ const Index = () => {
         <AboutSection />
       </main>
       <Footer />
-      <ContentManager />
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "headline": "Optimize Biopharmaceutical Manufacturing with AI-Driven Raw Material Insights",
@@ -65,7 +64,7 @@
     ]
   },
   "science": {
-    "title": "Proven Science, Measurable Impact",
+    "title": "Measurable Impacts",
     "subtitle": "Our proprietary algorithms are trained on extensive datasets from leading biomanufacturing facilities, delivering validated improvements across all metrics.",
     "stats": [
       {
@@ -133,8 +132,7 @@
     ]
   },
   "about": {
-    "title": "Meet Our Biopharmaceutical Manufacturing AI Experts",
-    "subtitle": "Meet the co-founders revolutionizing biopharmaceutical manufacturing efficiency through advanced predictive analytics and raw material optimization technology",
+    "title": "Meet the Team",
     "founders": [
       {
         "name": "Jamie Levitan",
@@ -166,12 +164,7 @@
     },
     "solutions": {
       "title": "Solutions",
-      "items": [
-        "Predictive Analytics",
-        "Data Integration", 
-        "Risk Prevention",
-        "Yield Optimization"
-      ]
+      "items": []
     },
     "contact": {
       "title": "Get Started",

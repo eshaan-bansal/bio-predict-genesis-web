@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
@@ -73,7 +72,7 @@ const ScienceSection = () => {
       <div className="container mx-auto container-padding">
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
-            Proven Science, Measurable Impact
+            Measurable Impacts
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
             Our proprietary algorithms are trained on extensive datasets from leading 

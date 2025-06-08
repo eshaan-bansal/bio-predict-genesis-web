@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { RocketIcon } from "lucide-react";
 
@@ -6,7 +5,7 @@ const CTASection = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-biopredict-blue to-biopredict-purple opacity-90 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent opacity-90 -z-10"></div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] -z-10"></div>
       
       <div className="absolute right-0 bottom-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-5"></div>
@@ -23,10 +22,10 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-white text-biopredict-purple hover:bg-white/90">
+            <Button size="lg" className="bg-primary text-foreground hover:bg-primary/90">
               Schedule a Demo
             </Button>
-            <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+            <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-primary/10">
               Download Case Study
             </Button>
           </div>

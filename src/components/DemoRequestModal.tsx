@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { X, Calendar, User, Mail, Building } from 'lucide-react';
@@ -17,13 +16,13 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
+    // TODO: Integrate with an email sending service (e.g., EmailJS, Formspree, or backend API)
+    // Send formData to jamie@rawmaterialpredictive.com and eshaan@rawmaterialpredictive.com
+    // Example: await sendEmail(formData);
     console.log('Demo request submitted:', formData);
-    
-    // Simple success handling for now
-    alert('Thank you! We\'ll contact you within 24 hours to schedule your demo.');
+    alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
     setFormData({ name: '', email: '', company: '', phone: '', message: '' });
     onClose();
   };
@@ -69,7 +68,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-black placeholder:text-gray-500"
               placeholder="Enter your full name"
             />
           </div>
@@ -86,7 +85,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-black placeholder:text-gray-500"
               placeholder="your.email@company.com"
             />
           </div>
@@ -103,7 +102,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               required
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-black placeholder:text-gray-500"
               placeholder="Your company name"
             />
           </div>
@@ -118,7 +117,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-black placeholder:text-gray-500"
               placeholder="+1 (555) 123-4567"
             />
           </div>
@@ -133,7 +132,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               rows={3}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-black placeholder:text-gray-500"
               placeholder="Describe your current processes, pain points, or specific areas where you'd like to see improvement..."
             />
           </div>
@@ -150,7 +149,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
               type="button"
               variant="outline"
               onClick={onClose}
-              className="px-6"
+              className="px-6 bg-black text-white hover:bg-black/90 border-none"
             >
               Cancel
             </Button>

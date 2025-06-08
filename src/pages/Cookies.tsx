@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -16,7 +15,7 @@ const Cookies = () => {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <Link to="/">
-                <Button size="lg" className="mb-6">
+                <Button size="lg" className="mb-6 bg-black text-white hover:bg-black/90">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Main Website
                 </Button>
