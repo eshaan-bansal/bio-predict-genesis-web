@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -36,25 +37,25 @@ const Footer = () => {
         
         {/* Footer Content */}
         <div className="container mx-auto container-padding py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {/* Brand */}
-            <div className="md:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+            {/* Brand - Centered */}
+            <div className="md:col-span-3 text-center mb-8">
               <div className="mb-6">
                 <span className="text-2xl font-sans font-medium">RMPredictive</span>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 AI-driven efficiency for advanced therapy manufacturing.
               </p>
             </div>
             
             {/* Navigation */}
-            <div>
+            <div className="text-center">
               <h3 className="font-sans font-medium mb-6 text-gray-300">Navigation</h3>
               <ul className="space-y-4 text-gray-400">
                 <li>
                   <button 
                     onClick={() => scrollToSection('problem')}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Problem
                   </button>
@@ -62,7 +63,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('platform')}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Platform
                   </button>
@@ -70,7 +71,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('science')}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Science
                   </button>
@@ -78,7 +79,7 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('market')}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Market
                   </button>
@@ -87,7 +88,7 @@ const Footer = () => {
             </div>
             
             {/* Solutions */}
-            <div>
+            <div className="text-center">
               <h3 className="font-sans font-medium mb-6 text-gray-300">Solutions</h3>
               <ul className="space-y-4 text-gray-400">
                 <li>Predictive Analytics</li>
@@ -97,14 +98,14 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Contact & Support */}
-            <div>
+            {/* Contact */}
+            <div className="text-center">
               <h3 className="font-sans font-medium mb-6 text-gray-300">Get Started</h3>
               <ul className="space-y-4 text-gray-400">
                 <li>
                   <button 
                     onClick={handleRequestDemo}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Request Demo
                   </button>
@@ -112,19 +113,17 @@ const Footer = () => {
                 <li>
                   <button 
                     onClick={() => scrollToSection('about')}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors"
                   >
                     Contact Us
                   </button>
                 </li>
-                <li>Support</li>
-                <li>Documentation</li>
               </ul>
             </div>
           </div>
           
           {/* Bottom Bar */}
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center max-w-4xl mx-auto">
             <p className="text-gray-400 mb-4 md:mb-0">
               © {new Date().getFullYear()} RMPredictive. All rights reserved.
             </p>
