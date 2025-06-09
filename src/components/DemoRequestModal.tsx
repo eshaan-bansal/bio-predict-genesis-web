@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { X, Calendar, User, Mail, Building } from 'lucide-react';
 import emailjs from '@emailjs/browser';
@@ -19,6 +19,11 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init('rX80Bwga544cxuI9z');
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -30,24 +35,28 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
         from_name: formData.name,
         from_email: formData.email,
         company: formData.company,
-        phone: formData.phone,
-        message: formData.message,
+        phone: formData.phone || 'Not provided',
+        message: formData.message || 'No message provided',
         to_email: 'eshaan@rawmaterialpredictive.com, jamie@rawmaterialpredictive.com'
       };
 
-      await emailjs.send(
+      const response = await emailjs.send(
         'service_vcs419w',
         'template_vzi1g0u',
         templateParams,
         'rX80Bwga544cxuI9z'
       );
 
-      alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-      onClose();
+      if (response.status === 200) {
+        alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
+        setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+        onClose();
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (err) {
-      setError('Failed to send the request. Please try again or contact us directly.');
       console.error('Error sending email:', err);
+      setError('Failed to send the request. Please try again or contact us directly at eshaan@rawmaterialpredictive.com');
     } finally {
       setIsSubmitting(false);
     }
