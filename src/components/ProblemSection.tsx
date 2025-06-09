@@ -16,12 +16,12 @@ const ProblemSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           <div className="relative">
-            <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 bg-red-100/20 rounded-full p-2 sm:p-3">
-              <FlaskRoundIcon className="h-5 w-5 sm:h-6 sm:w-6 text-red-600" />
+            <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 bg-black/10 rounded-full p-2 sm:p-3">
+              <FlaskRoundIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
             </div>
             <Card className="overflow-hidden border-0 shadow-lg h-full bg-gradient-to-br from-white to-gray-50">
               <CardContent className="p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4">Manufacturing Challenges</h3>
+                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4 text-black">Manufacturing Challenges</h3>
                 
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="flex">
@@ -70,12 +70,12 @@ const ProblemSection = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 bg-green-100/20 rounded-full p-2 sm:p-3">
-              <DnaIcon className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
+            <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 bg-black/10 rounded-full p-2 sm:p-3">
+              <DnaIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
             </div>
             <Card className="overflow-hidden border-0 shadow-lg h-full bg-gradient-to-br from-white to-gray-50">
               <CardContent className="p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4">RM Predictive: AI for Smarter Manufacturing</h3>
+                <h3 className="text-lg sm:text-xl font-sans font-bold mb-4 text-black">RMPredictive: AI for Smarter Manufacturing</h3>
                 
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="flex">

@@ -1,5 +1,5 @@
 import DemoRequestModal from './DemoRequestModal';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useContent } from '../hooks/useContent';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -7,6 +7,7 @@ const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const { content, loading } = useContent();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -17,6 +18,17 @@ const HeroSection = () => {
     window.addEventListener('resize', checkMobile);
     
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay might be blocked, but we tried
+        });
+      }
+    }
   }, []);
 
   const handleRequestDemo = () => {
@@ -38,12 +50,15 @@ const HeroSection = () => {
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#e6f3ff' }}>
         {/* Background Video */}
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover z-0"
           src="/CompleteRendering.mp4"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
+          poster="/fallback-poster.jpg"
         />
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-0" />
@@ -55,7 +70,7 @@ const HeroSection = () => {
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium leading-tight text-balance">
-                  <span className="text-blue-300">RM</span><span className="text-blue-300">Predictive</span>
+                  <span className="text-blue-300 font-instrument-serif">RM</span><span className="text-blue-300 font-instrument-serif">Predictive</span>
                 </h1>
 
                 {/* Subheadline */}
