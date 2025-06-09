@@ -81,7 +81,7 @@ const Navbar = () => {
                   className="h-[78px] w-[78px] object-contain"
                   style={{ background: 'transparent' }}
                 />
-                <span>RMPredictive</span>
+                <span className="font-instrument-serif">RMPredictive</span>
               </button>
             </div>
 

@@ -42,7 +42,7 @@ const Footer = () => {
       <footer className="bg-black text-white">
         <div className="container mx-auto container-padding py-20 flex flex-col items-center justify-center text-center">
           {/* Company Info */}
-          <h3 className="text-3xl font-bold mb-4">
+          <h3 className="text-3xl font-bold mb-4 font-instrument-serif text-white sm:text-gray-900">
             {footerContent.company.name}
           </h3>
           <p className="text-lg leading-relaxed mb-8 max-w-2xl">
