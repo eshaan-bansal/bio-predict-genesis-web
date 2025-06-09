@@ -59,6 +59,7 @@ const HeroSection = () => {
           playsInline
           preload="auto"
           poster="/fallback-poster.jpg"
+          controls={false}
         />
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-0" />
@@ -85,17 +86,17 @@ const HeroSection = () => {
                   {/* No 3D animation here, just empty space for layout */}
                 </div>
                 {/* Floating data points around the (now video) background */}
-                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.accuracy}</div>
-                  <div className="text-xs text-gray-600">Prediction Accuracy</div>
+                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse text-base sm:text-lg">
+                  <div className="font-semibold text-gray-900">{heroContent.statistics.accuracy}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Prediction Accuracy</div>
                 </div>
-                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-300">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.savings}</div>
-                  <div className="text-xs text-gray-600">Annual Savings</div>
+                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse delay-300 text-base sm:text-lg">
+                  <div className="font-semibold text-gray-900">{heroContent.statistics.savings}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Annual Savings</div>
                 </div>
-                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-4 sm:py-2 shadow-lg animate-pulse delay-700">
-                  <div className="text-xs sm:text-sm font-medium text-gray-900">{heroContent.statistics.fasterRCA}</div>
-                  <div className="text-xs text-gray-600">Faster RCA</div>
+                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse delay-700 text-base sm:text-lg">
+                  <div className="font-semibold text-gray-900">{heroContent.statistics.fasterRCA}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Faster RCA</div>
                 </div>
               </div>
             </div>
