@@ -46,7 +46,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
 
       const response = await emailjs.send(
         'service_vcs419w',
-        'template_utnfuzt',
+        'template_58770q7',
         templateParams
       );
 
