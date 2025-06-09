@@ -43,7 +43,7 @@ const HeroSection = () => {
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium leading-tight text-balance">
-                  <span className="text-[#0a2259]">RM</span><span className="text-blue-400">Predictive</span>
+                  <span className="text-[#0a2259]">RM</span><span className="text-blue-300">Predictive</span>
                 </h1>
 
                 {/* Subheadline */}
