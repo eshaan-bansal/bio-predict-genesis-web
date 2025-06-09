@@ -40,6 +40,8 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
         to_email: 'eshaan@rawmaterialpredictive.com, jamie@rawmaterialpredictive.com'
       };
 
+      console.log('Sending email with params:', templateParams);
+
       const response = await emailjs.send(
         'service_vcs419w',
         'template_vzi1g0u',
@@ -47,16 +49,18 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
         'rX80Bwga544cxuI9z'
       );
 
+      console.log('EmailJS response:', response);
+
       if (response.status === 200) {
         alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
         setFormData({ name: '', email: '', company: '', phone: '', message: '' });
         onClose();
       } else {
-        throw new Error('Failed to send email');
+        throw new Error(`Failed to send email: ${response.text}`);
       }
     } catch (err) {
       console.error('Error sending email:', err);
-      setError('Failed to send the request. Please try again or contact us directly at eshaan@rawmaterialpredictive.com');
+      setError(`Failed to send the request. Please try again or contact us directly at eshaan@rawmaterialpredictive.com. Error: ${err instanceof Error ? err.message : 'Unknown error'}`);
     } finally {
       setIsSubmitting(false);
     }
