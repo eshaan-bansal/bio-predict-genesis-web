@@ -20,8 +20,10 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Initialize EmailJS
-    emailjs.init('rX80Bwga544cxuI9z');
+    // Initialize EmailJS with the public key
+    emailjs.init({
+      publicKey: 'rX80Bwga544cxuI9z'
+    });
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -45,8 +47,7 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
       const response = await emailjs.send(
         'service_vcs419w',
         'template_utnfuzt',
-        templateParams,
-        'rX80Bwga544cxuI9z'
+        templateParams
       );
 
       console.log('EmailJS response:', response);
