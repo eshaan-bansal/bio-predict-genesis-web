@@ -37,27 +37,14 @@ const HeroSection = () => {
     <>
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#e6f3ff' }}>
         {/* Background Video */}
-        {!isMobile && (
-          <video
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            src="/CompleteRendering.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        )}
-        {/* Static background for mobile */}
-        {isMobile && (
-          <div 
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            style={{
-              backgroundImage: 'url(/CompleteRendering.mp4)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-        )}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/CompleteRendering.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-0" />
         {/* Content */}
