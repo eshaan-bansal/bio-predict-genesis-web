@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { X, Calendar, User, Mail, Building } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface DemoRequestModalProps {
   isOpen: boolean;
@@ -15,16 +16,41 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with an email sending service (e.g., EmailJS, Formspree, or backend API)
-    // Send formData to jamie@rawmaterialpredictive.com and eshaan@rawmaterialpredictive.com
-    // Example: await sendEmail(formData);
-    console.log('Demo request submitted:', formData);
-    alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
-    setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-    onClose();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      // Send email to both recipients
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: 'eshaan@rawmaterialpredictive.com, jamie@rawmaterialpredictive.com'
+      };
+
+      await emailjs.send(
+        'service_vcs419w',
+        'template_vzi1g0u',
+        templateParams,
+        'rX80Bwga544cxuI9z'
+      );
+
+      alert('Thank you! Your request has been sent. We\'ll contact you within 24 hours to schedule your demo.');
+      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+      onClose();
+    } catch (err) {
+      setError('Failed to send the request. Please try again or contact us directly.');
+      console.error('Error sending email:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,6 +82,12 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          {error && (
+            <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm">
+              {error}
+            </div>
+          )}
+
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               <User className="h-4 w-4 inline mr-2" />
@@ -141,15 +173,23 @@ const DemoRequestModal = ({ isOpen, onClose }: DemoRequestModalProps) => {
             <Button
               type="submit"
               className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+              disabled={isSubmitting}
             >
-              <Calendar className="h-4 w-4 mr-2" />
-              Schedule Demo
+              {isSubmitting ? (
+                'Sending...'
+              ) : (
+                <>
+                  <Calendar className="h-4 w-4 mr-2" />
+                  Schedule Demo
+                </>
+              )}
             </Button>
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
               className="px-6 bg-black text-white hover:bg-black/90 border-none"
+              disabled={isSubmitting}
             >
               Cancel
             </Button>
