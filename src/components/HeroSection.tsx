@@ -1,11 +1,23 @@
 import DemoRequestModal from './DemoRequestModal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useContent } from '../hooks/useContent';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { content, loading } = useContent();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleRequestDemo = () => {
     setIsDemoModalOpen(true);
@@ -25,14 +37,27 @@ const HeroSection = () => {
     <>
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#f5f3f0' }}>
         {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="/CompleteRendering.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {!isMobile && (
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src="/CompleteRendering.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        )}
+        {/* Static background for mobile */}
+        {isMobile && (
+          <div 
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            style={{
+              backgroundImage: 'url(/CompleteRendering.mp4)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+        )}
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-black/40 z-0" />
         {/* Content */}
