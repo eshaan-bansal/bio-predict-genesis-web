@@ -47,31 +47,33 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#e6f3ff' }}>
-        {/* Background Video or Static Image */}
-        {isMobile ? (
-          <img
-            src="/CompleteRendering-poster.jpg"
-            alt="Hero background"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            draggable="false"
-          />
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Video for Desktop, Gradient for Mobile */}
+        {!isMobile ? (
+          <>
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+              src="/CompleteRendering.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              poster="/CompleteRendering-poster.jpg"
+              controls={false}
+            />
+            <div className="absolute inset-0 bg-black/40 z-0" />
+          </>
         ) : (
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            src="/CompleteRendering.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/CompleteRendering-poster.jpg"
-            controls={false}
+          <div 
+            className="absolute inset-0 z-0" 
+            style={{
+              background: 'linear-gradient(135deg, #1e3a8a 0%, #4c1d95 50%, #1e1b4b 100%)'
+            }}
           />
         )}
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 z-0" />
+        
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
           <div className="max-w-7xl mx-auto">
