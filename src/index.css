@@ -129,3 +129,10 @@ video::-webkit-media-controls-start-playback-button {
 video::-webkit-media-controls-panel {
   display: none !important;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-up {
+    animation: none !important;
+  }
+}

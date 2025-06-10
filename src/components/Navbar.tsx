@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -75,12 +76,17 @@ const Navbar = () => {
                 onClick={() => scrollToSection('hero')}
                 className="flex items-center space-x-2 text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
               >
-                <img
-                  src="/RMPredictive_Logo.png"
-                  alt="RMPredictive Logo"
-                  className="h-[78px] w-[78px] object-contain"
-                  style={{ background: 'transparent' }}
-                />
+                <picture>
+                  <source srcSet="/RMPredictive_Logo.webp" type="image/webp" />
+                  <img
+                    src="/RMPredictive_Logo.png"
+                    srcSet="/RMPredictive_Logo.png 1x, /RMPredictive_Logo@2x.png 2x"
+                    sizes="(max-width: 768px) 78px, 78px"
+                    alt="RMPredictive Logo"
+                    className="h-[78px] w-[78px] object-contain"
+                    style={{ background: 'transparent' }}
+                  />
+                </picture>
                 <span className="font-instrument-serif">RMPredictive</span>
               </button>
             </div>
