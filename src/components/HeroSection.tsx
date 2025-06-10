@@ -9,6 +9,7 @@ const HeroSection = () => {
   const [autoplayFailed, setAutoplayFailed] = useState(false);
   const { content, loading } = useContent();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     if (videoRef.current) {
@@ -38,34 +39,34 @@ const HeroSection = () => {
   return (
     <>
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video with Fallback */}
-        {!autoplayFailed ? (
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            src="/CompleteRendering.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/CompleteRendering-poster.jpg"
-            controls={false}
-          />
-        ) : (
-          <picture>
-            <source srcSet="/CompleteRendering-poster.webp" type="image/webp" />
-            <img
-              src="/CompleteRendering-poster.jpg"
-              srcSet="/CompleteRendering-poster.jpg 1x, /CompleteRendering-poster@2x.jpg 2x"
-              sizes="(max-width: 768px) 100vw, 100vw"
-              alt="Hero visual fallback"
+        {/* Background Video for Desktop, Gradient for Mobile */}
+        {!isMobile ? (
+          <>
+            <video
+              ref={videoRef}
               className="absolute inset-0 w-full h-full object-cover z-0"
-              draggable={false}
+              src="/CompleteRendering.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              poster="/CompleteRendering-poster.jpg"
+              controls={false}
             />
-          </picture>
+            <div className="absolute inset-0 bg-black/40 z-0" />
+          </>
+        ) : (
+          <div 
+            className="absolute inset-0 z-0" 
+            style={{
+              background: 'linear-gradient(135deg, #1e40af 0%, #7e22ce 50%, #312e81 100%)',
+              backgroundSize: '200% 200%',
+              animation: 'gradient 15s ease infinite'
+            }}
+          />
         )}
-        <div className="absolute inset-0 bg-black/40 z-0" />
+        
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
           <div className="max-w-7xl mx-auto">
