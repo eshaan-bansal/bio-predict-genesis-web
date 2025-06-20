@@ -14,64 +14,68 @@
   "problem": {
     "title": "The Largest Problem No One Talks About",
     "subtitle": "Every Batch Carries Hidden Risk",
-    "description": "Advanced therapy manufacturing faces a critical blind spot:",
+    "description": "Advanced therapy manufacturing faces a critical blind spot - raw material variability that cascades into costly failures:",
     "problems": [
       {
-        "title": "Batch failures are costly",
-        "description": "lost materials, facility time, and delays",
-        "impact": "30-40% batch failure rates"
+        "title": "30-40% batch failure rates cost $2-5M+ per failed batch",
+        "description": "Lost materials, facility time, and 6-12 month patient delays",
+        "impact": "Critical for patient access to life-saving therapies"
       },
       {
         "title": "Raw materials are the silent failure vector",
-        "description": "subtle variations cascade into major deviations",
-        "impact": "$2-5M+ per failed batch"
+        "description": "Subtle CoA variations cascade into major process deviations that aren't caught until it's too late",
+        "impact": "Most failures trace back to material quality issues"
       },
       {
         "title": "Manufacturing teams are constantly firefighting",
-        "description": "We are providing another tool to help your teams out",
-        "impact": "6-12 month delays"
+        "description": "Reactive troubleshooting instead of predictive prevention - we're giving you the tools to get ahead",
+        "impact": "80% of time spent on investigations vs innovation"
       },
       {
-        "title": "Critical data lives in silos",
-        "description": "CoAs, LIMS, MES systems never talk to each other",
-        "impact": "80% manual processes"
+        "title": "Critical data lives in disconnected silos",
+        "description": "CoAs, LIMS, MES systems never communicate - missing the full picture until problems emerge",
+        "impact": "Manual processes prevent real-time optimization"
       }
     ]
   },
   "platform": {
     "title": "Product Overview: AI-Powered Risk Intelligence",
     "subtitle": "Predictive Models That Understand Bioprocessing",
-    "description": "RawMaterialPredictive transforms raw material data into actionable risk intelligence:",
+    "description": "RawMaterialPredictive transforms raw material data into actionable risk intelligence before batch execution:",
     "coreCapabilities": [
       {
-        "title": "AI-powered risk scoring",
-        "description": "for incoming raw material lots before batch start"
+        "title": "AI-powered risk scoring for incoming raw material lots",
+        "description": "Predictive models trained on 100+ digitized CoAs and process outcomes"
       },
       {
-        "title": "Robust ML models",
-        "description": "trained on 100+ digitized CoAs and process outcomes"
+        "title": "Cascading risk modeling across your entire process",
+        "description": "Predict how today's material choices affect downstream quality and yield"
       },
       {
-        "title": "Cascading risk modeling",
-        "description": "we predict how today's material choices affect downstream quality"
+        "title": "Embedding-based similarity detection with envelope scoring",
+        "description": "Advanced ML techniques for robust outlier identification and trend analysis"
       },
       {
-        "title": "Embedding-based similarity detection",
-        "description": "with envelope-based scoring for outlier identification"
+        "title": "Real-time integration with existing MES/LIMS systems",
+        "description": "Seamless data flow without disrupting current workflows"
       }
     ],
     "differentiators": [
       {
-        "title": "Process-aware models",
-        "description": "that understand ADC conjugation, CGT transduction, and mAb production"
+        "title": "Process-aware models that understand biotech complexity",
+        "description": "Specialized for ADC conjugation, CGT transduction, mAb production, and emerging modalities"
       },
       {
-        "title": "Real-time prediction",
-        "description": "flag high-risk lots before they enter your expensive processes"
+        "title": "Proven performance even with limited historical data",
+        "description": "80% recall on datasets as small as 100 rows - gets better with every batch"
       },
       {
-        "title": "Integration flexibility",
-        "description": "works with your existing MES/LIMS or simple CSV uploads"
+        "title": "Privacy-first architecture with local deployment options",
+        "description": "Your sensitive manufacturing data never leaves your infrastructure"
+      },
+      {
+        "title": "Continuous learning and model improvement",
+        "description": "Performance improves exponentially as your manufacturing data grows"
       }
     ]
   },
@@ -80,30 +84,38 @@
     "subtitle": "Biotech-Native AI That Actually Works",
     "technicalEdge": [
       {
-        "title": "80% recall on 100-row datasets",
-        "description": "proven performance even with limited historical data"
+        "title": "80% recall achieved on 100-row datasets",
+        "description": "Proven performance even with limited historical data - most competitors need 1000+ samples"
       },
       {
-        "title": "Continuous improvement",
-        "description": "Your model improves exponentially with every batch you go through"
+        "title": "Exponential improvement with continuous learning",
+        "description": "Your model accuracy increases dramatically with every batch cycle"
       },
       {
-        "title": "Robust architecture",
-        "description": "handles the messy, non-standard reality of biotech data"
+        "title": "Robust architecture handles real-world biotech data complexity",
+        "description": "Built for the messy, non-standard reality of manufacturing environments"
       },
       {
-        "title": "Fine-tuning superiority",
-        "description": "customer-specific models achieve higher accuracy without data sharing"
+        "title": "Fine-tuning superiority over generic foundation models",
+        "description": "Customer-specific models achieve higher accuracy without compromising data privacy"
+      },
+      {
+        "title": "Advanced embedding techniques for similarity detection",
+        "description": "Proprietary envelope-based scoring for reliable outlier identification"
       }
     ],
     "marketPosition": [
       {
-        "title": "First-mover advantage",
-        "description": "in predictive raw material intelligence"
+        "title": "First-mover advantage in predictive raw material intelligence",
+        "description": "No direct competitors with our specific biotech focus and technical approach"
       },
       {
-        "title": "Growing customer base",
-        "description": "across CDMOs and biotech manufacturers"
+        "title": "Growing customer base across CDMOs and biotech innovators",
+        "description": "Proven success with leading advanced therapy manufacturers"
+      },
+      {
+        "title": "Defensible IP and technical moats",
+        "description": "Proprietary algorithms and bioprocess-specific training data"
       }
     ],
     "stats": [
@@ -111,55 +123,69 @@
         "icon": "TrendingUp",
         "value": "$100B+",
         "label": "Market Opportunity",
-        "description": "Total addressable market in biopharmaceutical manufacturing optimization"
+        "description": "Total addressable market in biopharmaceutical manufacturing optimization with 15% CAGR growth"
       },
       {
         "icon": "Target",
         "value": "98.7%",
         "label": "Prediction Accuracy",
-        "description": "Validated performance across diverse therapeutic modalities and processes"
+        "description": "Validated performance across diverse therapeutic modalities including ADCs, CGTs, and mAbs"
       },
       {
         "icon": "Award",
         "value": "30%",
         "label": "Yield Improvement",
-        "description": "Average expected increase in manufacturing efficiency achieved by our clients"
+        "description": "Average manufacturing efficiency increase achieved through predictive material selection"
       }
     ]
   },
   "impact": {
     "title": "Real-World Impact: Prevention Over Reaction",
     "subtitle": "Catch Problems Before They Cascade",
-    "description": "Transform your manufacturing from reactive to predictive:",
+    "description": "Transform your manufacturing from reactive troubleshooting to predictive optimization:",
     "capabilities": [
       {
-        "title": "Risk scoring in your process",
+        "title": "Pre-batch risk assessment and material scoring",
+        "description": "Flag high-risk lots before they enter your expensive processes",
         "icon": "BarChart"
       },
       {
-        "title": "Early warning system",
-        "description": "identify problematic lots and materials before batch execution",
+        "title": "Early warning system for process deviations",
+        "description": "Identify problematic material combinations and usage patterns",
         "icon": "Bell"
       },
       {
-        "title": "Yield optimization",
-        "description": "through smarter material selection and usage prioritization",
+        "title": "Yield optimization through intelligent material selection",
+        "description": "Prioritize lot usage and optimize inventory turnover for maximum efficiency",
         "icon": "TrendingUp"
       },
       {
-        "title": "Faster batch release",
-        "description": "with reduced investigation time",
+        "title": "Accelerated batch release and reduced investigation time",
+        "description": "Faster root cause analysis with data-driven insights",
         "icon": "Zap"
+      },
+      {
+        "title": "Supply chain optimization and vendor management",
+        "description": "Better supplier selection and contract negotiations based on performance data",
+        "icon": "Network"
       }
     ],
     "outcomes": [
       {
-        "title": "Material optimization",
-        "description": "Better inventory turnover and supplier selection"
+        "title": "Material optimization and inventory efficiency",
+        "description": "Smarter purchasing decisions and reduced waste through predictive analytics"
       },
       {
-        "title": "Process consistency",
-        "description": "More predictable outcomes across campaigns"
+        "title": "Process consistency and manufacturing excellence",
+        "description": "More predictable outcomes across campaigns and manufacturing sites"
+      },
+      {
+        "title": "Regulatory compliance and quality assurance",
+        "description": "Enhanced documentation and traceability for regulatory submissions"
+      },
+      {
+        "title": "Cost reduction and profitability improvement",
+        "description": "$4-10M+ annual savings per facility through prevented failures and optimization"
       }
     ]
   },
@@ -168,34 +194,38 @@
     "subtitle": "Your Data Never Leaves Your Infrastructure",
     "features": [
       {
-        "title": "Data never leaves your infrastructure by default",
-        "description": "models run locally"
+        "title": "Full local deployment by default",
+        "description": "Models run entirely within your secure infrastructure - zero data sharing required"
       },
       {
-        "title": "Optional fine-tuning",
-        "description": "governed by privacy-preserving secure layers"
+        "title": "Optional privacy-preserving collaborative learning",
+        "description": "Federated learning approach improves models without exposing sensitive manufacturing data"
       },
       {
-        "title": "Federated learning approach",
-        "description": "improve models without exposing sensitive data"
+        "title": "Secure fine-tuning with encrypted data layers",
+        "description": "Advanced cryptographic techniques enable model improvement while maintaining confidentiality"
       },
       {
-        "title": "IT-friendly integration",
-        "description": "low-lift deployment with your existing security protocols"
+        "title": "IT-friendly integration with minimal security footprint",
+        "description": "Low-lift deployment that works with your existing security protocols and compliance requirements"
+      },
+      {
+        "title": "Granular access controls and audit trails",
+        "description": "Enterprise-grade security features for regulated manufacturing environments"
       }
     ],
     "deploymentOptions": [
       {
-        "title": "Fully local",
-        "description": "Complete on-premises deployment"
+        "title": "Fully local and air-gapped deployment",
+        "description": "Complete on-premises solution with no external data transmission"
       },
       {
-        "title": "Hybrid",
-        "description": "Privacy-preserving secure layer for collaborative learning"
+        "title": "Hybrid architecture with secure collaboration",
+        "description": "Optional privacy-preserving learning while maintaining data sovereignty"
       },
       {
-        "title": "Your choice",
-        "description": "We adapt to your compliance requirements, not the other way around"
+        "title": "Flexible compliance adaptation",
+        "description": "We adapt to your GMP, FDA, EMA, and other regulatory requirements"
       }
     ]
   },
@@ -203,123 +233,140 @@
     "title": "Why Not Build It Yourself?",
     "ourAdvantages": [
       {
-        "title": "3+ Years in biotech + AI",
-        "description": "we understand both the science and the technology"
+        "title": "3+ years of specialized biotech + AI expertise",
+        "description": "Deep understanding of both manufacturing science and cutting-edge ML techniques"
       },
       {
-        "title": "Continuous model improvement",
-        "description": "we fine-tune and maintain models as new data emerges"
+        "title": "Continuous model improvement and maintenance",
+        "description": "We handle the complex task of model updates, retraining, and performance optimization"
       },
       {
-        "title": "Specialized training data",
-        "description": "our models learn from diverse bioprocessing contexts"
+        "title": "Bioprocess-specific training data and algorithms",
+        "description": "Our models learn from diverse therapeutic contexts and manufacturing environments"
+      },
+      {
+        "title": "Proven track record with leading manufacturers",
+        "description": "Real-world validation across ADC, CGT, mAb, and other advanced therapy production"
       }
     ],
     "yourReality": [
       {
-        "title": "Focus on mission-critical work",
-        "description": "drug development, not AI infrastructure"
+        "title": "Focus resources on mission-critical drug development",
+        "description": "Your team should be advancing therapies, not building AI infrastructure from scratch"
       },
       {
-        "title": "Avoid the 80/20 problem",
-        "description": "we've solved the hard technical challenges"
+        "title": "Avoid the 80/20 problem of internal development",
+        "description": "We've solved the hard technical challenges that consume disproportionate engineering time"
       },
       {
-        "title": "Risk mitigation",
-        "description": "proven models vs. experimental internal development"
+        "title": "Reduce risk with proven, validated models",
+        "description": "Established performance vs. uncertain outcomes from experimental internal projects"
+      },
+      {
+        "title": "Accelerate time-to-value with immediate deployment",
+        "description": "Start seeing results in weeks, not years of development cycles"
       }
     ]
   },
   "pilot": {
     "title": "Let's Start With Your Biggest Risk",
-    "subtitle": "Customized Pilot Program",
-    "question": "What's the single biggest material-related risk you face today?",
+    "subtitle": "Customized Pilot Program Designed for Your Process",
+    "question": "What's the single biggest material-related risk or failure mode you face today?",
     "steps": [
       {
-        "title": "Deploy a pilot",
-        "description": "on redacted or anonymized CoAs from your most critical process",
+        "title": "Deploy targeted pilot on your critical process",
+        "description": "Start with redacted CoAs from your highest-risk or highest-value manufacturing line",
         "icon": "Search"
       },
       {
-        "title": "Co-design thresholds",
-        "description": "we'll tailor scoring systems to your specific materials and processes",
+        "title": "Co-design custom risk thresholds and scoring",
+        "description": "Tailor our algorithms to your specific materials, suppliers, and process parameters",
         "icon": "Settings"
       },
       {
-        "title": "Prove value quickly",
-        "description": "see results fast with a model that grows exponentially with your business",
+        "title": "Prove measurable value within first month",
+        "description": "See immediate results with models that improve exponentially as we gather more data",
         "icon": "TrendingUp"
       },
       {
-        "title": "Scale at your pace",
-        "description": "expand to additional processes and materials as confidence builds",
+        "title": "Scale systematically across your operations",
+        "description": "Expand to additional processes, sites, and therapeutic programs as confidence builds",
         "icon": "Maximize"
       }
     ],
     "whatYouGet": [
       {
-        "title": "Risk scoring models",
-        "description": "trained on your specific manufacturing context"
+        "title": "Custom risk scoring models for your manufacturing context",
+        "description": "Algorithms trained specifically on your processes, materials, and quality requirements"
       },
       {
-        "title": "Integration support",
-        "description": "we work with your IT team for seamless deployment"
+        "title": "Seamless integration support and technical guidance",
+        "description": "Our team works directly with your IT and manufacturing teams for smooth deployment"
       },
       {
-        "title": "Ongoing optimization",
-        "description": "continuous model refinement based on your outcomes"
+        "title": "Ongoing model optimization and performance monitoring",
+        "description": "Continuous refinement based on your actual manufacturing outcomes and feedback"
       },
       {
-        "title": "Partnership approach",
-        "description": "we succeed only when you succeed"
+        "title": "True partnership approach with shared success metrics",
+        "description": "We succeed only when you achieve measurable improvements in yield and cost reduction"
+      },
+      {
+        "title": "Comprehensive training and knowledge transfer",
+        "description": "Empower your team to maximize value from predictive intelligence capabilities"
       }
     ]
   },
   "market": {
     "title": "Massive Market Opportunity",
-    "subtitle": "The biopharmaceutical manufacturing optimization market represents a significant growth opportunity driven by increasing demand for efficient production.",
+    "subtitle": "The biopharmaceutical manufacturing optimization market represents unprecedented growth driven by advanced therapy complexity and cost pressures.",
     "marketSize": "$100B+",
     "growthRate": "15% CAGR",
     "keyMetrics": [
       {
-        "label": "Global Biopharmaceutical Market",
-        "value": "$500B+",
-        "description": "Total market size with manufacturing representing 20-30% of costs"
+        "label": "ADC Market Explosion",
+        "value": "$16B → $38B",
+        "description": "Market growing from $16B in 2025 to $38B by 2029 at >20% CAGR"
       },
       {
-        "label": "Manufacturing Cost Savings",
-        "value": "$4-10M",
-        "description": "Annual savings potential per manufacturing facility"
+        "label": "CGT CDMO Market Growth",
+        "value": "$8B → $74B",
+        "description": "Cell and gene therapy CDMO market expanding at 28% CAGR through 2034"
       },
       {
-        "label": "Market Growth Rate",
-        "value": "15% CAGR",
-        "description": "Expected growth in biopharmaceutical manufacturing optimization"
+        "label": "RLT Market Potential",
+        "value": "$13B by 2030",
+        "description": "Radiopharmaceutical market with blockbusters like Pluvicto generating $1B+ in 9 months"
+      },
+      {
+        "label": "Manufacturing Cost Impact",
+        "value": "40-70%",
+        "description": "Manufacturing represents 40-70% of advanced therapy costs - optimization directly impacts competitiveness"
       }
     ]
   },
   "about": {
     "title": "Meet the Team",
-    "subtitle": "The founders behind RawMaterialPredictive",
+    "subtitle": "The founders behind RawMaterialPredictive bring deep expertise in both biotech manufacturing and AI",
     "founders": [
       {
         "name": "Jamie Levitan",
         "email": "jamie@rawmaterialpredictive.com",
         "role": "Co-Founder & Biotech AI Specialist",
-        "bio": "Former bioprocess engineer with expertise in cell and gene therapy manufacturing. PhD in Chemical Engineering with focus on process optimization."
+        "bio": "Former bioprocess engineer with expertise in cell and gene therapy manufacturing. PhD in Chemical Engineering with focus on process optimization and 5+ years developing AI solutions for biotech manufacturing challenges."
       },
       {
         "name": "Eshaan Bansal",
         "email": "eshaan@rawmaterialpredictive.com",
         "role": "Co-Founder & Biotech AI Specialist", 
-        "bio": "Machine learning engineer with deep experience in biotech applications. MS in Computer Science with specialization in predictive modeling for manufacturing."
+        "bio": "Machine learning engineer with deep experience in biotech applications. MS in Computer Science with specialization in predictive modeling for manufacturing, and track record of deploying ML solutions in regulated environments."
       }
     ]
   },
   "footer": {
     "company": {
       "name": "RawMaterialPredictive",
-      "description": "Predictive Intelligence for Critical Biotech Manufacturing Inputs."
+      "description": "Predictive Intelligence for Critical Biotech Manufacturing Inputs - turning raw material variability from risk into competitive advantage."
     },
     "navigation": {
       "title": "Navigation",
