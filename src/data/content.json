@@ -1,3 +1,4 @@
+
 {
   "hero": {
     "headline": "RawMaterialPredictive",
@@ -305,13 +306,13 @@
         "name": "Jamie Levitan",
         "email": "jamie@rawmaterialpredictive.com",
         "role": "Co-Founder & Biotech AI Specialist",
-        "bio": ""
+        "bio": "Former bioprocess engineer with expertise in cell and gene therapy manufacturing. PhD in Chemical Engineering with focus on process optimization."
       },
       {
         "name": "Eshaan Bansal",
         "email": "eshaan@rawmaterialpredictive.com",
         "role": "Co-Founder & Biotech AI Specialist", 
-        "bio": ""
+        "bio": "Machine learning engineer with deep experience in biotech applications. MS in Computer Science with specialization in predictive modeling for manufacturing."
       }
     ]
   },
