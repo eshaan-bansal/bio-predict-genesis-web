@@ -318,7 +318,7 @@
     ]
   },
   "market": {
-    "title": "Massive Market Opportunity",
+    "title": "Massive Market Opportunity",  
     "subtitle": "The biopharmaceutical manufacturing optimization market represents unprecedented growth driven by advanced therapy complexity and cost pressures.",
     "marketSize": "$100B+",
     "growthRate": "15% CAGR",
@@ -329,13 +329,13 @@
         "description": "Market growing from $16B in 2025 to $38B by 2029 at >20% CAGR"
       },
       {
-        "label": "CGT CDMO Market Growth",
+        "label": "CGT CDMO Market Growth", 
         "value": "$8B → $74B",
         "description": "Cell and gene therapy CDMO market expanding at 28% CAGR through 2034"
       },
       {
         "label": "RLT Market Potential",
-        "value": "$13B by 2030",
+        "value": "$13B by 2030", 
         "description": "Radiopharmaceutical market with blockbusters like Pluvicto generating $1B+ in 9 months"
       },
       {
@@ -351,14 +351,14 @@
     "founders": [
       {
         "name": "Jamie Levitan",
-        "email": "jamie@rawmaterialpredictive.com",
+        "email": "jamie@rawmaterialpredictive.com", 
         "role": "Co-Founder & Biotech AI Specialist",
         "bio": "Former bioprocess engineer with expertise in cell and gene therapy manufacturing. PhD in Chemical Engineering with focus on process optimization and 5+ years developing AI solutions for biotech manufacturing challenges."
       },
       {
         "name": "Eshaan Bansal",
         "email": "eshaan@rawmaterialpredictive.com",
-        "role": "Co-Founder & Biotech AI Specialist", 
+        "role": "Co-Founder & Biotech AI Specialist",
         "bio": "Machine learning engineer with deep experience in biotech applications. MS in Computer Science with specialization in predictive modeling for manufacturing, and track record of deploying ML solutions in regulated environments."
       }
     ]
@@ -369,7 +369,7 @@
       "description": "Predictive Intelligence for Critical Biotech Manufacturing Inputs - turning raw material variability from risk into competitive advantage."
     },
     "navigation": {
-      "title": "Navigation",
+      "title": "Navigation", 
       "items": [
         { "label": "Problem", "sectionId": "problem" },
         { "label": "Platform", "sectionId": "platform" },
