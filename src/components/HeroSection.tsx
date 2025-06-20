@@ -1,26 +1,14 @@
+
 import React from 'react';
 import DemoRequestModal from './DemoRequestModal';
 import { useState, useEffect, useRef } from 'react';
 import { useContent } from '../hooks/useContent';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import LazyFuturisticCube from './LazyFuturisticCube';
 
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [autoplayFailed, setAutoplayFailed] = useState(false);
   const { content, loading } = useContent();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const isMobile = window.innerWidth <= 768;
-
-  useEffect(() => {
-    if (videoRef.current) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          setAutoplayFailed(true);
-        });
-      }
-    }
-  }, []);
 
   const handleRequestDemo = () => {
     setIsDemoModalOpen(true);
@@ -39,33 +27,15 @@ const HeroSection = () => {
   return (
     <>
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video for Desktop, Gradient for Mobile */}
-        {!isMobile ? (
-          <>
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover z-0"
-              src="/CompleteRendering.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster="/CompleteRendering-poster.jpg"
-              controls={false}
-            />
-            <div className="absolute inset-0 bg-black/40 z-0" />
-          </>
-        ) : (
-          <div 
-            className="absolute inset-0 z-0" 
-            style={{
-              background: 'linear-gradient(135deg, #1e40af 0%, #7e22ce 50%, #312e81 100%)',
-              backgroundSize: '200% 200%',
-              animation: 'gradient 15s ease infinite'
-            }}
-          />
-        )}
+        {/* Background Gradient */}
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{
+            background: 'linear-gradient(135deg, #1e40af 0%, #7e22ce 50%, #312e81 100%)',
+            backgroundSize: '200% 200%',
+            animation: 'gradient 15s ease infinite'
+          }}
+        />
         
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
@@ -84,12 +54,12 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              {/* Right Column - Floating Data Points Only (no 3D animation) */}
+              {/* Right Column - Futuristic Cube with Floating Data Points */}
               <div className="relative slide-up order-first lg:order-last">
                 <div className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] relative">
-                  {/* No 3D animation here, just empty space for layout */}
+                  <LazyFuturisticCube />
                 </div>
-                {/* Floating data points around the (now video) background */}
+                {/* Floating data points around the cube */}
                 <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse text-base sm:text-lg">
                   <div className="font-semibold text-gray-900">{heroContent.statistics.accuracy}</div>
                   <div className="text-xs sm:text-sm text-gray-600">Prediction Accuracy</div>
