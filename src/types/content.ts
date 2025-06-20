@@ -124,6 +124,7 @@ export interface MarketContent {
 
 export interface AboutContent {
   title: string;
+  subtitle: string;
   founders: {
     name: string;
     email: string;

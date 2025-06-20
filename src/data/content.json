@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "headline": "RawMaterialPredictive",
@@ -300,6 +299,7 @@
   },
   "about": {
     "title": "Meet the Team",
+    "subtitle": "The founders behind RawMaterialPredictive",
     "founders": [
       {
         "name": "Jamie Levitan",
