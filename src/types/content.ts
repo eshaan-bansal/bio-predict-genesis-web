@@ -3,6 +3,7 @@ export interface HeroContent {
   headline: string;
   subheadline: string;
   ctaText: string;
+  tagline: string;
   statistics: {
     accuracy: string;
     savings: string;
@@ -13,6 +14,7 @@ export interface HeroContent {
 export interface ProblemContent {
   title: string;
   subtitle: string;
+  description: string;
   problems: {
     title: string;
     description: string;
@@ -23,29 +25,89 @@ export interface ProblemContent {
 export interface PlatformContent {
   title: string;
   subtitle: string;
-  features: {
+  description: string;
+  coreCapabilities: {
     title: string;
     description: string;
-    benefits: string[];
+  }[];
+  differentiators: {
+    title: string;
+    description: string;
   }[];
 }
 
 export interface ScienceContent {
   title: string;
   subtitle: string;
+  technicalEdge: {
+    title: string;
+    description: string;
+  }[];
+  marketPosition: {
+    title: string;
+    description: string;
+  }[];
   stats: {
     icon: string;
     value: string;
     label: string;
     description: string;
   }[];
-  methodology: {
+}
+
+export interface ImpactContent {
+  title: string;
+  subtitle: string;
+  description: string;
+  capabilities: {
     title: string;
-    sections: {
-      title: string;
-      description: string;
-    }[];
-  };
+    description?: string;
+    icon: string;
+  }[];
+  outcomes: {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface PrivacyContent {
+  title: string;
+  subtitle: string;
+  features: {
+    title: string;
+    description: string;
+  }[];
+  deploymentOptions: {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface AdvantagesContent {
+  title: string;
+  ourAdvantages: {
+    title: string;
+    description: string;
+  }[];
+  yourReality: {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface PilotContent {
+  title: string;
+  subtitle: string;
+  question: string;
+  steps: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+  whatYouGet: {
+    title: string;
+    description: string;
+  }[];
 }
 
 export interface MarketContent {
@@ -62,7 +124,6 @@ export interface MarketContent {
 
 export interface AboutContent {
   title: string;
-  subtitle: string;
   founders: {
     name: string;
     email: string;
@@ -109,6 +170,10 @@ export interface SiteContent {
   problem: ProblemContent;
   platform: PlatformContent;
   science: ScienceContent;
+  impact: ImpactContent;
+  privacy: PrivacyContent;
+  advantages: AdvantagesContent;
+  pilot: PilotContent;
   market: MarketContent;
   about: AboutContent;
   footer: FooterContent;
