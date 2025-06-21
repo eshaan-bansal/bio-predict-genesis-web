@@ -84,10 +84,6 @@
     "subtitle": "Biotech-Native AI That Actually Works",
     "technicalEdge": [
       {
-        "title": "80% recall achieved on 100-row datasets",
-        "description": "Proven performance even with limited historical data - most competitors need 1000+ samples"
-      },
-      {
         "title": "Exponential improvement with continuous learning",
         "description": "Your model accuracy increases dramatically with every batch cycle"
       },
@@ -185,7 +181,7 @@
       },
       {
         "title": "Cost reduction and profitability improvement",
-        "description": "$4-10M+ annual savings per facility through prevented failures and optimization"
+        "description": "Annual savings per facility through prevented failures and optimization"
       }
     ]
   },
@@ -347,19 +343,15 @@
   },
   "about": {
     "title": "Meet the Team",
-    "subtitle": "The founders behind RawMaterialPredictive bring deep expertise in both biotech manufacturing and AI",
+    "subtitle": "The founders behind RawMaterialPredictive",
     "founders": [
       {
         "name": "Jamie Levitan",
-        "email": "jamie@rawmaterialpredictive.com", 
-        "role": "Co-Founder & Biotech AI Specialist",
-        "bio": "Former bioprocess engineer with expertise in cell and gene therapy manufacturing. PhD in Chemical Engineering with focus on process optimization and 5+ years developing AI solutions for biotech manufacturing challenges."
+        "email": "jamie@rawmaterialpredictive.com"
       },
       {
         "name": "Eshaan Bansal",
-        "email": "eshaan@rawmaterialpredictive.com",
-        "role": "Co-Founder & Biotech AI Specialist",
-        "bio": "Machine learning engineer with deep experience in biotech applications. MS in Computer Science with specialization in predictive modeling for manufacturing, and track record of deploying ML solutions in regulated environments."
+        "email": "eshaan@rawmaterialpredictive.com"
       }
     ]
   },

@@ -77,13 +77,12 @@ const Navbar = () => {
                 className="flex items-center space-x-2 text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
               >
                 <img
-                  src="/RMPredictive_Logo.png"
-                  alt="RMPredictive Logo"
-                  className="h-12 w-12 sm:h-[78px] sm:w-[78px] object-contain"
+                  src="/rmp-logo.svg"
+                  alt="RMP Logo"
+                  className="h-10 w-auto sm:h-12 sm:w-auto object-contain"
                   style={{ background: 'transparent' }}
                   loading="eager"
                 />
-                <span className="font-instrument-serif text-lg sm:text-xl">RMPredictive</span>
               </button>
             </div>
 

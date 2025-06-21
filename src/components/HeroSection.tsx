@@ -26,16 +26,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Gradient */}
-        <div 
-          className="absolute inset-0 z-0" 
-          style={{
-            background: 'linear-gradient(135deg, #1e40af 0%, #7e22ce 50%, #312e81 100%)',
-            backgroundSize: '200% 200%',
-            animation: 'gradient 15s ease infinite'
-          }}
-        />
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
         
         {/* Content */}
         <div className="container mx-auto container-padding relative z-10">
@@ -45,16 +36,16 @@ const HeroSection = () => {
               <div id="main-content" className="text-center lg:text-left space-y-6 lg:space-y-8 slide-up">
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium leading-tight text-balance">
-                  <span className="text-blue-300 font-instrument-serif">{heroContent.headline}</span>
+                  <span className="text-blue-600 font-instrument-serif">{heroContent.headline}</span>
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-white leading-relaxed font-medium">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-900 leading-relaxed font-medium">
                   {heroContent.subheadline}
                 </p>
 
                 {/* Tagline */}
-                <p className="text-sm sm:text-base md:text-lg text-blue-200 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                   {heroContent.tagline}
                 </p>
               </div>

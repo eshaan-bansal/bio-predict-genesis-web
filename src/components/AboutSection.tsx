@@ -32,27 +32,19 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {aboutContent.founders.map((founder, index) => (
             <div key={founder.name} className="text-center">
-              <div className="mb-6">
-                <h3 className="text-2xl font-medium text-gray-900 mb-2">
-                  {founder.name}
-                </h3>
-                <p className="text-blue-600 mb-4">{founder.role}</p>
-                <a 
-                  href={`mailto:${founder.email}`} 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                  aria-label={`Email ${founder.name}`}
-                >
-                  {founder.email}
-                </a>
-              </div>
-              <div className="mt-6">
-                {founder.bio && (
-                  <p className="text-gray-600 leading-relaxed">{founder.bio}</p>
-                )}
-              </div>
+              <h3 className="text-2xl font-medium text-gray-900 mb-4">
+                {founder.name}
+              </h3>
+              <a 
+                href={`mailto:${founder.email}`} 
+                className="text-blue-600 hover:text-blue-700 transition-colors"
+                aria-label={`Email ${founder.name}`}
+              >
+                {founder.email}
+              </a>
             </div>
           ))}
         </div>

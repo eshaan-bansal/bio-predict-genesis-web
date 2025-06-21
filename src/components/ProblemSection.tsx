@@ -22,7 +22,7 @@ const ProblemSection = () => {
   const problemContent = content.problem;
 
   return (
-    <section id="problem" className="py-16 sm:py-20 relative">
+    <section id="problem" className="py-16 sm:py-20 relative bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold mb-4 text-black">

@@ -2,10 +2,27 @@ import React, { useState } from 'react';
 import { TrendingUp, Target, Award, Database, Brain, Zap, Shield } from 'lucide-react';
 import AnimatedCounter from './AnimatedCounter';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useContent } from '../hooks/useContent';
 
 const ScienceSection = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const { content, loading } = useContent();
+
+  if (loading || !content) {
+    return (
+      <section className="section-padding bg-white">
+        <div className="container mx-auto container-padding">
+          <div className="animate-pulse text-center">
+            <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const scienceContent = content.science;
 
   const stats = [
     {
@@ -68,27 +85,20 @@ const ScienceSection = () => {
   ];
 
   return (
-    <section id="science" className="section-padding bg-white">
+    <section id="science" className="section-padding bg-gray-50">
       <div className="container mx-auto container-padding">
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 text-balance">
-            Measurable Impacts
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Our proprietary algorithms are trained on extensive datasets from leading 
-            biomanufacturing facilities, delivering validated improvements across all metrics.
-          </p>
-        </div>
         
         <div ref={elementRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
-          {stats.map((stat, index) => (
+          {scienceContent.stats.map((stat, index) => (
             <div 
               key={stat.label}
               className={`text-center ${index === 0 ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center' : ''} transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6 hover:bg-gray-200 transition-colors duration-300">
-                <stat.icon className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />
+                {stat.icon === 'TrendingUp' && <TrendingUp className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
+                {stat.icon === 'Target' && <Target className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
+                {stat.icon === 'Award' && <Award className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
               </div>
               <div className="text-3xl sm:text-4xl font-serif font-medium text-gray-900 mb-2">
                 <AnimatedCounter value={stat.value} isVisible={isVisible} />
@@ -97,6 +107,34 @@ const ScienceSection = () => {
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Market Position Section */}
+        <div className="mb-16 sm:mb-20">
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-gray-900 mb-8 sm:mb-12 text-center">
+            Market Position
+          </h3>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            {scienceContent.marketPosition.map((position, index) => (
+              <div 
+                key={position.title} 
+                className="flex items-start space-x-6"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Target className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-sans text-xl font-bold text-gray-900 mb-3">
+                    {position.title}
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    {position.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Process Flow Steps */}
