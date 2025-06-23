@@ -1,31 +1,27 @@
-
 import React from 'react';
 import DemoRequestModal from './DemoRequestModal';
 import { useState, useEffect, useRef } from 'react';
 import { useContent } from '../hooks/useContent';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import LazyFuturisticCube from './LazyFuturisticCube';
-
 const HeroSection = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const { content, loading } = useContent();
-
+  const {
+    content,
+    loading
+  } = useContent();
   const handleRequestDemo = () => {
     setIsDemoModalOpen(true);
   };
-
   if (loading || !content) {
-    return (
-      <section className="relative min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f5f3f0' }}>
+    return <section className="relative min-h-screen flex items-center justify-center" style={{
+      backgroundColor: '#f5f3f0'
+    }}>
         <div className="animate-pulse text-gray-400">Loading...</div>
-      </section>
-    );
+      </section>;
   }
-
   const heroContent = content.hero;
-
-  return (
-    <>
+  return <>
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
         
         {/* Content */}
@@ -56,18 +52,9 @@ const HeroSection = () => {
                   <LazyFuturisticCube />
                 </div>
                 {/* Floating data points around the cube */}
-                <div className="absolute top-1/4 left-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse text-base sm:text-lg">
-                  <div className="font-semibold text-gray-900">{heroContent.statistics.accuracy}</div>
-                  <div className="text-xs sm:text-sm text-gray-600">Prediction Accuracy</div>
-                </div>
-                <div className="absolute bottom-1/4 right-0 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse delay-300 text-base sm:text-lg">
-                  <div className="font-semibold text-gray-900">{heroContent.statistics.savings}</div>
-                  <div className="text-xs sm:text-sm text-gray-600">Annual Savings</div>
-                </div>
-                <div className="absolute top-1/2 -left-2 sm:-left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-lg animate-pulse delay-700 text-base sm:text-lg">
-                  <div className="font-semibold text-gray-900">{heroContent.statistics.fasterRCA}</div>
-                  <div className="text-xs sm:text-sm text-gray-600">Faster RCA</div>
-                </div>
+                
+                
+                
               </div>
             </div>
           </div>
@@ -75,12 +62,7 @@ const HeroSection = () => {
       </section>
 
       {/* Demo Request Modal */}
-      <DemoRequestModal 
-        isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
-      />
-    </>
-  );
+      <DemoRequestModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
+    </>;
 };
-
 export default HeroSection;
