@@ -1,11 +1,29 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { MicrochipIcon, Target, BrainCircuit, Shield, Rocket, Database } from "lucide-react";
+import { TrendingUp, Target, BrainCircuit, Shield, Rocket, Database, Award } from "lucide-react";
+import { useContent } from '../hooks/useContent';
 
 const MarketSection = () => {
+  const { content, loading } = useContent();
+
+  if (loading || !content) {
+    return (
+      <section className="py-16 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="animate-pulse text-center">
+            <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const scienceContent = content.science;
+
   return (
-    <section id="market" className="py-20 relative overflow-hidden">
+    <section id="market" className="py-16 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white -z-10"></div>
       
@@ -103,6 +121,48 @@ const MarketSection = () => {
               </ul>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Market Position Section */}
+        <div className="mb-16">
+          <h3 className="font-sans text-3xl font-bold text-gray-900 mb-12 text-center">
+            Market Position & Growth
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {scienceContent.marketPosition.map((position, index) => (
+              <div 
+                key={position.title} 
+                className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Award className="h-6 w-6 text-blue-600" />
+                </div>
+                <h4 className="font-sans text-xl font-bold text-gray-900 mb-3">
+                  {position.title}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  {position.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Market Statistics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {scienceContent.stats.map((stat, index) => (
+            <div key={stat.label} className="text-center bg-white p-6 rounded-lg shadow-md border border-gray-200">
+              <div className="text-4xl font-bold text-blue-600 mb-2">
+                {stat.value}
+              </div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">
+                {stat.label}
+              </div>
+              <p className="text-gray-600 text-sm">
+                {stat.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

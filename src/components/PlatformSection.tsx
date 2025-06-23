@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Brain, Database, Target } from 'lucide-react';
+import { Brain, Database, Target, CheckCircle, BarChart, TrendingUp, Award } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 
 const PlatformSection = () => {
@@ -20,11 +20,13 @@ const PlatformSection = () => {
   }
 
   const platformContent = content.platform;
+  const advantagesContent = content.advantages;
+  const impactContent = content.impact;
 
   return (
-    <section id="platform" className="section-padding bg-white">
+    <section id="platform" className="py-16 bg-white">
       <div className="container mx-auto container-padding">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-sans text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
             {platformContent.title}
           </h2>
@@ -36,7 +38,7 @@ const PlatformSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           {platformContent.coreCapabilities.map((capability, index) => (
             <div 
               key={capability.title} 
@@ -57,7 +59,7 @@ const PlatformSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           <h3 className="font-sans text-3xl font-bold text-gray-900 mb-8 col-span-full text-center">
             Technical Edge
           </h3>
@@ -81,6 +83,80 @@ const PlatformSection = () => {
           ))}
         </div>
 
+        {/* Measurable Outcomes Section */}
+        <div className="mb-16">
+          <h3 className="font-sans text-3xl font-bold text-gray-900 mb-12 text-center">
+            Measurable Outcomes
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {impactContent.outcomes.map((outcome, index) => (
+              <div key={outcome.title} className="bg-gray-50 p-6 rounded-lg">
+                <h4 className="font-sans text-lg font-bold text-gray-900 mb-3">
+                  {outcome.title}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">
+                  {outcome.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Not Build It Yourself Section */}
+        <div className="mb-16">
+          <h3 className="font-sans text-3xl font-bold text-gray-900 mb-12 text-center">
+            {advantagesContent.title}
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Our Advantages */}
+            <div>
+              <h4 className="font-sans text-2xl font-bold text-blue-600 mb-8">
+                Our Unique Advantages
+              </h4>
+              <div className="space-y-6">
+                {advantagesContent.ourAdvantages.map((advantage, index) => (
+                  <div key={advantage.title} className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-6 h-6 mt-1">
+                      <CheckCircle className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-sans text-lg font-semibold text-gray-900 mb-2">
+                        {advantage.title}
+                      </h5>
+                      <p className="text-gray-600 leading-relaxed">
+                        {advantage.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Your Resource Reality */}
+            <div>
+              <h4 className="font-sans text-2xl font-bold text-gray-600 mb-8">
+                Your Resource Reality
+              </h4>
+              <div className="space-y-6">
+                {advantagesContent.yourReality.map((reality, index) => (
+                  <div key={reality.title} className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-6 h-6 mt-1">
+                      <CheckCircle className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h5 className="font-sans text-lg font-semibold text-gray-900 mb-2">
+                        {reality.title}
+                      </h5>
+                      <p className="text-gray-600 leading-relaxed">
+                        {reality.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

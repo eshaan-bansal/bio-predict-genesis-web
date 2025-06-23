@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -47,6 +48,11 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleImplementation = () => {
+    scrollToSection('privacy');
+    setIsMobileMenuOpen(false);
+  };
+
   const navigationItems = [
     { name: 'Problem', id: 'problem' },
     { name: 'Platform', id: 'platform' },
@@ -72,18 +78,9 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <button 
-                onClick={() => scrollToSection('hero')}
-                className="flex items-center space-x-2 text-xl sm:text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors"
-              >
-                <img
-                  src="/rmp-logo.svg"
-                  alt="RMP Logo"
-                  className="h-10 w-auto sm:h-12 sm:w-auto object-contain"
-                  style={{ background: 'transparent' }}
-                  loading="eager"
-                />
-              </button>
+              <span className="text-xl sm:text-2xl font-medium text-gray-900">
+                RawMaterialPredictive
+              </span>
             </div>
 
             {/* Desktop Navigation */}
@@ -101,6 +98,15 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Implementation Button */}
+              <Button 
+                onClick={handleImplementation}
+                variant="outline"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-2 min-h-[44px]"
+              >
+                Implementation
+              </Button>
               
               {/* Primary CTA Button */}
               <Button 
@@ -141,6 +147,15 @@ const Navbar = () => {
                     {item.name}
                   </button>
                 ))}
+                
+                {/* Mobile Implementation Button */}
+                <Button 
+                  onClick={handleImplementation}
+                  variant="outline"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 py-4 min-h-[44px]"
+                >
+                  Implementation
+                </Button>
                 
                 {/* Mobile CTA Button */}
                 <div className="pt-4 border-t border-gray-100">
