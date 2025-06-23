@@ -75,7 +75,7 @@ const MarketSection = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Single batch failures can cost $4-10M+ due to material costs, patient delays, and regulatory implications</span>
+                  <span className="text-gray-700">Single batch failures can cost millions due to material costs, patient delays, and regulatory implications</span>
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
@@ -106,8 +106,8 @@ const MarketSection = () => {
                   <span className="text-gray-700">First-mover advantage in predictive raw material intelligence—no direct competitors with our specific focus and technical approach</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
-                  <span className="text-gray-700">Value-based pricing model: capture 10-25% of realized savings from prevented batch failures and optimization gains</span>
+                  
+                  
                 </li>
                 <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
