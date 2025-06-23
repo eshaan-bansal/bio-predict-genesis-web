@@ -1,24 +1,32 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Target, BrainCircuit, Shield, Rocket, Database, Award } from "lucide-react";
 import { useContent } from '../hooks/useContent';
+import AnimatedCounter from './AnimatedCounter';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+
 const MarketSection = () => {
-  const {
-    content,
-    loading
-  } = useContent();
+  const { elementRef, isVisible } = useIntersectionObserver();
+  const { content, loading } = useContent();
+
   if (loading || !content) {
-    return <section className="py-16 relative overflow-hidden">
+    return (
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="animate-pulse text-center">
             <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
             <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto"></div>
           </div>
         </div>
-      </section>;
+      </section>
+    );
   }
+
   const scienceContent = content.science;
-  return <section id="market" className="py-16 relative overflow-hidden">
+
+  return (
+    <section id="market" className="py-16 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white -z-10"></div>
       
@@ -30,6 +38,28 @@ const MarketSection = () => {
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Capturing unprecedented value in the rapidly expanding advanced therapy manufacturing market
           </p>
+        </div>
+
+        {/* Market Statistics moved from ScienceSection */}
+        <div ref={elementRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
+          {scienceContent.stats.map((stat, index) => (
+            <div 
+              key={stat.label}
+              className={`text-center ${index === 0 ? 'sm:col-span-2 lg:col-span-1 sm:justify-self-center' : ''} transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6 hover:bg-gray-200 transition-colors duration-300">
+                {stat.icon === 'TrendingUp' && <TrendingUp className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
+                {stat.icon === 'Target' && <Target className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
+                {stat.icon === 'Award' && <Award className="h-7 w-7 sm:h-8 sm:w-8 text-gray-700" />}
+              </div>
+              <div className="text-3xl sm:text-4xl font-serif font-medium text-gray-900 mb-2">
+                <AnimatedCounter value={stat.value} isVisible={isVisible} />
+              </div>
+              <div className="font-medium text-gray-900 mb-3">{stat.label}</div>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
+            </div>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
@@ -106,10 +136,6 @@ const MarketSection = () => {
                   <span className="text-gray-700">First-mover advantage in predictive raw material intelligence—no direct competitors with our specific focus and technical approach</span>
                 </li>
                 <li className="flex items-start">
-                  
-                  
-                </li>
-                <li className="flex items-start">
                   <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-1.5 mr-2 flex-shrink-0"></span>
                   <span className="text-gray-700">Expanding to adjacent markets: traditional biologics, small molecules, and emerging therapeutic modalities</span>
                 </li>
@@ -124,7 +150,8 @@ const MarketSection = () => {
             Market Position & Growth
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {scienceContent.marketPosition.map((position, index) => <div key={position.title} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+            {scienceContent.marketPosition.map((position, index) => (
+              <div key={position.title} className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Award className="h-6 w-6 text-blue-600" />
                 </div>
@@ -134,15 +161,13 @@ const MarketSection = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {position.description}
                 </p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Market Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {scienceContent.stats.map((stat, index) => {})}
-        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default MarketSection;
