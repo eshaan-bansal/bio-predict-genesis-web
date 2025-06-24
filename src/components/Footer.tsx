@@ -56,10 +56,10 @@ const Footer = () => {
                 <button onClick={() => scrollToSection('pilot')} className="text-lg font-semibold hover:text-accent transition-colors">Get Started</button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('about')} className="text-lg font-semibold hover:text-accent transition-colors">Contact Us</button>
+                
               </li>
               <li>
-                <Button onClick={handleRequestDemo} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 min-h-[44px]">Request Demo</Button>
+                
               </li>
             </ul>
           </div>
