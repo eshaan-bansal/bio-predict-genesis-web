@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -16,7 +15,7 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Determine active section
-      const sections = ['problem', 'platform', 'privacy', 'about'];
+      const sections = ['problem', 'platform', 'how-it-works', 'pilot', 'about'];
       const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -48,15 +47,15 @@ const Navbar = () => {
   };
 
   const handleImplementation = () => {
-    scrollToSection('privacy');
+    scrollToSection('pilot');
     setIsMobileMenuOpen(false);
   };
 
   const navigationItems = [
     { name: 'Problem', id: 'problem' },
     { name: 'Platform', id: 'platform' },
-    { name: 'Implementation', id: 'privacy' },
-    { name: 'Contact', id: 'about' }
+    { name: 'Get Started', id: 'pilot' },
+    { name: 'Contact Us', id: 'about' }
   ];
 
   return (
@@ -72,9 +71,9 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/5a39ee6b-b6f6-445e-840c-302f413ddae4.png" 
+                src="/RMPlogo.png" 
                 alt="RMP Logo" 
-                className="h-8 w-auto"
+                style={{ height: '48px', width: 'auto', display: 'block', objectFit: 'contain' }}
               />
             </div>
 

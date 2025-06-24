@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "headline": "RawMaterialPredictive",
@@ -17,8 +16,8 @@
     "description": "Advanced therapy manufacturing faces a critical blind spot - raw material variability that cascades into costly failures:",
     "problems": [
       {
-        "title": "30-40% batch failure rates cost $2-5M+ per failed batch",
-        "description": "Lost materials, facility time, and 6-12 month patient delays",
+        "title": "Batch failure rates can cost millions per failed batch",
+        "description": "Lost materials, facility time, and many month patient delays",
         "impact": "Critical for patient access to life-saving therapies"
       },
       {
@@ -265,7 +264,7 @@
     ]
   },
   "pilot": {
-    "title": "Let's Start With Your Biggest Risk",
+    "title": "Let's Get Started",
     "subtitle": "Customized Pilot Program Designed for Your Process",
     "question": "What's the single biggest material-related risk or failure mode you face today?",
     "steps": [
