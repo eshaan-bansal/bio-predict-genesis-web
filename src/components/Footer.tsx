@@ -58,6 +58,9 @@ const Footer = () => {
                 <button onClick={() => scrollToSection('problem')} className="text-lg font-semibold hover:text-accent transition-colors">Problem</button>
               </li>
               <li>
+                <button onClick={() => scrollToSection('platform')} className="text-lg font-semibold hover:text-accent transition-colors">Platform</button>
+              </li>
+              <li>
                 <button onClick={() => scrollToSection('pilot')} className="text-lg font-semibold hover:text-accent transition-colors">Get Started</button>
               </li>
               <li>
