@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -54,7 +55,7 @@ const Footer = () => {
           <div className="mb-8">
             <ul className="flex flex-wrap justify-center gap-8">
               <li>
-                <button onClick={() => scrollToSection('platform')} className="text-lg font-semibold hover:text-accent transition-colors">Platform</button>
+                <button onClick={() => scrollToSection('problem')} className="text-lg font-semibold hover:text-accent transition-colors">Problem</button>
               </li>
               <li>
                 <button onClick={() => scrollToSection('pilot')} className="text-lg font-semibold hover:text-accent transition-colors">Get Started</button>
@@ -125,3 +126,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
